@@ -1,11 +1,12 @@
 import './App.css'
+import { SideBar } from './components/SideBar'
 
 function App() {
 
 
   return (
     <>
-      <h1 className='font-bold'>Hola</h1>
+      <SideBar />
     </>
   )
 }
