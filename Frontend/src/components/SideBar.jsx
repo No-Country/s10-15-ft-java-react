@@ -68,5 +68,5 @@ export const SideBar = () => {
                 </Link>
         </div>
     </nav>
-  )
-}
+  );
+};
