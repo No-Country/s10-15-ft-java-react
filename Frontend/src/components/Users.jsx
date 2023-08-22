@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { AiOutlinePlus, AiTwotoneFilter } from 'react-icons/ai';
+import { FilterNav } from './FilterNav';
 
 export const Users = () => {
   return (
-    <div className='p-5'>Users</div>
+    <div className='m-10 w-full px-10 text-lg'>
+      <FilterNav />
+    </div>
   )
 }

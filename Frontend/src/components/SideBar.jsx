@@ -33,12 +33,12 @@ export const SideBar = () => {
                 Proveedores
             </Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to='/historial' className='flex items-center hover:bg-blue-800 py-4 rounded-xl px-2'>
                     <AiOutlineHistory className='me-5 text-2xl' />
                     Historial
                 </Link>
-            </li>
+            </li> */}
             <li>
                 <Link to='/usuarios' className='flex items-center hover:bg-blue-800 py-4 rounded-xl px-2'>
                     <HiUsers className='me-5 text-2xl' />
