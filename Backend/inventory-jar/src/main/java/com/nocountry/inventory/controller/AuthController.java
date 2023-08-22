@@ -1,5 +1,6 @@
 package com.nocountry.inventory.controller;
 
+import com.nocountry.inventory.entity.UserEntity;
 import com.nocountry.inventory.requestEntity.LoginRE;
 import com.nocountry.inventory.requestEntity.UserRE;
 import com.nocountry.inventory.dto.GenericResponseDTO;
@@ -28,6 +29,8 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody UserRE userRE){
+
+
 
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.register(userRE)));
 

@@ -4,6 +4,7 @@ package com.nocountry.inventory.service;
 
 
 import com.nocountry.inventory.auth.AuthResponse;
+import com.nocountry.inventory.dto.UserEntityDTO;
 import com.nocountry.inventory.repository.UserEntityRepository;
 import com.nocountry.inventory.requestEntity.LoginRE;
 import com.nocountry.inventory.requestEntity.UserRE;
@@ -24,12 +25,11 @@ public class AuthService {
     @Autowired
     JwtService jwtService;
 
-
     public AuthResponse login(LoginRE loginRE) {
         return null;
     }
 
-    public UserEntity register(UserRE userRE) {
+    public UserEntityDTO register(UserRE userRE) {
         UserEntity user = new UserEntity();
 
         if (userRE.getUserName() != null)
@@ -40,13 +40,10 @@ public class AuthService {
         user.setFirstname(userRE.getFirstname());
         user.setCountry(userRE.getCountry());
         user.setRole(ERole.USER);
-
         userEntityRepository.save(user);
 
-
-      return user;
-
-              // new AuthResponse(jwtService.getToken(user));
+        AuthResponse token = new AuthResponse(jwtService.getToken(user));
+        return new UserEntityDTO(user,token);
 
     }
 }
