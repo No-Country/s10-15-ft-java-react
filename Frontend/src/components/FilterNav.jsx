@@ -1,5 +1,8 @@
 import React from 'react';
 import { AiOutlinePlus, AiTwotoneFilter } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
+
 
 export const FilterNav = () => {
   return (
@@ -21,10 +24,10 @@ export const FilterNav = () => {
               <AiTwotoneFilter className='text-2xl' /> 
               <span className='text-lg'>FILTRAR</span>
             </button>
-            <button className='btn btn-primary'>
+            <Link to='/nuevoUsuario' className='btn btn-primary'>
               <AiOutlinePlus className='text-2xl'/> 
                AGREGAR USUARIO
-            </button>
+            </Link>
         </div>
       </div>
     </div>
