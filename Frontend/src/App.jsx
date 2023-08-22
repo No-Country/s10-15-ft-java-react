@@ -1,11 +1,15 @@
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import { SideBar } from './components/SideBar'
 
 function App() {
 
 
   return (
     <>
-      <h1 className='font-bold'>Hola</h1>
+    <BrowserRouter>
+      <SideBar />
+    </BrowserRouter>
     </>
   )
 }
