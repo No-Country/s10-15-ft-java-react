@@ -1,11 +1,15 @@
 import React from 'react';
-import {BiSolidDashboard, BiHelpCircle } from 'react-icons/bi'
-import {MdInventory } from 'react-icons/md'
-import {BsFillPersonVcardFill } from 'react-icons/bs'
-import {AiOutlineHistory, AiTwotoneSetting } from 'react-icons/ai'
-import {HiUsers } from 'react-icons/hi'
-import {RxExit } from 'react-icons/rx'
-import { Link } from 'react-router-dom'
+import {
+    BiSolidDashboard,
+    BiHelpCircle,
+    MdInventory,
+    BsFillPersonVcardFill,
+    AiOutlineHistory,
+    AiTwotoneSetting,
+    HiUsers,
+    RxExit,
+} from 'react-icons';
+import { Link } from 'react-router-dom';
 
 export const SideBar = () => {
   return (

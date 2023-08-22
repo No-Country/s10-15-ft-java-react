@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Settings = () => {
   return (
-    <div>Settings</div>
+    <div className='p-5'>Settings</div>
   )
 }
