@@ -1,4 +1,4 @@
-package com.nocountry.inventory.auth;
+package com.nocountry.inventory.requestEntity;
 
 
 import lombok.AllArgsConstructor;
@@ -9,13 +9,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class RegisterRequest {
+public class UserRE {
 
     private String userName;
     private String firstname;
     private String lastname;
     private String password;
-    private String phone;
+    private String country;
 
 }

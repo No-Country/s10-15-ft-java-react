@@ -1,4 +1,4 @@
-package com.nocountry.inventory.auth;
+package com.nocountry.inventory.requestEntity;
 
 
 
@@ -10,8 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class LoginRequest {
+public class LoginRE {
 
     private String userName;
     private String password;

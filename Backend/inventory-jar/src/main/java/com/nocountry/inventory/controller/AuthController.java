@@ -1,7 +1,7 @@
 package com.nocountry.inventory.controller;
 
-import com.nocountry.inventory.auth.LoginRequest;
-import com.nocountry.inventory.auth.RegisterRequest;
+import com.nocountry.inventory.requestEntity.LoginRE;
+import com.nocountry.inventory.requestEntity.UserRE;
 import com.nocountry.inventory.dto.GenericResponseDTO;
 import com.nocountry.inventory.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +20,16 @@ public class AuthController {
     AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequest request){
+    public ResponseEntity<?> login(@RequestBody LoginRE loginRE){
 
-        return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.login(request)));
+        return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.login(loginRE)));
 
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterRequest request){
+    public ResponseEntity<?> register(@RequestBody UserRE userRE){
 
-        return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.register(request)));
+        return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.register(userRE)));
 
     }
 
