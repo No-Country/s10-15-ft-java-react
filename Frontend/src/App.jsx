@@ -7,9 +7,9 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-      <SideBar />
-    </BrowserRouter>
+      <BrowserRouter>
+        <SideBar />
+      </BrowserRouter>
     </>
   )
 }
