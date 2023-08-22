@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply tracking-widest rounded-full bg-blue-600 text-white
+}
+
+.btn-outline {
+  @apply bg-white border-2 border-blue-600 text-blue-600
+}
