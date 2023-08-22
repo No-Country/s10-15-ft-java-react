@@ -1,0 +1,10 @@
+{
+  "trailingComma": "none",
+  "spaceWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "object-curly-spacing": false,
+  "space-before-function-paren": true
+}
