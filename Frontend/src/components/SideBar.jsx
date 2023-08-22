@@ -14,52 +14,54 @@ export const SideBar = () => {
             LOGO
         </div>
         <ul className='h-full flex flex-col mt-10 bg-blue-500 px-8'>
-            <li className='py-4'>
-                <Link to='/dashboard' className='flex items-center'>
+            <li>
+                <Link to='/dashboard' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <BiSolidDashboard className='me-5 text-2xl' />
                     Dashboard
                 </Link>
             </li>
-            <li className='py-4'>
-                <Link to='/inventario' className='flex items-center'>
+            <li>
+                <Link to='/inventario' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <MdInventory className='me-5 text-2xl' />
                     Inventario
                 </Link>
             </li>
-            <li className='py-4'>
-            <Link to='/proveedores' className='flex items-center'>
+            <li>
+            <Link to='/proveedores' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                 <BsFillPersonVcardFill className='me-5 text-2xl' />
                 Proveedores
             </Link>
             </li>
-            <li className='py-4'>
-                <Link to='/historial' className='flex items-center'>
+            <li>
+                <Link to='/historial' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <AiOutlineHistory className='me-5 text-2xl' />
                     Historial
                 </Link>
             </li>
-            <li className='py-4'>
-                <Link to='/usuarios' className='flex items-center'>
+            <li>
+                <Link to='/usuarios' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <HiUsers className='me-5 text-2xl' />
                     Usuarios
                 </Link>
             </li>
-            <li className='py-4'>
-                <Link to='/configuracion' className='flex items-center'>
+            <li>
+                <Link to='/configuracion' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <AiTwotoneSetting className='me-5 text-2xl' />
                     Configuración
                 </Link>
             </li>
-            <li className='py-4'>
-                <Link to='/ayuda' className='flex items-center'>
+            <li>
+                <Link to='/ayuda' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2'>
                     <BiHelpCircle className='me-5 text-2xl' />
                     Ayuda
                 </Link>
             </li>
         </ul>
         <div className='px-8 pb-10 flex'>
-            <RxExit className='me-5 text-2xl' />
-            Salir
+                <Link to='/ayuda' className='flex items-center hover:bg-blue-400 py-4 rounded-md px-2 w-full'>
+                    <RxExit className='me-5 text-2xl' />
+                    Salir
+                </Link>
         </div>
     </nav>
   )
