@@ -5,6 +5,7 @@ import {BsFillPersonVcardFill } from 'react-icons/bs'
 import {AiOutlineHistory, AiTwotoneSetting } from 'react-icons/ai'
 import {HiUsers } from 'react-icons/hi'
 import {RxExit } from 'react-icons/rx'
+import { Link } from 'react-router-dom'
 
 export const SideBar = () => {
   return (
@@ -13,33 +14,47 @@ export const SideBar = () => {
             LOGO
         </div>
         <ul className='h-full flex flex-col mt-10 bg-blue-500 px-8'>
-            <li className='py-4 flex items-center'>
-                <BiSolidDashboard className='me-5 text-2xl' />
-                Dashboard
+            <li className='py-4'>
+                <Link to='/dashboard' className='flex items-center'>
+                    <BiSolidDashboard className='me-5 text-2xl' />
+                    Dashboard
+                </Link>
             </li>
-            <li className='py-4 flex items-center'>
-                <MdInventory className='me-5 text-2xl' />
-                Inventario
+            <li className='py-4'>
+                <Link to='/inventario' className='flex items-center'>
+                    <MdInventory className='me-5 text-2xl' />
+                    Inventario
+                </Link>
             </li>
-            <li className='py-4 flex items-center'>
+            <li className='py-4'>
+            <Link to='/proveedores' className='flex items-center'>
                 <BsFillPersonVcardFill className='me-5 text-2xl' />
                 Proveedores
+            </Link>
             </li>
-            <li className='py-4 flex items-center'>
-                <AiOutlineHistory className='me-5 text-2xl' />
-                Historial
+            <li className='py-4'>
+                <Link to='/historial' className='flex items-center'>
+                    <AiOutlineHistory className='me-5 text-2xl' />
+                    Historial
+                </Link>
             </li>
-            <li className='py-4 flex items-center'>
-                <HiUsers className='me-5 text-2xl' />
-                Usuarios
+            <li className='py-4'>
+                <Link to='/usuarios' className='flex items-center'>
+                    <HiUsers className='me-5 text-2xl' />
+                    Usuarios
+                </Link>
             </li>
-            <li className='py-4 flex items-center'>
-                <AiTwotoneSetting className='me-5 text-2xl' />
-                Configuración
+            <li className='py-4'>
+                <Link to='/configuracion' className='flex items-center'>
+                    <AiTwotoneSetting className='me-5 text-2xl' />
+                    Configuración
+                </Link>
             </li>
-            <li className='py-4 flex items-center'>
-                <BiHelpCircle className='me-5 text-2xl' />
-                Ayuda
+            <li className='py-4'>
+                <Link to='/ayuda' className='flex items-center'>
+                    <BiHelpCircle className='me-5 text-2xl' />
+                    Ayuda
+                </Link>
             </li>
         </ul>
         <div className='px-8 pb-10 flex'>
