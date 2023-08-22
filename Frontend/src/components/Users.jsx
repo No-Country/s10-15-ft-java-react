@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Users = () => {
   return (
-    <div>Users</div>
+    <div className='p-5'>Users</div>
   )
 }
