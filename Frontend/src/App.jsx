@@ -8,6 +8,7 @@ import { Suppliers } from './components/Suppliers'
 import { History } from './components/History'
 import { Users } from './components/Users'
 import { Settings } from './components/Settings'
+import { NewUser } from './components/NewUser'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div className='flex'>
+    <div className='flex text-black'>
       <SideBar />
       <Routes>
         <Route path='/dashboard' element={<Dashboard />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path='/proveedores' element={<Suppliers />} />
         <Route path='/historial' element={<History />} />
         <Route path='/usuarios' element={<Users />} />
+        <Route path='/nuevoUsuario' element={<NewUser />} />
         <Route path='/configuracion' element={<Settings />} />
         <Route path='/ayuda' element={<Help />} />
       </Routes>
