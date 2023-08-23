@@ -11,7 +11,7 @@ const Login = () => {
           setLog(true)
         }}
       >
-        acceder
+        Acceder
       </button>
     </>
   )
