@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 export const NewUser = () => {
   return (
-    <div className='flex flex-col text-black p-10 w-4/5'>
+    <div className='flex flex-col text-black py-2 px-10 w-4/5'>
         <div className='flex items-center gap-2 text-xl px-10'>
             <Link to='/usuarios'>
                 <AiOutlineLeft  />
             </Link>
             <span className='ms-2'>Registro de usuario</span>
         </div>
-        <form action="" className='flex flex-col mt-20 gap-8 w-2/5 px-10'>
+        <form action="" className='flex flex-col mt-5 gap-8 w-2/5 px-10'>
             <input type="text" placeholder='Nombre del usuario' className='input border-black'/>
             <input type="text" placeholder='Correo electrónico' className='input border-black'/>
             <input type="text" placeholder='Contraseña' className='input border-black'/>
@@ -27,7 +27,7 @@ export const NewUser = () => {
                     <input type='checkbox' className='toggle toggle-primary'/>
                 </div>
             </div>
-            <div className='flex gap-3 mt-20'>
+            <div className='flex gap-3 mt-10'>
                 <button className='btn btn-primary'>Cancelar</button>
                 <button className='btn btn-outline'>Guardar</button>
             </div>
