@@ -1,6 +1,10 @@
+import { NavBar } from "./NavBar"
 
 export const Dashboard = () => {
   return (
-    <div className='p-5'>Dashboardd</div>
+    <div className='px-10 py-5 w-4/5'>
+      <NavBar />
+      Dashboard
+    </div>
   )
 }
