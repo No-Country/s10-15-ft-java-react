@@ -16,14 +16,11 @@ import { UserContext } from './libs/context/useContext'
 
 function App() {
   //logical part of user logged
-  const [log, setLog] = useState(false)
-  
-useEffect(() => {
-  const storedLog = localStorage.getItem('log');
-  if (storedLog !== null) {
-    setLog(storedLog === 'true'); 
-  }
-}, []);
+  const [log, setLog] = useState(localStorage.getItem('log'))
+
+  useEffect(() => {
+    setLog(localStorage.getItem('log') ?? 'false')
+  }, [])
   useEffect(() => {
     localStorage.setItem('log', log)
   }, [log])
@@ -38,7 +35,7 @@ useEffect(() => {
         <div className='flex text-black'>
           {
             //diferencial rendering if user are logged
-            log === true ? (
+            log === 'true' ? (
               <>
                 <SideBar />
                 <div className='flex flex-col w-full'>

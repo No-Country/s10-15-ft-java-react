@@ -8,7 +8,7 @@ const Login = () => {
       login
       <button
         onClick={() => {
-          setLog(true)
+          setLog('true')
         }}
       >
         Acceder
