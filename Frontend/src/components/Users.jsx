@@ -1,9 +1,11 @@
 import React from 'react';
 import { FilterNav } from './FilterNav';
+import { NavBar } from './NavBar';
 
 export const Users = () => {
   return (
-    <div className='text-lg box-border w-4/5 p-10'>
+    <div className='text-lg box-border w-4/5 px-10 py-4'>
+        <NavBar />
         <FilterNav  />
     </div>
   )

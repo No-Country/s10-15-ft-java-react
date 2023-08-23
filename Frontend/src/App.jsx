@@ -9,6 +9,7 @@ import { History } from './components/History'
 import { Users } from './components/Users'
 import { Settings } from './components/Settings'
 import { NewUser } from './components/NewUser'
+import { NavBar } from './components/NavBar'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-    <div className='flex'>
+    <div className='flex '>
       <SideBar />
       <Routes>
         <Route path='/dashboard' element={<Dashboard />} />
