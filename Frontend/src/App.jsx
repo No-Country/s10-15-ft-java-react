@@ -17,10 +17,11 @@ import { UserContext } from './libs/context/useContext'
 function App() {
   //logical part of user logged
   const [log, setLog] = useState(false)
+  
 useEffect(() => {
   const storedLog = localStorage.getItem('log');
   if (storedLog !== null) {
-    setLog(storedLog === 'true');
+    setLog(storedLog === 'true'); 
   }
 }, []);
   useEffect(() => {
