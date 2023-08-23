@@ -15,15 +15,9 @@ public class UserEntityService {
     @Autowired
     UserEntityRepository userEntityRepository;
 
-
-    public UserEntity userEntity(String username){
-
+    public Boolean userEntity(String username){
       Optional<UserEntity> user = userEntityRepository.findByUsername(username);
-
-      if(user.isPresent()){
-          return GenericResponseDTO()
-      }
-
+        return user.isPresent();
     }
 
 
