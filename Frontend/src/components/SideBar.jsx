@@ -1,4 +1,3 @@
-import React from 'react';
 import {  AiTwotoneSetting } from 'react-icons/ai';
 import { BiSolidDashboard, BiHelpCircle } from 'react-icons/bi';
 import { MdInventory } from 'react-icons/md';
@@ -64,5 +63,5 @@ export const SideBar = () => {
                 </Link>
         </div>
     </nav>
-  );
-};
+  )
+}
