@@ -1,4 +1,3 @@
-import { NavBar } from './NavBar'
 import { FaUserFriends } from 'react-icons/fa'
 import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi'
 import { BsClipboardCheckFill } from 'react-icons/bs'
@@ -6,8 +5,7 @@ import { IoMdNotifications } from 'react-icons/io'
 
 export const Dashboard = () => {
   return (
-    <div className='px-10 py-5 w-4/5'>
-      <NavBar />
+    <div className='p-5'>
       <div className='container flex flex-col justify-between gap-7 w-full mt-5'>
         <div className='flex justify-around w-full mt-5 gap-4'>
           <div className="card w-96 bg-inherit border-2 border-slate-400">
