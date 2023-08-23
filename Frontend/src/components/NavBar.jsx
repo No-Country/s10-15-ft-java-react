@@ -3,7 +3,7 @@ import { IoIosNotifications } from 'react-icons/io';
 
 export const NavBar = () => {
   return (
-    <nav className='flex justify-end text-black'>
+    <nav className='flex justify-end text-black p-10'>
         <div className='flex items-center'>
             <IoIosNotifications className='text-3xl mx-3'/>
             <div className='h-10 w-10 rounded-full bg-gray-500 mx-2'></div>
