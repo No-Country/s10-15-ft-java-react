@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export const FilterNav = () => {
   return (
-    <div className='text-black'>
+    <div className='text-black mt-10'>
       <div className='flex justify-between items-center'>
         <div>
 
