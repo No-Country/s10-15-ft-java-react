@@ -15,7 +15,7 @@ export const Dashboard = () => {
                 0
               </span>
               <p className='text-xl font-bold'>
-                Proveedoress
+                Proveedores
               </p>
             </div>
           </div>
