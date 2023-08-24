@@ -62,7 +62,8 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("*"));
         // configuration.setAllowedOrigins(List.of("http://localhost:8084","https://s10-15-ft-java-react-production.up.railway.app/"));
-        configuration.setAllowedMethods(List.of("GET"));
+        // configuration.setAllowedMethods(List.of("GET"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(List.of("Authorization"));
 
       UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();
