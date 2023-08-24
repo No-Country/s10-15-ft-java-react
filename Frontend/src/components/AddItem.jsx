@@ -8,6 +8,7 @@ const AddItem = () => {
             <div>
                 <form className="flex  mt-6" >
                     <div className="flex w-[70%]  justify-center items-center gap-4">    
+                    
                         <div className="flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1">
                             <div className=" h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl" ><FaCamera/></div>
                             <p className="text-md flex justify-center items-center text-xl"><MdUpload/>Subir imagen</p>

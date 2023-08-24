@@ -13,6 +13,7 @@ export const Inventory = () => {
   
   const url = "../../public/productos.json"
 
+  
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
