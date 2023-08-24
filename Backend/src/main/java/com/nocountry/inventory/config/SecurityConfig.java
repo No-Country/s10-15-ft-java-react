@@ -60,7 +60,8 @@ public class SecurityConfig {
   @Bean
     CorsConfigurationSource courseF(){
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:8084","https://s10-15-ft-java-react-production.up.railway.app/"));
+        configuration.setAllowedOrigins(List.of("*"));
+        // configuration.setAllowedOrigins(List.of("http://localhost:8084","https://s10-15-ft-java-react-production.up.railway.app/"));
         configuration.setAllowedMethods(List.of("GET"));
         configuration.setAllowedHeaders(List.of("Authorization"));
 
