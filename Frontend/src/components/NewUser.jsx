@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export const NewUser = () => {
   return (
-    <div className='flex flex-col text-black py-2 px-10 w-4/5'>
+    <div className='flex flex-col text-black py-4 px-10 w-4/5'>
         <div className='flex items-center gap-2 text-xl px-10'>
             <Link to='/usuarios'>
                 <AiOutlineLeft  />
