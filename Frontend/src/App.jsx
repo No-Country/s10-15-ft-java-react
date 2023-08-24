@@ -13,6 +13,7 @@ import { NavBar } from './components/NavBar'
 import Login from './components/Login'
 import { useEffect, useState } from 'react'
 import { UserContext } from './libs/context/useContext'
+import AddItem from './components/addItem'
 
 function App() {
   //logical part of user logged
@@ -43,6 +44,7 @@ function App() {
                   <Routes>
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/inventario' element={<Inventory />} />
+                    <Route path='/AgregarItem' element={<AddItem />} />
                     <Route path='/proveedores' element={<Suppliers />} />
                     <Route path='/historial' element={<History />} />
                     <Route path='/usuarios' element={<Users />} />
