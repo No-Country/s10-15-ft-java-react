@@ -6,9 +6,8 @@ import { IoMdNotifications } from 'react-icons/io'
 export const Dashboard = () => {
   return (
     <div className='p-5'>
-      <div className='flex flex-col justify-between gap-10 w-full mt-5'>
-
-        <div className='flex justify-around w-full mt-5 gap-10'>
+      <div className='container flex flex-col justify-between gap-4 w-full'>
+        <div className='flex justify-around w-full gap-4'>
           <div className="card w-1/3 bg-inherit border-2 border-slate-400">
             <div className="card-body items-center text-center">
               <FaUserFriends className='text-7xl text-primary' />
@@ -43,8 +42,7 @@ export const Dashboard = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex justify-around w-full mt-5 gap-10">
+        <div className="flex justify-around w-full mt-5 gap-4">
           <div className="card w-1/3 bg-inherit border-2 border-slate-400">
             <div className="card-body items-center text-center">
               <span className='flex items-center'>
