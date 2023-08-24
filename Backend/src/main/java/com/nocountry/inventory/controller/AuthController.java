@@ -37,7 +37,7 @@ public class AuthController {
         Boolean user = userEntityService.userEntity(userRE.getUserName());
 
         if(user){
-            return ResponseEntity.badRequest().body(new GenericResponseDTO<>(false,"El Usuario Ya existe",""));
+            return ResponseEntity.badRequest().body(new GenericResponseDTO<>(false,"El Usuario Ya existe",null));
         }
 
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"Success",authService.register(userRE)));
