@@ -7,9 +7,17 @@ const Login = () => {
   const [user, setUser] = useState()
   const [pass, setPass] = useState()
   const { setLog } = useContext(UserContext)
-  console.log(user, pass)
-  user && pass
-    ? axios
+  return (
+    <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
+      <div className='flex flex-col items-center w-1/2 gap-10'>
+        <h1>Registrate para poder acceder</h1>
+        <form
+          className='flex flex-col items-center gap-7 w-350px'
+          onSubmit={
+            (e)=>{
+              e.preventDefault()
+              user && pass
+        ? axios
         .post(
           'https://s10-15-ft-java-react-production.up.railway.app/auth/login',
           {
@@ -20,26 +28,15 @@ const Login = () => {
         .then(function (response) {
           console.log(response)
           setStatus(response)
+          status === 200 
+        ? setLog('true')
+        :{}
         })
         .catch(function (error) {
           console.log(error)
         })
-    : {}
-  return (
-    <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
-      <div className='flex flex-col items-center w-1/2 gap-10'>
-        <h1>Registrate para poder acceder</h1>
-        <form
-          className='flex flex-col items-center gap-7 w-350px'
-          onSubmit={
-            status === 200
-              ? () => {
-                  setLog('true')
-                }
-              : (e) => {
-                  e.preventDefault()
-                }
-          }
+    : {}}
+            }
         >
           <label htmlFor='user' className='flex flex-col items-start'>
             Usuario
