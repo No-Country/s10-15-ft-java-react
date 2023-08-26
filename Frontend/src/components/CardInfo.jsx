@@ -1,6 +1,6 @@
 
 
-const CardInfo = ({ icon, number, title }) => {
+export const CardInfo = ({ icon, number, title }) => {
   const Icon = icon;
 
   return (
@@ -16,4 +16,4 @@ const CardInfo = ({ icon, number, title }) => {
   )
 }
 
-export default CardInfo;
+
