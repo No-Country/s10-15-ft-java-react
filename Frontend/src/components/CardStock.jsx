@@ -1,13 +1,16 @@
-
-const CardStock = ({ icon, title, nameProduct, number, customClass }) => {
-  const Icon = icon;
+export const CardStock = ({
+  icon,
+  title,
+  nameProduct,
+  number,
+  customClass
+}) => {
+  const Icon = icon
 
   return (
-    <div className="card-body items-center text-center">
+    <div className='card-body items-center text-center'>
       <span className='flex items-center'>
-        <p className='text-2xl font-bold'>
-          {title}
-        </p>
+        <p className='text-2xl font-bold'>{title}</p>
         <Icon className={`text-5xl ${customClass}`} />
       </span>
       <ol className='list-decimal'>
@@ -21,5 +24,3 @@ const CardStock = ({ icon, title, nameProduct, number, customClass }) => {
     </div>
   )
 }
-
-export default CardStock;
