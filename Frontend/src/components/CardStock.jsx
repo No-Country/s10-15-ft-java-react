@@ -1,5 +1,5 @@
 
-const CardStock = ({ icon, title, nameProduct, number, customClass }) => {
+export const CardStock = ({ icon, title, nameProduct, number, customClass }) => {
   const Icon = icon;
 
   return (
@@ -22,4 +22,3 @@ const CardStock = ({ icon, title, nameProduct, number, customClass }) => {
   )
 }
 
-export default CardStock;

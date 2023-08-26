@@ -2,21 +2,22 @@ import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi'
 import { FaUserFriends } from 'react-icons/fa'
 import { BsClipboardCheckFill } from 'react-icons/bs'
 import { IoMdNotifications } from 'react-icons/io'
-import CardInfo from './CardInfo'
-import CardStock from './CardStock'
+import { CardInfo } from './CardInfo'
+import { CardStock } from './CardStock'
 import { useEffect, useState } from 'react'
+
+import axios from 'axios';
 
 export const Dashboard = () => {
   
   const [items, setItems] = useState([])
   
+
   const url = "../../public/productos.json"
 
-  
   useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => setItems(data))
+    axios.get(url)
+      .then(response => setItems(response.data))
       .catch(err => console.log(err)) 
   },[])
   console.log(items);
