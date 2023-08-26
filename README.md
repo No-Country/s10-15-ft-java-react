@@ -1,10 +1,10 @@
-# Sistema de Gestión Integral: "InventoVentas" 📊🛍️
+# Sistema de Gestión Integral: "StockFLow" 📊🛍️
 
-¡Bienvenido a "InventoVentas"! Esta aplicación revolucionaria combina Java y React para ofrecerte una solución completa de gestión de ventas e inventario. Este README te proporcionará un vistazo rápido a las características clave y cómo poner en marcha la aplicación.
+¡Bienvenido a "StockFLow"! Esta aplicación revolucionaria combina Java y React para ofrecerte una solución completa de gestión de ventas e inventario. Este README te proporcionará un vistazo rápido a las características clave y cómo poner en marcha la aplicación.
 
 ## Descripción del Proyecto
 
-"InventoVentas" es una poderosa herramienta de gestión de ventas e inventario diseñada para optimizar tus operaciones comerciales. Con un backend Java y un frontend React, disfrutarás de una experiencia perfecta y eficiente.
+"StockFLow" es una poderosa herramienta de gestión de ventas e inventario diseñada para optimizar tus operaciones comerciales. Con un backend Java y un frontend React, disfrutarás de una experiencia perfecta y eficiente.
 
 ## Características Destacadas 🌟
 
@@ -20,7 +20,7 @@
 
 ## Instalación y Puesta en Marcha 🚀
 
-Sigue estos pasos para comenzar a utilizar "InventoVentas":
+Sigue estos pasos para comenzar a utilizar "StockFLow":
 
 1. Asegúrate de tener Java, React y MySQL instalados en tu entorno de desarrollo.
 
@@ -38,11 +38,11 @@ Sigue estos pasos para comenzar a utilizar "InventoVentas":
 4. Inicia la aplicación:
 
     ```bash
-    java -jar target/invento-ventas.jar
+    mvn spring-boot:run
     ```
-5. Visita:
+5. Visita en tu navegador de preferencia:
     ```bash
-    http://localhost:8080/
+    http://localhost:8084/
     ```
 Contribuciones y Colaboración 🤝
 ¡Valoramos y apreciamos tus contribuciones para hacer que este proyecto sea aún mejor! Si deseas contribuir:
@@ -59,4 +59,4 @@ Contribuciones y Colaboración 🤝
 Contacto
 Para cualquier consulta o sugerencia, no dudes en ponerte en contacto con nosotros en s10javareact@gmail.com
 
-¡Esperamos que disfrutes utilizando "InventoVentas" para optimizar y mejorar tus operaciones comerciales! 📊🛍️
+¡Esperamos que disfrutes utilizando "StockFLow" para optimizar y mejorar tus operaciones comerciales! 📊🛍️
