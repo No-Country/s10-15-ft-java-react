@@ -13,7 +13,7 @@ import { NavBar } from './components/NavBar'
 import Login from './components/Login'
 import { useEffect, useState } from 'react'
 import { UserContext } from './libs/context/useContext'
-import AddItem from './components/addItem'
+import AddItem from './components/AddItem'
 
 function App() {
   //logical part of user logged
