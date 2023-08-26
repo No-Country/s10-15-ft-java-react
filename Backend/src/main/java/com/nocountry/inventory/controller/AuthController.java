@@ -8,14 +8,12 @@ import com.nocountry.inventory.service.AuthService;
 import com.nocountry.inventory.service.UserEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/"})
 public class AuthController {
 
     @Autowired
