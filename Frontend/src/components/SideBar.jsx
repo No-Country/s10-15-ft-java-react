@@ -4,7 +4,7 @@ import BtnSalir from './BtnSalir'
 
 export const SideBar = () => {
   return (
-    <nav className='h-screen w-1/5 flex flex-col justify-between bg-primary text-white box-border'>
+    <nav className='h-screen w-1/5 flex flex-col justify-between bg-{primary} text-white box-border'>
       <div className='text-center py-2'>LOGO</div>
       <ul className='h-full flex flex-col mt-10 bg-primary px-8'>
         {
