@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/"})
+@CrossOrigin(origins = {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/","http://localhost:5173/"})
 public class AuthController {
 
     @Autowired
