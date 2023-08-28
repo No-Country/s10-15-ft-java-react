@@ -8,7 +8,7 @@ export const CardStock = ({
   const Icon = icon
 
   return (
-    <div className='card-body items-center text-center'>
+    <div className='card-body flex flex-col items-center'>
       <span className='flex items-center'>
         <p className='text-2xl font-bold'>{title}</p>
         <Icon className={`text-5xl ${customClass}`} />
