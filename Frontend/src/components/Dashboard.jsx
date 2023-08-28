@@ -41,13 +41,13 @@ export const Dashboard = () => {
         
         <div className="flex justify-around w-full mt-5 gap-4">
           <div className="card w-1/3 bg-inherit border-2 border-slate-400">
-            <CardStock icon={FiArrowDownRight} customClass='text-red-700' title='Stock Bajo' nameProduct='Producto' number={0} />
+            <CardStock icon={FiArrowDownRight} customClass='text-red-700' title='Stock Bajo' nameProduct='Nombre Producto' number={0} />
           </div>
           <div className="card w-1/3 bg-inherit border-2 border-slate-400">
-            <CardStock icon={FiArrowUpRight} customClass='text-green-700' title='Stock Alto' nameProduct='Producto' number={0} />
+            <CardStock icon={FiArrowUpRight} customClass='text-green-700' title='Stock Alto' nameProduct='Nombre Producto' number={0} />
           </div>
           <div className="card w-1/3 bg-inherit border-2 border-slate-400">
-            <CardStock icon={FiArrowUpRight} customClass='text-red-700' title='Sobre Stock' nameProduct='Producto' number={0} />
+            <CardStock icon={FiArrowUpRight} customClass='text-red-700' title='Sobre Stock' nameProduct='Nombre Producto' number={0} />
           </div>
         </div>
         
