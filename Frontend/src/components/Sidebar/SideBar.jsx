@@ -16,7 +16,7 @@ export const SideBar = () => {
                 className='flex items-center hover:bg-primary-focus py-4 rounded-xl px-2'
               >
                 <Icon className='me-5 text-2xl' />
-                {label}
+                {label}S
               </Link>
             </li>
           ))

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { UserContext } from '../../libs/context/useContext'
 import { RxExit } from 'react-icons/rx'
+import { UserContext } from '../../libs/context/useContext'
 
 const BtnSalir = () => {
   const { setLog } = useContext(UserContext)

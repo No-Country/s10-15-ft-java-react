@@ -3,7 +3,7 @@ import axios from "axios"
 const LoginPost = async({user, pass, setStat, setLog, stat, API_URL})=>{
      await axios
     .post(
-      `${API_URL}/auth/login`,
+      `${API_URL || 'https://stockflow.up.railway.app'}/auth/login`,
       {
         userName: user,
         password: `${pass}`
