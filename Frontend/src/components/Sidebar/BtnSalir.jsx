@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { UserContext } from '../libs/context/useContext'
+import { UserContext } from '../../libs/context/useContext'
 import { RxExit } from 'react-icons/rx'
 
 const BtnSalir = () => {

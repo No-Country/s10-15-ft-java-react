@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react'
-import { UserContext } from '../libs/context/useContext'
-import axios from 'axios'
-
+import { UserContext } from '../../libs/context/useContext'
+import LoginPost from '../../libs/loginPost'
+import ErrorFormLoginComponent from './ErrorFormLoginComponent'
+const API_URL = import.meta.env.VITE_API_URL
 const Login = () => {
-  const [status, setStatus] = useState()
+  const [stat, setStat] = useState()
   const [user, setUser] = useState()
   const [pass, setPass] = useState()
   const { setLog } = useContext(UserContext)
@@ -13,30 +14,12 @@ const Login = () => {
         <h1>Registrate para poder acceder</h1>
         <form
           className='flex flex-col items-center gap-7 w-350px'
-          onSubmit={
-            (e)=>{
-              e.preventDefault()
-              user && pass
-        ? axios
-        .post(
-          'https://s10-15-ft-java-react-production.up.railway.app/auth/login',
-          {
-            userName: user,
-            password: `${pass}`
-          }
-        )
-        .then(function (response) {
-          console.log(response)
-          setStatus(response)
-          status === 200 
-        ? setLog('true')
-        :{}
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    : {}}
-            }
+          onSubmit={(e) => {
+            e.preventDefault()
+            user && pass
+              ? LoginPost({ stat, setLog, setStat, pass, user, API_URL })
+              : {}
+          }}
         >
           <label htmlFor='user' className='flex flex-col items-start'>
             Usuario
@@ -49,7 +32,6 @@ const Login = () => {
                 setUser(e.target.value)
               }}
             />
-            <small className='text-red-500'>Usuario icorrecto</small>
           </label>
           <label htmlFor='password' className='flex flex-col items-start'>
             Contraseña
@@ -62,8 +44,8 @@ const Login = () => {
                 setPass(e.target.value)
               }}
             />
-            <small className='text-red-500'>Contraseña incorrecta</small>
           </label>
+          <ErrorFormLoginComponent data={{ user, pass, stat }} />
           <input type='submit' value='Acceder' className='cursor-pointer' />
         </form>
       </div>
