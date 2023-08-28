@@ -25,11 +25,7 @@ export const Dashboard = () => {
     <div className='p-5 flex flex-col gap-4 w-full'>
       <div className='flex justify-around w-full gap-4'>
         <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
-          <CardInfo 
-            icon={FaUserFriends} 
-            number={0} 
-            title='Proveedores' 
-          />
+          <CardInfo icon={FaUserFriends} number={0} title='Proveedores' />
         </div>
 
         <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
