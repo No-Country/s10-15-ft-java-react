@@ -11,7 +11,7 @@ import axios from 'axios'
 export const Dashboard = () => {
   const [items, setItems] = useState([])
 
-  const url = '../../public/productos.json'
+  const url = '/productos.json'
 
   useEffect(() => {
     axios
@@ -24,11 +24,15 @@ export const Dashboard = () => {
   return (
     <div className='p-5 flex flex-col gap-4 w-full'>
       <div className='flex justify-around w-full gap-4'>
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
-          <CardInfo icon={FaUserFriends} number={0} title='Proveedores' />
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
+          <CardInfo 
+            icon={FaUserFriends} 
+            number={0} 
+            title='Proveedores' 
+          />
         </div>
 
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
           <CardInfo
             icon={BsClipboardCheckFill}
             number={items.length}
@@ -36,7 +40,7 @@ export const Dashboard = () => {
           />
         </div>
 
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
           <CardInfo
             icon={IoMdNotifications}
             number={0}
@@ -46,7 +50,7 @@ export const Dashboard = () => {
       </div>
 
       <div className='flex justify-around w-full mt-5 gap-4'>
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
           <CardStock
             icon={FiArrowDownRight}
             customClass='text-red-700'
@@ -55,7 +59,7 @@ export const Dashboard = () => {
             number={0}
           />
         </div>
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
           <CardStock
             icon={FiArrowUpRight}
             customClass='text-green-700'
@@ -64,7 +68,7 @@ export const Dashboard = () => {
             number={0}
           />
         </div>
-        <div className='card w-1/3 bg-inherit border-2 border-slate-400'>
+        <div className='card w-1/3 bg-inherit border-2 border-slate-400 rounded-lg'>
           <CardStock
             icon={FiArrowUpRight}
             customClass='text-red-700'
