@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { links } from '../libs/links'
+import { links } from '../../libs/links'
 import BtnSalir from './BtnSalir'
 
 export const SideBar = () => {
@@ -16,7 +16,7 @@ export const SideBar = () => {
                 className='flex items-center hover:bg-primary-focus py-4 rounded-xl px-2'
               >
                 <Icon className='me-5 text-2xl' />
-                {label}
+                {label}S
               </Link>
             </li>
           ))
