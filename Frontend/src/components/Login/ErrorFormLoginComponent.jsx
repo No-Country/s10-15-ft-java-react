@@ -1,4 +1,5 @@
 const ErrorFormLoginComponent = (data) => {
+  //controller error on inputsData component
   return (
     <div>
       {data.data.user && data.data.pass ? (

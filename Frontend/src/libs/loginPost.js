@@ -1,5 +1,5 @@
 import axios from "axios"
-
+//Logical component for a login request
 const LoginPost = async({user, pass, setStat, setLog, stat, API_URL})=>{
      await axios
     .post(
@@ -10,7 +10,6 @@ const LoginPost = async({user, pass, setStat, setLog, stat, API_URL})=>{
       }
     )
     .then(function (response) {
-      console.log(response.status)
       setStat(response.status)
       stat === 200 ? setLog('true') : {}
     })
