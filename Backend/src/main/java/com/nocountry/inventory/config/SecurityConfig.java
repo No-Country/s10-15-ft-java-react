@@ -1,7 +1,5 @@
 package com.nocountry.inventory.config;
 
-
-
 import com.nocountry.inventory.config.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,45 +28,44 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    @Autowired
-     JwtAuthenticationFilter jwtAuthenticationFilter;
+  @Autowired
+  JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    @Autowired
-     AuthenticationProvider authenticationProvider;
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity)throws Exception{
-
-        return httpSecurity
-                .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth->{
-                    auth.requestMatchers("/auth/login").permitAll();
-                    auth.requestMatchers("/auth/register").permitAll();
-                    auth.requestMatchers("/user/listAll").permitAll();
-                    auth.anyRequest().authenticated();
-                })
-                .sessionManagement(session->{
-                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                })
-                .cors(Customizer.withDefaults())
-                .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .build();
-    }
-
+  @Autowired
+  AuthenticationProvider authenticationProvider;
 
   @Bean
-    CorsConfigurationSource courseF(){
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:8084","https://stockflows10.vercel.app/"));
-        configuration.setAllowedMethods(List.of("GET","POST"));    
-        configuration.setAllowedHeaders(List.of("Authorization"));
+  public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 
-      UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();
-      sourse.registerCorsConfiguration("/**",configuration);
-      return sourse;
-
+    return httpSecurity
+        .csrf(AbstractHttpConfigurer::disable)
+        .authorizeHttpRequests(auth -> {
+          auth.requestMatchers("/auth/login").permitAll();
+          auth.requestMatchers("/auth/register").permitAll();
+          auth.requestMatchers("/user/listAll").permitAll();
+          auth.anyRequest().authenticated();
+        })
+        .sessionManagement(session -> {
+          session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        })
+        .cors(Customizer.withDefaults())
+        .authenticationProvider(authenticationProvider)
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
   }
 
+  @Bean
+  CorsConfigurationSource courseF() {
+    CorsConfiguration configuration = new CorsConfiguration();
+    configuration.setAllowedOrigins(
+        List.of("http://localhost:8084", "https://stockflows10.vercel.app/", "http://localhost:5173"));
+    configuration.setAllowedMethods(List.of("GET", "POST"));
+    configuration.setAllowedHeaders(List.of("Authorization"));
+
+    UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();
+    sourse.registerCorsConfiguration("/**", configuration);
+    return sourse;
+
+  }
 
 }
