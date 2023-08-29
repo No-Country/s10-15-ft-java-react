@@ -2,10 +2,8 @@ import { HiOutlineCamera } from 'react-icons/hi'
 import Avatar from 'react-avatar'
 import { useState } from 'react'
 export const EditUser = ({ username, img }) => {
-  console.log(img)
   const [file, setFile] = useState(img)
   const handleChange = (e) => {
-    console.log(e.target.files)
     setFile(URL.createObjectURL(e.target.files[0]))
   }
   return (
