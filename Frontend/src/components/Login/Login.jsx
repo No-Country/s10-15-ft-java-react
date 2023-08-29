@@ -1,47 +1,32 @@
-import { useContext, useState } from 'react'
-import { UserContext } from '../libs/context/useContext'
-import axios from 'axios'
-
+import { useContext, useEffect, useState } from 'react'
+import { UserContext } from '../../libs/context/useContext'
+import LoginPost from '../../libs/loginPost'
+import ErrorFormLoginComponent from './ErrorFormLoginComponent'
+const API_URL = import.meta.env.VITE_API_URL
 const Login = () => {
-  const [status, setStatus] = useState()
-  const [user, setUser] = useState()
-  const [pass, setPass] = useState()
+  const [stat, setStat] = useState()
+  useEffect((stat) => {
+    setStat(stat)
+  }, [])
+  const [user, setUser] = useState('')
+  const [pass, setPass] = useState('')
   const { setLog } = useContext(UserContext)
+  user && pass ? LoginPost({ stat, setLog, setStat, pass, user, API_URL }) : {}
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
       <div className='flex flex-col items-center w-1/2 gap-10'>
         <h1>Registrate para poder acceder</h1>
         <form
           className='flex flex-col items-center gap-7 w-350px'
-          onSubmit={
-            (e)=>{
-              e.preventDefault()
-              user && pass
-        ? axios
-        .post(
-          'https://s10-15-ft-java-react-production.up.railway.app/auth/login',
-          {
-            userName: user,
-            password: `${pass}`
-          }
-        )
-        .then(function (response) {
-          console.log(response)
-          setStatus(response)
-          status === 200 
-        ? setLog('true')
-        :{}
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    : {}}
-            }
+          onSubmit={(e) => {
+            e.preventDefault()
+            stat === 200 ? setLog('true') : {}
+          }}
         >
           <label htmlFor='user' className='flex flex-col items-start'>
             Usuario
             <input
-              className='w-60 h-8 rounded mt-2'
+              className='w-60 h-8 placeholder:italic bg-white  border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'
               type='text'
               id='user'
               required
@@ -49,22 +34,25 @@ const Login = () => {
                 setUser(e.target.value)
               }}
             />
-            <small className='text-red-500'>Usuario icorrecto</small>
           </label>
           <label htmlFor='password' className='flex flex-col items-start'>
             Contraseña
             <input
-              className='w-60 h-8 rounded mt-2'
               type='password'
+              className='w-60 h-8 placeholder:italic bg-white  border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'
               id='password'
               required
               onChange={(e) => {
                 setPass(e.target.value)
               }}
             />
-            <small className='text-red-500'>Contraseña incorrecta</small>
+            <ErrorFormLoginComponent data={{ user, pass, stat }} />
           </label>
-          <input type='submit' value='Acceder' className='cursor-pointer' />
+          <input
+            type='submit'
+            value='Acceder'
+            className='cursor-pointer outline-0'
+          />
         </form>
       </div>
       <div className='w-1/2 h-screen flex items-center'>
@@ -74,7 +62,7 @@ const Login = () => {
         <img
           src='https://i.ibb.co/kgtgmK5/loginImg.webp'
           alt='login image'
-          className='m-w-full m-h-full'
+          className='h-full'
         />
       </div>
     </div>
