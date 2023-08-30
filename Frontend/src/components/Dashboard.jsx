@@ -24,7 +24,7 @@ export const Dashboard = () => {
   return (
     <div className='p-5 flex flex-col gap-6 w-full'>
       <div className='flex justify-around w-full gap-6 mt-10'>
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardInfo 
             icon={FaUserFriends} 
             number={0} 
@@ -32,7 +32,7 @@ export const Dashboard = () => {
           />
         </div>
 
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardInfo
             icon={BsClipboardCheckFill}
             number={items.length}
@@ -40,7 +40,7 @@ export const Dashboard = () => {
           />
         </div>
 
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardInfo
             icon={IoMdNotifications}
             number={0}
@@ -50,7 +50,7 @@ export const Dashboard = () => {
       </div>
 
       <div className='flex justify-around w-full mt-10 gap-6'>
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardStock
             icon={FiArrowDownRight}
             customClass='text-red-700'
@@ -59,7 +59,7 @@ export const Dashboard = () => {
             number={0}
           />
         </div>
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardStock
             icon={FiArrowUpRight}
             customClass='text-green-700'
@@ -68,7 +68,7 @@ export const Dashboard = () => {
             number={0}
           />
         </div>
-        <div className='card w-1/3 h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
+        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
           <CardStock
             icon={FiArrowUpRight}
             customClass='text-red-700'
