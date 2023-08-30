@@ -43,6 +43,15 @@ public class SecurityConfig {
           auth.requestMatchers("/auth/login").permitAll();
           auth.requestMatchers("/auth/register").permitAll();
           auth.requestMatchers("/user/listAll").permitAll();
+          /* testing product */
+          auth.requestMatchers("/product/listAll").permitAll();
+          auth.requestMatchers("/product/list/{id}").permitAll();
+          auth.requestMatchers("/product/save").permitAll();
+          auth.requestMatchers("/product/update").permitAll();
+          auth.requestMatchers("/product/delete/{id}").permitAll();
+          auth.requestMatchers("/product/list/{productName}").permitAll();
+          /* Fin testing product */
+
           auth.anyRequest().authenticated();
         })
         .sessionManagement(session -> {
