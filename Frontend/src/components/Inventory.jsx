@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 export const Inventory = () => {
   const [items, setItems] = useState([])
 
-  const url = '../../public/productos.json'
+  const url = '../../productos.json'
 
   useEffect(() => {
     fetch(url)
@@ -17,8 +17,6 @@ export const Inventory = () => {
       .then((data) => setItems(data))
       .catch((err) => console.log(err))
   }, [])
-
-  console.log(items)
   return (
     <div className='p-5 flex flex-col gap-6 '>
       <div className='w-full flex justify-between items-center overflow-hidden'>
