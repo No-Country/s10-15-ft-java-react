@@ -15,7 +15,6 @@ import com.nocountry.inventory.entity.ProductEntity;
 import com.nocountry.inventory.service.ProductEntityService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.nocountry.inventory.requestEntity.ProductRE;
 
 @RequestMapping("/product")
 @RestController
@@ -29,12 +28,6 @@ public class ProductController {
     public ResponseEntity<?> listAllProducts() {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.getAllProducts()));
-
-        /*
-         * List<ProductRE> products = productEntityService.getAllProducts();
-         * return ResponseEntity.ok().body(new GenericResponseDTO<>(true, "FULL",
-         * productEntityService.getAllProducts()));
-         */
     }
 
     // Get product by id
@@ -52,8 +45,8 @@ public class ProductController {
     }
 
     // update product
-    @PostMapping(value = "/update")
-    public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity) {
+    @PostMapping(value = "/update/{id}")
+    public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity, @PathVariable Long id) {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.updateProduct(productEntity)));
     }

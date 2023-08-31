@@ -1,17 +1,23 @@
 package com.nocountry.inventory.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nocountry.inventory.entity.ProductEntity;
+import com.nocountry.inventory.entity.UserEntity;
 import com.nocountry.inventory.repository.ProductEntityRepository;
 
 @Service
 public class ProductEntityService {
+    private final ProductEntityRepository productEntityRepository;
+
     @Autowired
-    ProductEntityRepository productEntityRepository;
+    public ProductEntityService(ProductEntityRepository productEntityRepository) {
+        this.productEntityRepository = productEntityRepository;
+    }
 
     public Boolean productEntity(String productName) {
         Optional<ProductEntity> product = productEntityRepository.findByProductName(productName);
@@ -31,7 +37,8 @@ public class ProductEntityService {
     }
 
     // Get all products
-    public Iterable<ProductEntity> getAllProducts() {
+    public List<ProductEntity> getAllProducts() {
+        System.out.println("getAllProducts() called");
         System.out.println(productEntityRepository.findAll());
         return productEntityRepository.findAll();
     }
