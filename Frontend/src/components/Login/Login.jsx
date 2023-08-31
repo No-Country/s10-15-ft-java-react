@@ -31,7 +31,7 @@ const Login = () => {
               id='user'
               required
               onChange={(e) => {
-                setUser(e.target.value)
+                setUser(e.target.value.toLocaleLowerCase())
               }}
             />
           </label>

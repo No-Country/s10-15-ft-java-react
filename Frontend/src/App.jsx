@@ -4,7 +4,6 @@ import { SideBar } from './components/Sidebar/SideBar'
 import { Dashboard } from './components/Dashboard'
 import { Help } from './components/Help'
 import { Inventory } from './components/Inventory'
-import { Suppliers } from './components/Suppliers'
 import { History } from './components/History'
 import { Users } from './components/Users'
 import { Settings } from './components/Settings/Settings'
@@ -45,7 +44,6 @@ function App() {
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/inventario' element={<Inventory />} />
                     <Route path='/AgregarItem' element={<AddItem />} />
-                    <Route path='/proveedores' element={<Suppliers />} />
                     <Route path='/historial' element={<History />} />
                     <Route path='/usuarios' element={<Users />} />
                     <Route path='/nuevoUsuario' element={<NewUser />} />

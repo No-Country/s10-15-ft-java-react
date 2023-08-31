@@ -16,11 +16,6 @@ export const links = [
     icon: MdInventory
   },
   {
-    label: 'Proveedores',
-    route: '/proveedores',
-    icon: BsFillPersonVcardFill
-  },
-  {
     label: 'Usuarios',
     route: '/usuarios',
     icon: HiUsers
