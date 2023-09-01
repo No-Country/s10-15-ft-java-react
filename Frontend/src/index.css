@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply tracking-widest rounded-full bg-primary text-base-100 hover:bg-primary-focus
+}
+
+.btn-outline {
+  @apply bg-base-100 border-2 border-primary text-primary hover:bg-base-200 hover:border-primary hover:text-primary
+}

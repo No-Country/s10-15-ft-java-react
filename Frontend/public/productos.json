@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "img": "../src/assets/img/magistral.webp",
+        "name": "Detergente Magistral 1lt",
+        "code": "1234abc",
+        "category": "Limpieza",
+        "quantity":150,
+        "price": 200
+    },
+    {
+        "id": 2,
+        "img": "../src/assets/img/elite.webp",
+        "name": "Papel higienico Elite doble hoja",
+        "code": "1234dasa",
+        "category": "higiene",
+        "quantity":250,
+        "price": 100
+    }
+]

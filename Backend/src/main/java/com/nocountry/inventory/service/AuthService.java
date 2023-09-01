@@ -12,6 +12,10 @@ import com.nocountry.inventory.entity.UserEntity;
 import com.nocountry.inventory.util.ERole;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -25,8 +29,17 @@ public class AuthService {
     @Autowired
     JwtService jwtService;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
+    AuthenticationManager authenticationManager;
+
     public AuthResponse login(LoginRE loginRE) {
-        return null;
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRE.getUserName(),loginRE.getPassword()));
+        UserDetails user =userEntityRepository.findByUsername(loginRE.getUserName()).orElseThrow();
+        String token = jwtService.getToken(user);
+        return new AuthResponse(token);
     }
 
     public UserEntityDTO register(UserRE userRE) {
@@ -35,7 +48,7 @@ public class AuthService {
         if (userRE.getUserName() != null)
                 user.setUsername(userRE.getUserName());
         if (userRE.getPassword() != null)
-                user.setPassword(userRE.getPassword());
+                user.setPassword(passwordEncoder.encode(userRE.getPassword()));
         user.setLastname(userRE.getLastname());
         user.setFirstname(userRE.getFirstname());
         user.setCountry(userRE.getCountry());
@@ -44,6 +57,5 @@ public class AuthService {
 
         AuthResponse token = new AuthResponse(jwtService.getToken(user));
         return new UserEntityDTO(user,token);
-
     }
 }
