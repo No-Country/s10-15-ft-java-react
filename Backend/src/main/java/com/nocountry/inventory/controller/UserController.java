@@ -16,6 +16,7 @@ import javax.print.DocFlavor;
 @RequestMapping("/user")
 @RestController
 @Secured("ROLE_ADMIN")
+@CrossOrigin(origins = {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/","http://localhost:5173/"})
 public class UserController {
 
     @Autowired
