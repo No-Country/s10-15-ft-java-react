@@ -1,22 +1,27 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { MdCategory } from 'react-icons/md'
 import { GrNext, GrPrevious } from 'react-icons/gr'
-import ProductItemComponent from './ProductItemComponent'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import ProductItemComponent from './ProductItemComponent'
 
 export const Inventory = () => {
   const [items, setItems] = useState([])
+  axios
+    .get(
+      'https://s10-15-ft-java-react-production.up.railway.app/product/listAll'
+    )
+    .then(function (response) {
+      // Franco en ese console.log tenes la data console.log(response.data.data)
+      setItems(response.data.data)
+    })
+    .catch(function (error) {
+      console.log(error)
+      error
+    })
 
-  const url = '../../productos.json'
-
-  useEffect(() => {
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.log(err))
-  }, [])
   return (
     <div className='p-5 flex flex-col gap-6 '>
       <div className='w-full flex justify-between items-center overflow-hidden'>
@@ -53,13 +58,13 @@ export const Inventory = () => {
         {items.map((item) => (
           <ProductItemComponent
             key={item.id}
-            img={item.img}
-            name={item.name}
-            code={item.code}
+            img={`https://s10-15-ft-java-react-production.up.railway.app/${item.pathImage}`}
+            name={item.productName}
+            code={item.itemCode}
             category={item.category}
-            stock={item.stock}
-            price={item.price}
-            quantity={item.quantity}
+            stock={item.warehouseStatus}
+            price={item.uniPrice}
+            quantity={item.quantityStock}
           />
         ))}
       </div>
