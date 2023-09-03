@@ -27,17 +27,15 @@ const AddItem = () => {
     });
   };
 
-
-
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       await createProduct(formData);
-      // Lógica adicional después de crear el producto, si es necesario
-      console.log('Producto creado exitosamente');
+      
       console.log(formData);
+      console.log('Producto creado exitosamente');
     } catch (error) {
-      // Maneja el error aquí
+      
       console.error('Error al crear el producto:', error);
     }
   };

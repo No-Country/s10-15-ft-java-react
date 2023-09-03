@@ -1,22 +1,24 @@
 import axios from 'axios';
-const API_URL = import.meta.env.VITE_API_PRODUCT_URL;
+//const API_URL = import.meta.env.VITE_API_PRODUCT_URL;
+
 
 
 const createProduct = async (productData) => {
-        try {
-            const response = await axios.post(`${API_URL}/product/save`, productData);
-    
-            // Verifica la respuesta y maneja cualquier lógica necesaria aquí
-            if (response.status === 200) {
-                console.log('Producto creado exitosamente');
-                // Realiza cualquier acción adicional que necesites
+    try {
+            const resp = await axios.post(`https://s10-15-ft-java-react-production.up.railway.app/product/save`, productData, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('log')}`, // Verificar si el log esta en localstorage, si no esta, no se puede hacer la peticion
+                },
+            });
+
+            if (resp) {
+                console.log('Pesticion exitosa');
+                
             } else {
-                console.error('Error al crear el producto');
-                // Maneja el error según sea necesario
+                console.error('Petición fallida');
             }
         } catch (error) {
             console.error('Error al realizar la solicitud:', error);
-            // Maneja el error de red o cualquier otro error aquí
         }
     };
 
