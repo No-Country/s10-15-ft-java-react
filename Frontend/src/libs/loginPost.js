@@ -5,7 +5,7 @@ import axios from "axios"
 const LoginPost = async({user, pass, setStat, API_URL})=>{
      await axios
     .post(
-      `${API_URL || 'https://stockflow.up.railway.app'}/auth/login`,
+      `${API_URL || 'https://s10-15-ft-java-react-production.up.railway.app'}/auth/login`,
       {
         userName: user,
         password: `${pass}`
@@ -16,6 +16,7 @@ const LoginPost = async({user, pass, setStat, API_URL})=>{
 
     })
     .catch(function (error) {
+      console.log(error)
       setStat()
     error
     })
