@@ -16,7 +16,6 @@ const LoginPost = async({user, pass, setStat, API_URL})=>{
 
     })
     .catch(function (error) {
-      console.log(error)
       setStat()
     error
     })
