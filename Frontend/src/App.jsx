@@ -3,8 +3,7 @@ import './App.css'
 import { SideBar } from './components/Sidebar/SideBar'
 import { Dashboard } from './components/Dashboard'
 import { Help } from './components/Help'
-import { Inventory } from './components/Inventory'
-import { History } from './components/History'
+import { Inventory } from './components/Inventory/Inventory'
 import { Users } from './components/Users'
 import { Settings } from './components/Settings/Settings'
 import { NewUser } from './components/NewUser'
@@ -44,7 +43,6 @@ function App() {
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/inventario' element={<Inventory />} />
                     <Route path='/AgregarItem' element={<AddItem />} />
-                    <Route path='/historial' element={<History />} />
                     <Route path='/usuarios' element={<Users />} />
                     <Route path='/nuevoUsuario' element={<NewUser />} />
                     <Route path='/configuracion' element={<Settings />} />
