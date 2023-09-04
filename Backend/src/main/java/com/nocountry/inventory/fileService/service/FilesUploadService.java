@@ -11,7 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class FilesUploadService {
-    private static final String UPLOADED_FOLDER = "src/main/webapp/";
+    private static final String UPLOADED_FOLDER = "src/main/webapp/images/";
 
     @Autowired
     public FilesUploadService() {

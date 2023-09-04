@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.nocountry.inventory.dto.GenericResponseDTO;
 import com.nocountry.inventory.entity.ProductEntity;
 import com.nocountry.inventory.service.ProductEntityService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RequestMapping("/product")
@@ -47,14 +49,14 @@ public class ProductController {
     }
 
     // update product
-    @PostMapping(value = "/update/{id}")
-    public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity, @PathVariable Long id) {
+    @PutMapping(value = "/update")
+    public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity) {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.updateProduct(productEntity)));
     }
 
     // delete product
-    @PostMapping(value = "/delete/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
         productEntityService.deleteProductById(id);
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true, "FULL", "Product deleted"));

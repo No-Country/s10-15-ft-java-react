@@ -45,11 +45,10 @@ public class SecurityConfig {
           auth.requestMatchers("/user/listAll").permitAll();
           /* testing product */
           auth.requestMatchers("/product/listAll").permitAll();
-          auth.requestMatchers("/product/list/{id}").permitAll();
+          auth.requestMatchers("/product/list/**").permitAll();
           auth.requestMatchers("/product/save").permitAll();
-          auth.requestMatchers("/product/update").permitAll();
-          auth.requestMatchers("/product/delete/{id}").permitAll();
-          auth.requestMatchers("/product/list/{productName}").permitAll();
+          auth.requestMatchers("/product/update/**").permitAll();
+          auth.requestMatchers("/product/delete/**").permitAll();
           /* Fin testing product */
 
           /* Testing upload file */
@@ -75,7 +74,7 @@ public class SecurityConfig {
     configuration.setAllowedOrigins(
         List.of("http://localhost:8084", "https://stockflows10.vercel.app/", "http://localhost:5173",
             "http://localhost:5500"));
-    configuration.setAllowedMethods(List.of("GET", "POST"));
+    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
     configuration.setAllowedHeaders(List.of("Authorization"));
 
     UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();
