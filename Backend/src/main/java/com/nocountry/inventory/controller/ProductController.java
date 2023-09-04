@@ -63,7 +63,7 @@ public class ProductController {
     }
 
     // Get product by name
-    @GetMapping("/list/{productName}")
+    @GetMapping("/list/name/{productName}")
     public ResponseEntity<?> getProductByName(@PathVariable String productName) {
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.getProductByName(productName)));
