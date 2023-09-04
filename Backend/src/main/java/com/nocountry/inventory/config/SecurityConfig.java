@@ -52,6 +52,12 @@ public class SecurityConfig {
           auth.requestMatchers("/product/list/{productName}").permitAll();
           /* Fin testing product */
 
+          /* Testing upload file */
+          auth.requestMatchers("/files/upload").permitAll();
+          auth.requestMatchers("/files/delete").permitAll();
+          // Para acceder a la imagen
+          auth.requestMatchers("/**").permitAll();
+          /* Fin Testing upload file */
           auth.anyRequest().authenticated();
         })
         .sessionManagement(session -> {
