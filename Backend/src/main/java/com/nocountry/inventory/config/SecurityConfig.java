@@ -56,7 +56,7 @@ public class SecurityConfig {
           auth.requestMatchers("/files/upload").permitAll();
           auth.requestMatchers("/files/delete").permitAll();
           // Para acceder a la imagen
-          auth.requestMatchers("/**").permitAll();
+          auth.requestMatchers("/images/**").permitAll();
           /* Fin Testing upload file */
           auth.anyRequest().authenticated();
         })
