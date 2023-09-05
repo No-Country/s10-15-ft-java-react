@@ -8,16 +8,17 @@ const AddItem = () => {
   const [formData, setFormData] = useState({
     productName: "",
     itemCode: "",
-    category: "",
-    uniPrice: "",
-    quantityStock: "",
+    category: 0,
+    uniPrice: 0.0,
+    quantityStock: 0,
     pathImage: "",
     locationDeposit: "",
-    provider: "",
+    provider: 0,
     description: "",
     warehouseStatus: "In Stock"
   })
 
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -29,16 +30,20 @@ const AddItem = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
+    setIsLoading(true);
     try {
       await createProduct(formData);
-      
       console.log(formData);
       console.log('Producto creado exitosamente');
+      
     } catch (error) {
       
       console.error('Error al crear el producto:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
+  
 
   
   return (
@@ -125,7 +130,9 @@ const AddItem = () => {
               <button className=' border border-primary text-primary rounded-3xl font-semibold px-4 py-3'>
                 Cancelar
               </button>
-              <button type='submit' className='btn'>Guardar</button>
+              <button type='submit' className='btn' disabled={isLoading}>
+                {isLoading ? <span className="loading loading-spinner text-primary loading-lg"></span> : 'Guardar'}
+              </button>
             </div>
           </div>
         </form>
@@ -134,4 +141,4 @@ const AddItem = () => {
   )
 }
 
-export default AddItem
+export default AddItem;
