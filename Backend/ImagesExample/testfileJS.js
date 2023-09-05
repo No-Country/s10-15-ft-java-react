@@ -20,5 +20,8 @@ btnsubir.addEventListener("click", (e) => {
     .then((res) => res.text())
     .then((data) => console.log(data))
     .catch((err) => console.log(err));
+
+    //redireccionar a url+/images+/nombre
+    window.location.href = "https://s10-15-ft-java-react-production.up.railway.app/images/"+nombre;
 });
 
