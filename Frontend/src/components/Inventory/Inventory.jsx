@@ -14,7 +14,8 @@ export const Inventory = () => {
   let categories = []
   axios
     .get(
-      'https://s10-15-ft-java-react-production.up.railway.app/product/listAll'
+      'https://s10-15-ft-java-react-production.up.railway.app/product/listAll',
+      
     )
     .then(function (response) {
       //console.log(response.data.data)
@@ -47,6 +48,9 @@ export const Inventory = () => {
       }
     }
   }
+
+
+
 
   const searchedData = filterData(searchQuery, items, 'search')
   const filteredData = filterData(category, searchedData)

@@ -5,11 +5,7 @@ import axios from 'axios';
 
 const createProduct = async (productData) => {
     try {
-            const resp = await axios.post(`https://s10-15-ft-java-react-production.up.railway.app/product/save`, productData, {
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('log')}`, // Verificar si el log esta en localstorage, si no esta, no se puede hacer la peticion
-                },
-            });
+            const resp = await axios.post(`https://s10-15-ft-java-react-production.up.railway.app/product/save`, productData);
 
             if (resp) {
                 console.log('Pesticion exitosa');
