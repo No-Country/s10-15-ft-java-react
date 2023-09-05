@@ -15,7 +15,6 @@ export const Inventory = () => {
         'https://s10-15-ft-java-react-production.up.railway.app/product/listAll'
       )
       .then(function (response) {
-        // Franco en ese console.log tenes la data console.log(response.data.data)
         setItems(response.data.data)
       })
       .catch(function (error) {
