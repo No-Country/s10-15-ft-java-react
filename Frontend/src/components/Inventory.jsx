@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { BiSearchAlt2 } from 'react-icons/bi'
 import { MdCategory } from 'react-icons/md'
@@ -9,19 +9,20 @@ import ProductItemComponent from './ProductItemComponent'
 
 export const Inventory = () => {
   const [items, setItems] = useState([])
-  axios
-    .get(
-      'https://s10-15-ft-java-react-production.up.railway.app/product/listAll'
-    )
-    .then(function (response) {
-      // Franco en ese console.log tenes la data console.log(response.data.data)
-      setItems(response.data.data)
-    })
-    .catch(function (error) {
-      console.log(error)
-      error
-    })
-
+  useEffect(() => {
+    axios
+      .get(
+        'https://s10-15-ft-java-react-production.up.railway.app/product/listAll'
+      )
+      .then(function (response) {
+        // Franco en ese console.log tenes la data console.log(response.data.data)
+        setItems(response.data.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+        error
+      })
+  }, [items])
   return (
     <div className='p-5 flex flex-col gap-6 '>
       <div className='w-full flex justify-between items-center overflow-hidden'>
