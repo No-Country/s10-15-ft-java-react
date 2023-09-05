@@ -1,6 +1,5 @@
 import { AiTwotoneSetting } from "react-icons/ai";
 import { BiHelpCircle, BiSolidDashboard } from "react-icons/bi";
-import { BsFillPersonVcardFill } from "react-icons/bs";
 import { HiUsers } from "react-icons/hi";
 import { MdInventory } from "react-icons/md";
 //links file = array of links with their respective path-route, label and icon
