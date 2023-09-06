@@ -52,21 +52,21 @@ const AddItem = () => {
     setIsLoading(true);
     try {
       // Primero, envía la imagen a la URL de carga de archivos
-      const formData = new FormData();
-      formData.append('file', evt.target.pathImage.files[0]); // Agrega el archivo seleccionado al formData
+      //const formData = new FormData();
+      //formData.append('file', evt.target.pathImage.files[0]); // Agrega el archivo seleccionado al formData
+      console.log(formData);
   
       const resp = await axios.post('https://s10-15-ft-java-react-production.up.railway.app/files/upload', formData,
         {
           headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('log'),
             'Content-Type': 'multipart/form-data',
           },
         }
       );
-        
-      console.log(resp);
-      if (resp.status === 200) {
-        const imageUrl = resp.data.url;
+
+      
+      if (resp) {
+        const imageUrl = resp.data;
 
         // Actualiza la URL de la imagen en el formData
         setFormData({
@@ -76,11 +76,10 @@ const AddItem = () => {
 
         console.log(formData);
   
-        await createProduct(formData);
         console.log('Producto creado exitosamente');
-      } else {
-        console.error('Error al cargar la imagen');
       }
+      await createProduct(formData);
+      
     } catch (error) {
       console.error('Error al crear el producto:', error);
     } finally {
@@ -117,7 +116,7 @@ const AddItem = () => {
                 placeholder='Código del item'
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='itemCode'
-                value={formData.itemCode}
+                value={formData.itemCode || ''}
                 onChange={ (evt) => handleInputChange(evt) }
               />
               <input
