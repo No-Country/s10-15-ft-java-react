@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export const Help = () => {
   return (
@@ -31,5 +31,5 @@ export const Help = () => {
 
       {/* Agrega más secciones según tus necesidades */}
     </div>
-  )
-}
+  );
+};

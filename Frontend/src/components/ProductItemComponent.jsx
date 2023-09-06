@@ -1,4 +1,4 @@
-import { MdDelete, MdEdit } from 'react-icons/md'
+import { MdDelete, MdEdit } from 'react-icons/md';
 
 const ProductItemComponent = ({
   img,
@@ -6,7 +6,7 @@ const ProductItemComponent = ({
   price,
   code,
   quantity,
-  category
+  category,
 }) => {
   return (
     <div>
@@ -43,7 +43,7 @@ const ProductItemComponent = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductItemComponent
+export default ProductItemComponent;

@@ -3,9 +3,9 @@ export const CardStock = ({
   title,
   nameProduct,
   number,
-  customClass
+  customClass,
 }) => {
-  const Icon = icon
+  const Icon = icon;
 
   return (
     <div className='card-body flex flex-col items-center'>
@@ -22,5 +22,5 @@ export const CardStock = ({
         </li>
       </ol>
     </div>
-  )
-}
+  );
+};

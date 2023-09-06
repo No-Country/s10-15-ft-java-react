@@ -1,59 +1,55 @@
-import { useState } from 'react'
-import { AiOutlinePlus } from 'react-icons/ai'
-import { GrNext, GrPrevious } from 'react-icons/gr'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import ProductItemComponent from '../ProductItemComponent'
-import Filter from './Filter'
-import SearchBar from './SearchBar'
+import { useState } from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import ProductItemComponent from '../ProductItemComponent';
+import Filter from './Filter';
+import SearchBar from './SearchBar';
 
 export const Inventory = () => {
-  const [items, setItems] = useState([])
-  const [category, setCategory] = useState('')
-  const [searchQuery, setSearchQuery] = useState('')
-  let categories = []
+  const [items, setItems] = useState([]);
+  const [category, setCategory] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  let categories = [];
   axios
     .get(
       'https://s10-15-ft-java-react-production.up.railway.app/product/listAll',
-      
     )
     .then(function (response) {
       //console.log(response.data.data)
-      setItems(response.data.data)
+      setItems(response.data.data);
       response.data.data.map((product) => {
         categories.includes(product.category)
           ? null
-          : categories.push(product.category)
-      })
+          : categories.push(product.category);
+      });
     })
     .catch(function (error) {
-      console.log(error)
-      error
-    })
+      console.log(error);
+      error;
+    });
 
   const filterData = (query, data, type) => {
     if (type === 'search') {
       if (!query) {
-        return data
+        return data;
       } else {
         return data.filter((data) =>
-          data.productName.toLowerCase().includes(query)
-        )
+          data.productName.toLowerCase().includes(query),
+        );
       }
     } else {
       if (!query) {
-        return data
+        return data;
       } else {
-        return data.filter((data) => data.category.toString().includes(query))
+        return data.filter((data) => data.category.toString().includes(query));
       }
     }
-  }
+  };
 
-
-
-
-  const searchedData = filterData(searchQuery, items, 'search')
-  const filteredData = filterData(category, searchedData)
+  const searchedData = filterData(searchQuery, items, 'search');
+  const filteredData = filterData(category, searchedData);
 
   return (
     <div className='p-5 flex flex-col gap-6 '>
@@ -116,5 +112,5 @@ export const Inventory = () => {
         <p>de 8 páginas</p>
       </div>
     </div>
-  )
-}
+  );
+};

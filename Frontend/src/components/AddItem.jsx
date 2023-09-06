@@ -1,22 +1,21 @@
-import { FaCamera } from 'react-icons/fa'
-import { MdUpload } from 'react-icons/md'
-import createProduct from '../libs/productPost'
-import { useState } from 'react'
+import { FaCamera } from 'react-icons/fa';
+import { MdUpload } from 'react-icons/md';
+import createProduct from '../libs/productPost';
+import { useState } from 'react';
 
 const AddItem = () => {
-
   const [formData, setFormData] = useState({
-    productName: "",
-    itemCode: "",
+    productName: '',
+    itemCode: '',
     category: 0,
     uniPrice: 0.0,
     quantityStock: 0,
-    pathImage: "",
-    locationDeposit: "",
+    pathImage: '',
+    locationDeposit: '',
     provider: 0,
-    description: "",
-    warehouseStatus: "In Stock"
-  })
+    description: '',
+    warehouseStatus: 'In Stock',
+  });
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,7 +23,7 @@ const AddItem = () => {
     const { name, value } = evt.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -35,17 +34,13 @@ const AddItem = () => {
       await createProduct(formData);
       console.log(formData);
       console.log('Producto creado exitosamente');
-      
     } catch (error) {
-      
       console.error('Error al crear el producto:', error);
     } finally {
       setIsLoading(false);
     }
   };
-  
 
-  
   return (
     <div className='p-5'>
       <div>
@@ -107,7 +102,7 @@ const AddItem = () => {
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='provider'
                 value={formData.provider}
-                onChange={handleInputChange} 
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -131,14 +126,18 @@ const AddItem = () => {
                 Cancelar
               </button>
               <button type='submit' className='btn' disabled={isLoading}>
-                {isLoading ? <span className="loading loading-spinner text-primary loading-lg"></span> : 'Guardar'}
+                {isLoading ? (
+                  <span className='loading loading-spinner text-primary loading-lg'></span>
+                ) : (
+                  'Guardar'
+                )}
               </button>
             </div>
           </div>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AddItem;
