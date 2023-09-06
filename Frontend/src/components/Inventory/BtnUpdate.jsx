@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { MdEdit } from 'react-icons/md'
 import { useState } from 'react'
-import { ModalUpdateProduct } from './modalUpdateProduct'
+import { ModalUpdateProduct } from './ModalUpdateProduct'
 
 export const BtnUpdate = ({ item }) => {
   const [mostrar, setMostrar] = useState(false)
