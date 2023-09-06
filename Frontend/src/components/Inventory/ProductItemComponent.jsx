@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { MdDelete } from 'react-icons/md'
 import { deleteProduct } from '../../libs/deleteProduct'
-import { BtnUpdate } from './btnUpdate'
+import { BtnUpdate } from './BtnUpdate'
 
 export const ProductItemComponent = ({ item }) => {
   return (
