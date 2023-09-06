@@ -2,6 +2,7 @@ import { HiOutlineCamera } from 'react-icons/hi'
 import Avatar from 'react-avatar'
 import axios from 'axios'
 import { useState } from 'react'
+// eslint-disable-next-line react/prop-types
 export const EditUser = ({ username, img }) => {
   const [file, setFile] = useState()
   const [fileName, setFileName] = useState('')
