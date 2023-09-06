@@ -1,8 +1,8 @@
 package com.nocountry.inventory.config;
 
 import com.nocountry.inventory.config.jwt.JwtAuthenticationFilter;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -10,17 +10,13 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.CorsConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Configuration
@@ -28,13 +24,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-  @Autowired
-  JwtAuthenticationFilter jwtAuthenticationFilter;
+  private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-  @Autowired
-  AuthenticationProvider authenticationProvider;
+  private final AuthenticationProvider authenticationProvider;
 
-  @Bean
+    @Bean
   public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 
     return httpSecurity
@@ -72,9 +66,8 @@ public class SecurityConfig {
   CorsConfigurationSource courseF() {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(
-        List.of("http://localhost:8084", "https://stockflows10.vercel.app/", "http://localhost:5173",
-            "http://localhost:5500"));
-    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+    List.of("https://stockflows10.vercel.app/", "http://localhost:5173/"));
+    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
     configuration.setAllowedHeaders(List.of("Authorization"));
 
     UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();

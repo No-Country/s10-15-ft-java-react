@@ -1,6 +1,7 @@
 package com.nocountry.inventory.service;
 
 
+import ch.qos.logback.core.util.TimeUtil;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -15,6 +16,7 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
@@ -24,15 +26,15 @@ public class JwtService {
     private String secretKey;
 
     public String getToken(UserDetails user){
-        return createToken(new HashMap<>(),user);
+        return createToken(new HashMap<>(), user);
     }
 
-    private String createToken(Map<String,Object>extraClaims,UserDetails user){
+    private String createToken(Map<String,Object> extraClaims, UserDetails user){
         return Jwts.builder()
                 .setClaims(extraClaims)
                 .setSubject(user.getUsername())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60*24))
+                .setExpiration(new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(1)))
                 .signWith(getKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
@@ -41,5 +43,4 @@ public class JwtService {
         byte[]keyBytes= Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
-
 }

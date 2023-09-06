@@ -3,6 +3,7 @@ package com.nocountry.inventory.service;
 import java.util.List;
 import java.util.Optional;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,26 +47,16 @@ public class ProductEntityService {
     public Object updateProduct(ProductEntity productEntity) {
         ProductEntity product = productEntityRepository.findById(productEntity.getId())
                 .orElseThrow(() -> new RuntimeException("Message not found"));
-        if (productEntity.getProductName() != null)
-            product.setProductName(productEntity.getProductName());
-        if (productEntity.getItemCode() != null)
-            product.setItemCode(productEntity.getItemCode());
-        if (productEntity.getCategory() != null)
-            product.setCategory(productEntity.getCategory());
-        if (productEntity.getUniPrice() != null)
-            product.setUniPrice(productEntity.getUniPrice());
-        if (productEntity.getQuantityStock() != null)
-            product.setQuantityStock(productEntity.getQuantityStock());
-        if (productEntity.getPathImage() != null)
-            product.setPathImage(productEntity.getPathImage());
-        if (productEntity.getLocationDeposit() != null)
-            product.setLocationDeposit(productEntity.getLocationDeposit());
-        if (productEntity.getProvider() != null)
-            product.setProvider(productEntity.getProvider());
-        if (productEntity.getDescription() != null)
-            product.setDescription(productEntity.getDescription());
-        if (productEntity.getWarehouseStatus() != null)
-            product.setWarehouseStatus(productEntity.getWarehouseStatus());
+        if (productEntity.getProductName() != null) product.setProductName(productEntity.getProductName());
+        if (productEntity.getItemCode() != null) product.setItemCode(productEntity.getItemCode());
+        if (productEntity.getCategory() != null) product.setCategory(productEntity.getCategory());
+        if (productEntity.getUniPrice() != null) product.setUniPrice(productEntity.getUniPrice());
+        if (productEntity.getQuantityStock() != null) product.setQuantityStock(productEntity.getQuantityStock());
+        if (productEntity.getPathImage() != null) product.setPathImage(productEntity.getPathImage());
+        if (productEntity.getLocationDeposit() != null) product.setLocationDeposit(productEntity.getLocationDeposit());
+        if (productEntity.getProvider() != null) product.setProvider(productEntity.getProvider());
+        if (productEntity.getDescription() != null) product.setDescription(productEntity.getDescription());
+        if (productEntity.getWarehouseStatus() != null) product.setWarehouseStatus(productEntity.getWarehouseStatus());
         return productEntityRepository.save(product);
     }
 
