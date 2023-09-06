@@ -2,13 +2,14 @@ import { HiOutlineCamera } from 'react-icons/hi'
 import Avatar from 'react-avatar'
 import axios from 'axios'
 import { useState } from 'react'
+// eslint-disable-next-line react/prop-types
 export const EditUser = ({ username, img }) => {
   const [file, setFile] = useState()
   const [fileName, setFileName] = useState('')
   const handleChange = (e) => {
     setFileName(e.target.files[0].name)
     setFile(e.target.files[0])
-    setFileURL(URL.createObjectURL(e.target.files[0]))
+    // setFileURL(URL.createObjectURL(e.target.files[0]))
   }
   const handleClick = (e) => {
     e.preventDefault()
