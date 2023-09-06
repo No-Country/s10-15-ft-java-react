@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
 import { MdEdit } from 'react-icons/md'
 import ModalUpdateProduct from './modalUpdateProduct'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const BtnUpdate = ({ item }) => {
-  const [mostrar, setMostrar] = useState(false)
-  useEffect(() => {
-    setMostrar(mostrar)
-  }, [mostrar])
+  const [mostrar, setMostrar] = useState(false);
   return (
     <>
       <button
