@@ -2,54 +2,37 @@ import { FaCamera } from 'react-icons/fa'
 import { MdUpload } from 'react-icons/md'
 import createProduct from '../libs/productPost'
 import { useState } from 'react'
-import axios from 'axios';
+import axios from 'axios'
 //import postImageProduct from '../libs/postImageProduct';
 
 const AddItem = () => {
-
   const [formData, setFormData] = useState({
-    productName: "",
-    itemCode: "",
+    productName: '',
+    itemCode: '',
     category: 0,
     uniPrice: 0.0,
     quantityStock: 0,
-    pathImage: "",
-    locationDeposit: "",
+    pathImage: '',
+    locationDeposit: '',
     provider: 0,
-    description: "",
-    warehouseStatus: "In Stock"
+    description: '',
+    warehouseStatus: 'In Stock'
   })
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   //const [imagen, setImagen] = useState('');
 
   const handleInputChange = (evt) => {
-    const { name, value } = evt.target;
+    const { name, value } = evt.target
     setFormData({
       ...formData,
       [name]: value
-    });
-  };
-
-  const imageUpload = (evt) => {
-    const file = evt.target.files[0]; // Obtener el primer archivo seleccionado
-    
-    if (file) {
-      setFormData({
-        ...formData,
-        pathImage: file.name
-      });
-    }
-    console.log(file);
-  };
-
-
-
-
+    })
+  }
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    setIsLoading(true);
+    evt.preventDefault()
+    setIsLoading(true)
     try {
       // Primero, envía la imagen a la URL de carga de archivos
       //const formData = new FormData();
@@ -81,26 +64,23 @@ const AddItem = () => {
       await createProduct(formData);
       
     } catch (error) {
-      console.error('Error al crear el producto:', error);
+      console.error('Error al crear el producto:', error)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
-  
-    
+  }
 
-  
   return (
     <div className='p-5'>
       <div>
-        <form className='flex mt-6' onSubmit={ handleSubmit }>
+        <form className='flex mt-6' onSubmit={handleSubmit}>
           <div className='flex w-[70%]  justify-center items-center gap-4'>
             <div className='flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1'>
-              <input 
-                type="file"
+              <input
+                type='file'
                 accept='image/*'
                 name='pathImage'
-                onChange={ imageUpload }  // Actualiza el estado de la imagen
+                // onChange={imageUpload} // Actualiza el estado de la imagen
               />
               <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
                 <FaCamera />
@@ -157,7 +137,7 @@ const AddItem = () => {
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='provider'
                 value={formData.provider}
-                onChange={handleInputChange} 
+                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -167,7 +147,11 @@ const AddItem = () => {
                 Cancelar
               </button>
               <button type='submit' className='btn' disabled={isLoading}>
-                {isLoading ? <span className="loading loading-spinner text-primary loading-lg"></span> : 'Guardar'}
+                {isLoading ? (
+                  <span className='loading loading-spinner text-primary loading-lg'></span>
+                ) : (
+                  'Guardar'
+                )}
               </button>
             </div>
           </div>
@@ -177,4 +161,4 @@ const AddItem = () => {
   )
 }
 
-export default AddItem;
+export default AddItem

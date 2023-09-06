@@ -1,7 +1,7 @@
 import axios from "axios";
 //const API_URL = import.meta.env.VITE_API_PRODUCT_URL;
 
-const getAllProducts = async () => {
+const getProductsDashboard = async () => {
     try {
         const resp = await axios.get(`https://s10-15-ft-java-react-production.up.railway.app/product/listAll`);
 
@@ -16,4 +16,4 @@ const getAllProducts = async () => {
 };
 
 
-export default getAllProducts;
+export default getProductsDashboard;
