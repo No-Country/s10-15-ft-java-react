@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import { SideBar } from './components/Sidebar/SideBar'
 import { Dashboard } from './components/Dashboard'
@@ -40,6 +40,7 @@ function App() {
                 <div className='flex flex-col w-full'>
                   <NavBar />
                   <Routes>
+                    <Route path='/' element={<Navigate to='/dashboard' />} />
                     <Route path='/dashboard' element={<Dashboard />} />
                     <Route path='/inventario' element={<Inventory />} />
                     <Route path='/AgregarItem' element={<AddItem />} />
