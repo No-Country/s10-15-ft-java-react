@@ -12,8 +12,4 @@ export const updateProducts = (formData) =>{
             quantityStock: formData.quantityStock
     }
     )
-    .then(function (response) {
-    })
-    .catch(function (error) {
-    })
 }

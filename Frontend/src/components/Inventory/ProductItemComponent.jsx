@@ -27,7 +27,6 @@ const ProductItemComponent = ({ item }) => {
             className='cursor-pointer bg-gray-200 rounded-full p-2 text-red-600 text-xl tooltip'
             data-tip='Eliminar'
           >
-            {' '}
             <MdDelete
               onClick={() => {
                 deleteProduct(item.id)
