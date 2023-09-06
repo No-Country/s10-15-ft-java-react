@@ -2,6 +2,7 @@ import { HiOutlineCamera } from 'react-icons/hi';
 import Avatar from 'react-avatar';
 import axios from 'axios';
 import { useState } from 'react';
+import { EditUserPropTypes } from '../../utils/prop-types';
 export const EditUser = ({ username, img }) => {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState('');
@@ -95,3 +96,5 @@ export const EditUser = ({ username, img }) => {
     </div>
   );
 };
+
+EditUser.propTypes = EditUserPropTypes;

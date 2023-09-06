@@ -1,5 +1,5 @@
 import { MdDelete, MdEdit } from 'react-icons/md';
-
+import { ProductItemComponentPropTypes } from '../utils/prop-types';
 const ProductItemComponent = ({
   img,
   name,
@@ -45,5 +45,7 @@ const ProductItemComponent = ({
     </div>
   );
 };
+
+ProductItemComponent.propTypes = ProductItemComponentPropTypes;
 
 export default ProductItemComponent;

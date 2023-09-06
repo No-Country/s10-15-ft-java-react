@@ -1,3 +1,5 @@
+import { CardInfoPropTypes } from '../utils/prop-types';
+
 export const CardInfo = ({ icon, number, title }) => {
   const Icon = icon;
 
@@ -9,3 +11,5 @@ export const CardInfo = ({ icon, number, title }) => {
     </div>
   );
 };
+
+CardInfo.propTypes = CardInfoPropTypes;

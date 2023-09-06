@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MdCategory } from 'react-icons/md';
+import { FilterPropTypes } from '../../utils/prop-types';
 
 const Filter = ({ category, setCategory, categories }) => {
   const [filterData] = useState(categories);
@@ -28,5 +29,7 @@ const Filter = ({ category, setCategory, categories }) => {
     </div>
   );
 };
+
+Filter.propTypes = FilterPropTypes;
 
 export default Filter;
