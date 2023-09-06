@@ -1,15 +1,43 @@
 import { HiOutlineCamera } from 'react-icons/hi'
 import Avatar from 'react-avatar'
+import axios from 'axios'
 import { useState } from 'react'
 export const EditUser = ({ username, img }) => {
-  const [file, setFile] = useState(img)
+  const [file, setFile] = useState()
+  const [fileName, setFileName] = useState('')
   const handleChange = (e) => {
-    setFile(URL.createObjectURL(e.target.files[0]))
+    setFileName(e.target.files[0].name)
+    setFile(e.target.files[0])
+    setFileURL(URL.createObjectURL(e.target.files[0]))
   }
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log(fileName, '=', file)
+    const formData = new FormData()
+    formData.append('file', file, fileName)
+    console.log(formData)
+    axios
+      .post(
+        'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }
+      )
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
+
   return (
     <div>
       <h2 className='text-2xl font-semibold mb-4'>Editar perfil</h2>
-      <form action='' className='flex flex-col mt-5 gap-8 px-10 align-middle'>
+      <form className='flex flex-col mt-5 gap-8 px-10 align-middle'>
         {img != null ? (
           <div className='flex w-2/3 justify-center avatar placeholder'>
             <input
@@ -59,7 +87,9 @@ export const EditUser = ({ username, img }) => {
           className='input border-black w-2/3'
         />
         <div className='flex justify-end w-2/3'>
-          <button className='btn'>Guardar</button>
+          <button onClick={handleClick} className='btn'>
+            Guardar
+          </button>
         </div>
       </form>
     </div>
