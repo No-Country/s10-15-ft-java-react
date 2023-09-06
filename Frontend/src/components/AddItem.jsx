@@ -2,6 +2,7 @@ import { FaCamera } from 'react-icons/fa'
 import { MdUpload } from 'react-icons/md'
 import createProduct from '../libs/productPost'
 import { useState } from 'react'
+//import postImageProduct from '../libs/postImageProduct';
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ const AddItem = () => {
   })
 
   const [isLoading, setIsLoading] = useState(false)
+  //const [imagen, setImagen] = useState('');
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target
@@ -47,7 +49,13 @@ const AddItem = () => {
         <form className='flex mt-6' onSubmit={handleSubmit}>
           <div className='flex w-[70%]  justify-center items-center gap-4'>
             <div className='flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1'>
-              <div className=' h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
+              <input
+                type='file'
+                accept='image/*'
+                name='pathImage'
+                // onChange={imageUpload} // Actualiza el estado de la imagen
+              />
+              <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
                 <FaCamera />
               </div>
               <p className='text-md flex justify-center items-center text-xl'>
@@ -62,7 +70,7 @@ const AddItem = () => {
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='itemCode'
                 value={formData.itemCode}
-                onChange={handleInputChange}
+                onChange={(evt) => handleInputChange(evt)}
               />
               <input
                 type='text'
@@ -107,20 +115,6 @@ const AddItem = () => {
             </div>
           </div>
           <div className='flex flex-col w-[30%] justify-center items-start gap-4'>
-            {/* <div className=' text-start w-full'>
-              <h2 className='text-xl'>Stock</h2>
-              <p className='text-sm'>Control de stock del item</p>
-            </div>
-            <input
-              type='text'
-              placeholder='Stock minimo'
-              className='input input-bordered outline-none w-full max-w-xs border border-gray-400 '
-            />
-            <input
-              type='text'
-              placeholder='Stock optimo'
-              className='input input-bordered outline-none w-full max-w-xs border border-gray-400'
-            /> */}
             <div className='flex gap-4 justify-end items-center w-full mt-5'>
               <button className=' border border-primary text-primary rounded-3xl font-semibold px-4 py-3'>
                 Cancelar
