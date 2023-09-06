@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { MdDelete } from 'react-icons/md'
 import { deleteProduct } from '../../libs/deleteProduct'
-import { BtnUpdate } from './btnUpdate'
+import UpdateBtn from './UpdateBtn'
 
 export const ProductItemComponent = ({ item }) => {
   return (
@@ -22,7 +22,7 @@ export const ProductItemComponent = ({ item }) => {
         <p>{item.quantityStock}</p>
         <p>{item.uniPrice}</p>
         <div className='flex flex-row gap-6 justify-center items-center'>
-          <BtnUpdate item={item} />
+          <UpdateBtn item={item} />
           <div
             className='cursor-pointer bg-gray-200 rounded-full p-2 text-red-600 text-xl tooltip'
             data-tip='Eliminar'
