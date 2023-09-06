@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import ProductItemComponent from './ProductItemComponent'
 import Filter from './Filter'
 import SearchBar from './SearchBar'
 import { getProductsInventory } from '../../libs/getProductsInventory'
 import { filterData } from '../../libs/filterData'
+import { ProductItemComponent } from './ProductItemComponent'
 
 export const Inventory = () => {
   const [items, setItems] = useState([])

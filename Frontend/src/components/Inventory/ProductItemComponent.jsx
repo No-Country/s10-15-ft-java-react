@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { MdDelete } from 'react-icons/md'
 import { deleteProduct } from '../../libs/deleteProduct'
-import BtnUpdate from './btnUpdate'
+import { BtnUpdate } from './btnUpdate'
 
-const ProductItemComponent = ({ item }) => {
+export const ProductItemComponent = ({ item }) => {
   return (
     <div>
       <div className='grid grid-cols-8 gap-4 w-full text-center border-t border-gray-400 p-2'>
@@ -38,5 +38,3 @@ const ProductItemComponent = ({ item }) => {
     </div>
   )
 }
-
-export default ProductItemComponent
