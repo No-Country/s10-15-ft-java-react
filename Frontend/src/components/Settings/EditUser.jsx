@@ -8,7 +8,7 @@ export const EditUser = ({ username, img }) => {
   const handleChange = (e) => {
     setFileName(e.target.files[0].name)
     setFile(e.target.files[0])
-    setFileURL(URL.createObjectURL(e.target.files[0]))
+    // setFileURL(URL.createObjectURL(e.target.files[0]))
   }
   const handleClick = (e) => {
     e.preventDefault()
