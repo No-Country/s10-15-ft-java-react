@@ -16,7 +16,7 @@ public class UserEntityService {
     @Autowired
     UserEntityRepository userEntityRepository;
 
-    public Boolean userEntity(String username) {
+    public Boolean userExist(String username) {
         Optional<UserEntity> user = userEntityRepository.findByUsername(username);
         return user.isPresent();
     }

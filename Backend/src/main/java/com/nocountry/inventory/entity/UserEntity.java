@@ -25,20 +25,34 @@ public class UserEntity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(nullable = false)
     private String username;
-    private String lastname;
-    private String firstname;
-    private String country;
     private String password;
-
+    private String email;
+    private String firstname;
+    private String lastname;
+    private String otherDetails;
+    private String currencyType;
+    private boolean showDecimals;
+    private boolean darkMode;
+    private String img;
+    private String country;
     @Enumerated(EnumType.STRING)
     ERole role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
     }
 
     @Override
