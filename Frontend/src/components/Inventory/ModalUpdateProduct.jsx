@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { updateProducts } from '../../libs/updateProducts'
 
 /* eslint-disable react/prop-types */
+//modal para actualizar el producto
 export const ModalUpdateProduct = ({ item, setMostrar }) => {
   const [formData, setFormdata] = useState({ id: item.id })
   useEffect(() => {
