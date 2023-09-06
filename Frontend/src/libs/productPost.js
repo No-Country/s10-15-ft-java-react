@@ -5,7 +5,9 @@ import axios from 'axios';
 
 const createProduct = async (productData) => {
     try {
-            const resp = await axios.post(`https://s10-15-ft-java-react-production.up.railway.app/product/save`, productData);
+            const resp = await axios.post(`https://s10-15-ft-java-react-production.up.railway.app/product/save`, productData,
+                
+            );
 
             if (resp) {
                 console.log('Pesticion exitosa');

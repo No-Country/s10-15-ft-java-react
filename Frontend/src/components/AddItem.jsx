@@ -2,6 +2,8 @@ import { FaCamera } from 'react-icons/fa'
 import { MdUpload } from 'react-icons/md'
 import createProduct from '../libs/productPost'
 import { useState } from 'react'
+import axios from 'axios';
+//import postImageProduct from '../libs/postImageProduct';
 
 const AddItem = () => {
 
@@ -19,6 +21,7 @@ const AddItem = () => {
   })
 
   const [isLoading, setIsLoading] = useState(false);
+  //const [imagen, setImagen] = useState('');
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -28,31 +31,79 @@ const AddItem = () => {
     });
   };
 
+  const imageUpload = (evt) => {
+    const file = evt.target.files[0]; // Obtener el primer archivo seleccionado
+    
+    if (file) {
+      setFormData({
+        ...formData,
+        pathImage: file.name
+      });
+    }
+    console.log(file);
+  };
+
+
+
+
+
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     setIsLoading(true);
     try {
-      await createProduct(formData);
-      console.log(formData);
-      console.log('Producto creado exitosamente');
-      
+      // Primero, envía la imagen a la URL de carga de archivos
+      const formData = new FormData();
+      formData.append('file', evt.target.pathImage.files[0]); // Agrega el archivo seleccionado al formData
+  
+      const resp = await axios.post('https://s10-15-ft-java-react-production.up.railway.app/files/upload', formData,
+        {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('log'),
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+        
+      console.log(resp);
+      if (resp.status === 200) {
+        const imageUrl = resp.data.url;
+
+        // Actualiza la URL de la imagen en el formData
+        setFormData({
+          ...formData,
+          pathImage: imageUrl,
+        });
+
+        console.log(formData);
+  
+        await createProduct(formData);
+        console.log('Producto creado exitosamente');
+      } else {
+        console.error('Error al cargar la imagen');
+      }
     } catch (error) {
-      
       console.error('Error al crear el producto:', error);
     } finally {
       setIsLoading(false);
     }
   };
   
+    
 
   
   return (
     <div className='p-5'>
       <div>
-        <form className='flex mt-6' onSubmit={handleSubmit}>
+        <form className='flex mt-6' onSubmit={ handleSubmit }>
           <div className='flex w-[70%]  justify-center items-center gap-4'>
             <div className='flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1'>
-              <div className=' h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
+              <input 
+                type="file"
+                accept='image/*'
+                name='pathImage'
+                onChange={ imageUpload }  // Actualiza el estado de la imagen
+              />
+              <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
                 <FaCamera />
               </div>
               <p className='text-md flex justify-center items-center text-xl'>
@@ -67,7 +118,7 @@ const AddItem = () => {
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='itemCode'
                 value={formData.itemCode}
-                onChange={handleInputChange}
+                onChange={ (evt) => handleInputChange(evt) }
               />
               <input
                 type='text'
@@ -112,20 +163,6 @@ const AddItem = () => {
             </div>
           </div>
           <div className='flex flex-col w-[30%] justify-center items-start gap-4'>
-            {/* <div className=' text-start w-full'>
-              <h2 className='text-xl'>Stock</h2>
-              <p className='text-sm'>Control de stock del item</p>
-            </div>
-            <input
-              type='text'
-              placeholder='Stock minimo'
-              className='input input-bordered outline-none w-full max-w-xs border border-gray-400 '
-            />
-            <input
-              type='text'
-              placeholder='Stock optimo'
-              className='input input-bordered outline-none w-full max-w-xs border border-gray-400'
-            /> */}
             <div className='flex gap-4 justify-end items-center w-full mt-5'>
               <button className=' border border-primary text-primary rounded-3xl font-semibold px-4 py-3'>
                 Cancelar
