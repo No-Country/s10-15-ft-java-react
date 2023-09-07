@@ -17,9 +17,6 @@ export const CardStock = ({
         <li className='md:text-lg lg:text-xl font-semibold'>
           {nameProduct} - {number}
         </li>
-        <li className='md:text-lg lg:text-xl font-semibold'>
-          {nameProduct} - {number}
-        </li>
       </ol>
     </div>
   )
