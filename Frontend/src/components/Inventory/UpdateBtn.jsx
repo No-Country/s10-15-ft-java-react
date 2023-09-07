@@ -1,13 +1,13 @@
-/* eslint-disable react/prop-types */
-import { MdEdit } from 'react-icons/md'
-import { useEffect, useState } from 'react'
-import { ModalUpdateProduct } from './ModalUpdateProduct'
+import { MdEdit } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+import { ModalUpdateProduct } from './ModalUpdateProduct';
+import { UpdateBtnPropTypes } from '../../utils/prop-types';
 
 const UpdateBtn = ({ item }) => {
-  const [mostrar, setMostrar] = useState(false)
+  const [mostrar, setMostrar] = useState(false);
   useEffect(() => {
-    setMostrar(mostrar)
-  }, [mostrar])
+    setMostrar(mostrar);
+  }, [mostrar]);
   return (
     <>
       <button
@@ -24,6 +24,9 @@ const UpdateBtn = ({ item }) => {
         </div>
       </dialog>
     </>
-  )
-}
-export default UpdateBtn
+  );
+};
+
+UpdateBtn.propTypes = UpdateBtnPropTypes;
+
+export default UpdateBtn;

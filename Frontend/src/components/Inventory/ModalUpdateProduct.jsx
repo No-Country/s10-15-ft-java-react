@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react'
-import { updateProducts } from '../../libs/updateProducts'
+import { useEffect, useState } from 'react';
+import { updateProducts } from '../../libs/updateProducts';
+import { ModalUpdateProductPropTypes } from '../../utils/prop-types';
 
-/* eslint-disable react/prop-types */
 //modal para actualizar el producto
 export const ModalUpdateProduct = ({ item, setMostrar }) => {
-  const [formData, setFormdata] = useState({ id: item.id })
+  const [formData, setFormdata] = useState({ id: item.id });
   useEffect(() => {
-    setFormdata(formData)
-  }, [formData])
+    setFormdata(formData);
+  }, [formData]);
   return (
     <form
       className='flex flex-col justify-center h-max gap-5 items-center'
       onSubmit={(e) => {
-        e.preventDefault()
-        updateProducts(formData)
+        e.preventDefault();
+        updateProducts(formData);
         setTimeout(() => {
-          setMostrar(false)
-        }, 2000)
+          setMostrar(false);
+        }, 2000);
       }}
     >
       <label className={'flex flex-col items-start'}>
@@ -28,8 +28,8 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              productName: e.target.value ? e.target.value : item.productName
-            })
+              productName: e.target.value ? e.target.value : item.productName,
+            });
           }}
         />
       </label>
@@ -42,8 +42,8 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              itemCode: e.target.value ? e.target.value : item.itemCode
-            })
+              itemCode: e.target.value ? e.target.value : item.itemCode,
+            });
           }}
         />
       </label>
@@ -56,8 +56,8 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              category: e.target.value ? e.target.value : item.category
-            })
+              category: e.target.value ? e.target.value : item.category,
+            });
           }}
         />
       </label>
@@ -72,8 +72,8 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
               ...formData,
               quantityStock: e.target.value
                 ? e.target.value
-                : item.quantityStock
-            })
+                : item.quantityStock,
+            });
           }}
         />
       </label>
@@ -86,8 +86,8 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              uniPrice: e.target.value ? e.target.value : item.uniPrice
-            })
+              uniPrice: e.target.value ? e.target.value : item.uniPrice,
+            });
           }}
         />
       </label>
@@ -98,5 +98,7 @@ export const ModalUpdateProduct = ({ item, setMostrar }) => {
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
+
+ModalUpdateProduct.propTypes = ModalUpdateProductPropTypes;

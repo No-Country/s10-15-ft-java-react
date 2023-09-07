@@ -23,5 +23,5 @@ export const ChangePassword = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};

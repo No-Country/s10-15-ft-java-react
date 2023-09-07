@@ -16,6 +16,6 @@ const ErrorFormLoginComponent = (data) => {
         </small>
       )}
     </div>
-  )
-}
-export default ErrorFormLoginComponent
+  );
+};
+export default ErrorFormLoginComponent;
