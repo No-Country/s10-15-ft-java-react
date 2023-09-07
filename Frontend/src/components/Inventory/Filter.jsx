@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import { MdCategory } from 'react-icons/md'
+import { useState } from 'react';
+import { MdCategory } from 'react-icons/md';
+import { FilterPropTypes } from '../../utils/prop-types';
 
 const Filter = ({ category, setCategory, categories }) => {
-  const [filterData] = useState(categories)
+  const [filterData] = useState(categories);
 
   return (
     <div className='flex justify-center items-center text-primary'>
@@ -11,7 +12,7 @@ const Filter = ({ category, setCategory, categories }) => {
         value={category}
         className='select text-primary cursor-pointer text-xl flex justify-center items-center'
         onChange={(e) => {
-          setCategory(e.target.value)
+          setCategory(e.target.value);
         }}
       >
         <option value='' defaultValue>
@@ -22,11 +23,13 @@ const Filter = ({ category, setCategory, categories }) => {
             <option key={category} value={category}>
               {category}
             </option>
-          )
+          );
         })}
       </select>
     </div>
-  )
-}
+  );
+};
 
-export default Filter
+Filter.propTypes = FilterPropTypes;
+
+export default Filter;

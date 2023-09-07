@@ -41,7 +41,9 @@ public class JwtAuthenticationManager {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return username -> userEntityRepository.findByUsername(username).orElseThrow(()->new UsernameNotFoundException("User not found"));
+        return username -> userEntityRepository
+                .findByUsername(username)
+                .orElseThrow(()-> new UsernameNotFoundException("User not found"));
     }
 
 }

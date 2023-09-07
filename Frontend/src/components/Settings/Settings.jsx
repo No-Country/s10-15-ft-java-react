@@ -1,14 +1,14 @@
-import { EditUser } from './EditUser'
-import { ChangePassword } from './ChangePassword'
-import { useState } from 'react'
-import { GrNext } from 'react-icons/gr'
+import { EditUser } from './EditUser';
+import { ChangePassword } from './ChangePassword';
+import { useState } from 'react';
+import { GrNext } from 'react-icons/gr';
 
 export const Settings = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleClick = () => {
-    setIsVisible(!isVisible)
-  }
+    setIsVisible(!isVisible);
+  };
   return (
     <main className='p-5 grid grid-flow-col grid-cols-2'>
       <section className='p-5 border-r-2'>
@@ -41,5 +41,5 @@ export const Settings = () => {
         {isVisible ? <ChangePassword /> : <EditUser />}
       </section>
     </main>
-  )
-}
+  );
+};

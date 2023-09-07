@@ -1,11 +1,11 @@
-import { useContext } from 'react'
-import { IoIosNotifications } from 'react-icons/io'
-import { UserContext } from '../../libs/context/userProvider'
-import Avatar from 'react-avatar'
+import { useContext } from 'react';
+import { IoIosNotifications } from 'react-icons/io';
+import { UserContext } from '../../libs/context/userProvider';
+import Avatar from 'react-avatar';
 
 export const NavBar = () => {
-  const [data, dispatch] = useContext(UserContext)
-  const { username, img, role } = data.user
+  const [data, dispatch] = useContext(UserContext);
+  const { username, img, role } = data.user;
   return (
     <nav className='flex justify-end text-black px-10 py-5 border-b-1 border-slate-400 shadow-md'>
       <div className='flex items-center'>
@@ -19,5 +19,5 @@ export const NavBar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};

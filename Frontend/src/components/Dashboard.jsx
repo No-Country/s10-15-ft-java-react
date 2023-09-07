@@ -1,32 +1,31 @@
-import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi'
-import { FaUserFriends } from 'react-icons/fa'
-import { BsClipboardCheckFill } from 'react-icons/bs'
-import { IoMdNotifications } from 'react-icons/io'
-import { CardInfo } from './CardInfo'
-import { CardStock } from './CardStock'
-import { useEffect, useState } from 'react'
-import getProductsDashboard from '../libs/getProductsDashboard'
+import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi';
+import { FaUserFriends } from 'react-icons/fa';
+import { BsClipboardCheckFill } from 'react-icons/bs';
+import { IoMdNotifications } from 'react-icons/io';
+import { CardInfo } from './CardInfo';
+import { CardStock } from './CardStock';
+import { useEffect, useState } from 'react';
+import getProductsDashboard from '../libs/getProductsDashboard';
 
 export const Dashboard = () => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
   useEffect(() => {
     getProductsDashboard().then((res) => {
-      setItems(res.data)
-    })
-  }, [items])
-
+      setItems(res.data);
+    });
+  }, [items]);
 
   // contar cantidad de providers mientars sean distintos
-  const providers = items.map((item) => item.provider)
-  const lenghtProviders = [...new Set(providers)] // Set solo permite valores unicos...
+  const providers = items.map((item) => item.provider);
+  const lenghtProviders = [...new Set(providers)]; // Set solo permite valores unicos...
 
   // Productos con stock bajo (menor a 10)
-  const stockBajo = items.filter((item) => item.quantityStock < 10)
-  const cantidadStockBajo = stockBajo[0]?.quantityStock
-  
+  const stockBajo = items.filter((item) => item.quantityStock < 10);
+  const cantidadStockBajo = stockBajo[0]?.quantityStock;
+
   // Productos con stock alto (mayor a 20)
-  const stockAlto = items.filter((item) => item.quantityStock > 20)
-  const cantidadStockAlto = stockAlto[0]?.quantityStock
+  const stockAlto = items.filter((item) => item.quantityStock > 20);
+  const cantidadStockAlto = stockAlto[0]?.quantityStock;
 
   return (
     <div className='p-5 flex flex-col gap-6 w-full'>
@@ -77,5 +76,5 @@ export const Dashboard = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

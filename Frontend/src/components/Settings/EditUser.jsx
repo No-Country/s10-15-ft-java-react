@@ -1,30 +1,30 @@
-import { HiOutlineCamera } from 'react-icons/hi'
-import Avatar from 'react-avatar'
-import axios from 'axios'
-import { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../../libs/context/userProvider'
-import { types } from '../../libs/context/userReducer'
+import { HiOutlineCamera } from 'react-icons/hi';
+import Avatar from 'react-avatar';
+import axios from 'axios';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../libs/context/userProvider';
+import { types } from '../../libs/context/userReducer';
 // eslint-disable-next-line react/prop-types
 export const EditUser = () => {
-  const [file, setFile] = useState()
-  const [fileName, setFileName] = useState('')
-  const [fileURL, setFileURL] = useState()
-  const [data, dispatch] = useContext(UserContext)
-  const { img } = data.user
+  const [file, setFile] = useState();
+  const [fileName, setFileName] = useState('');
+  const [fileURL, setFileURL] = useState();
+  const [data, dispatch] = useContext(UserContext);
+  const { img } = data.user;
 
   const handleChange = (e) => {
     // setFileName(e.target.files[0].name)
     // setFile(e.target.files[0])
-    setFileURL(URL.createObjectURL(e.target.files[0]))
+    setFileURL(URL.createObjectURL(e.target.files[0]));
     dispatch({
       type: types.userUpdate,
-      payload: { ...data.user, img: fileURL }
-    })
-  }
+      payload: { ...data.user, img: fileURL },
+    });
+  };
   const handleClick = (e) => {
-    e.preventDefault()
-    const formData = new FormData()
-    formData.append('file', file, fileName)
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file, fileName);
     // axios
     //   .post(
     //     'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
@@ -41,7 +41,7 @@ export const EditUser = () => {
     //   .catch(function (error) {
     //     console.log(error)
     //   })
-  }
+  };
 
   return (
     <div>
@@ -90,5 +90,7 @@ export const EditUser = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
+
+EditUser.propTypes = EditUserPropTypes;

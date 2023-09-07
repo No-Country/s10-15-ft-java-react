@@ -14,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,40 +23,39 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthService {
+    private final UserEntityRepository userEntityRepository;
+    private final JwtService jwtService;
+    private final PasswordEncoder passwordEncoder;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    UserEntityRepository userEntityRepository;
-
-    @Autowired
-    JwtService jwtService;
-
-    @Autowired
-    PasswordEncoder passwordEncoder;
-
-    @Autowired
-    AuthenticationManager authenticationManager;
-
-    public AuthResponse login(LoginRE loginRE) {
-        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRE.getUserName(),loginRE.getPassword()));
-        UserDetails user =userEntityRepository.findByUsername(loginRE.getUserName()).orElseThrow();
-        String token = jwtService.getToken(user);
-        return new AuthResponse(token);
+    public UserEntityDTO login(LoginRE loginRE) {
+        return authenticate(loginRE.getUserName(), loginRE.getPassword());
     }
 
     public UserEntityDTO register(UserRE userRE) {
         UserEntity user = new UserEntity();
 
-        if (userRE.getUserName() != null)
-                user.setUsername(userRE.getUserName());
-        if (userRE.getPassword() != null)
-                user.setPassword(passwordEncoder.encode(userRE.getPassword()));
-        user.setLastname(userRE.getLastname());
-        user.setFirstname(userRE.getFirstname());
-        user.setCountry(userRE.getCountry());
+        user.setUsername(userRE.getUserName());
+        user.setPassword(passwordEncoder.encode(userRE.getPassword()));
         user.setRole(ERole.USER);
+
         userEntityRepository.save(user);
 
-        AuthResponse token = new AuthResponse(jwtService.getToken(user));
-        return new UserEntityDTO(user,token);
+        return authenticate(user.getUsername(), user.getPassword());
+    }
+
+    private UserEntityDTO authenticate(String credential, String password){
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(credential, password));
+
+        var user = userEntityRepository.findByUsername(credential).orElseThrow();
+        String token = jwtService.getToken(user);
+        return UserEntityDTO.builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .country(user.getCountry())
+                .firstname(user.getFirstname())
+                .lastname(user.getLastname())
+                .token(token)
+                .build();
     }
 }

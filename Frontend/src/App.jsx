@@ -1,37 +1,37 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import './App.css'
-import { SideBar } from './components/Sidebar/SideBar'
-import { Dashboard } from './components/Dashboard'
-import { Help } from './components/Help'
-import { Inventory } from './components/Inventory/Inventory'
-import { Users } from './components/Users'
-import { Settings } from './components/Settings/Settings'
-import { NewUser } from './components/NewUser'
-import { NavBar } from './components/NavBar/NavBar'
-import Login from './components/Login/Login'
-import { useContext, useEffect, useState } from 'react'
-import AddItem from './components/AddItem'
-import { UserContext } from './libs/context/userProvider'
-import { types } from './libs/context/userReducer'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import './App.css';
+import { SideBar } from './components/Sidebar/SideBar';
+import { Dashboard } from './components/Dashboard';
+import { Help } from './components/Help';
+import { Inventory } from './components/Inventory/Inventory';
+import { Users } from './components/Users';
+import { Settings } from './components/Settings/Settings';
+import { NewUser } from './components/NewUser';
+import { NavBar } from './components/NavBar/NavBar';
+import Login from './components/Login/Login';
+import { useContext, useEffect, useState } from 'react';
+import AddItem from './components/AddItem';
+import { UserContext } from './libs/context/userProvider';
+import { types } from './libs/context/userReducer';
 
 function App() {
   //logical part of user logged
-  const [log, setLog] = useState(localStorage.getItem('log'))
+  const [log, setLog] = useState(localStorage.getItem('log'));
 
   useEffect(() => {
-    setLog(localStorage.getItem('log') ?? 'false')
-  }, [])
+    setLog(localStorage.getItem('log') ?? 'false');
+  }, []);
   useEffect(() => {
-    localStorage.setItem('log', log)
-  }, [log])
+    localStorage.setItem('log', log);
+  }, [log]);
 
-  const [data, dispatch] = useContext(UserContext)
+  const [data, dispatch] = useContext(UserContext);
   useEffect(() => {
     dispatch({
       type: types.authLogin,
-      payload: { log }
-    })
-  }, [])
+      payload: { log },
+    });
+  }, []);
   return (
     <BrowserRouter>
       <div className='flex text-black'>
@@ -60,7 +60,7 @@ function App() {
         }
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

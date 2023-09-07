@@ -1,10 +1,10 @@
-import { RxExit } from 'react-icons/rx'
-import { UserContext } from '../../libs/context/userProvider'
-import { types } from '../../libs/context/userReducer'
-import { useContext } from 'react'
+import { RxExit } from 'react-icons/rx';
+import { UserContext } from '../../libs/context/userProvider';
+import { types } from '../../libs/context/userReducer';
+import { useContext } from 'react';
 
 const BtnSalir = () => {
-  const [data, dispatch] = useContext(UserContext)
+  const [data, dispatch] = useContext(UserContext);
   return (
     <>
       <button
@@ -28,8 +28,8 @@ const BtnSalir = () => {
             <button
               onClick={() => {
                 dispatch({
-                  type: types.authLogout
-                })
+                  type: types.authLogout,
+                });
               }}
               className='btn'
             >
@@ -39,6 +39,6 @@ const BtnSalir = () => {
         </form>
       </dialog>
     </>
-  )
-}
-export default BtnSalir
+  );
+};
+export default BtnSalir;
