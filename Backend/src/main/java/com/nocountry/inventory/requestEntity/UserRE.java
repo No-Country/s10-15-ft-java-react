@@ -12,9 +12,5 @@ import lombok.NoArgsConstructor;
 public class UserRE {
 
     private String userName;
-    private String firstname;
-    private String lastname;
     private String password;
-    private String country;
-
 }
