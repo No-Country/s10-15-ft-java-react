@@ -30,6 +30,35 @@ const AddItem = () => {
     })
   }
 
+  /* const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  }; */
+
+
+  const imageUpload = async (evt) => {
+    const file = evt.target.files[0];
+    //const base64 = await convertBase64(file);
+    
+    setFormData({
+      ...formData,
+      pathImage: file.name
+    });
+    console.log(formData);
+  };
+
+
+
   const handleSubmit = async (evt) => {
     evt.preventDefault()
     setIsLoading(true)
@@ -80,7 +109,7 @@ const AddItem = () => {
                 type='file'
                 accept='image/*'
                 name='pathImage'
-                // onChange={imageUpload} // Actualiza el estado de la imagen
+                onChange={ (evt) => imageUpload(evt) }
               />
               <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
                 <FaCamera />
