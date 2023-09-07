@@ -15,7 +15,6 @@ import javax.print.DocFlavor;
 
 @RequestMapping("/user")
 @RestController
-//@Secured("ROLE_ADMIN")
 public class UserController {
 
     @Autowired
