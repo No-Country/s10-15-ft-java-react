@@ -4,7 +4,7 @@
 
 ## Descripción del Proyecto
 
-"StockFLow" es una poderosa herramienta de gestión de ventas e inventario diseñada para optimizar tus operaciones comerciales. Con un backend Java y un frontend React, disfrutarás de una experiencia perfecta y eficiente.
+StockFlow es un innovador aplicativo web diseñado para transformar por completo la gestión de tu inventario y almacén. Nuestra plataforma tiene un objetivo claro: mejorar la experiencia de control y gestión de tus productos, materiales o activos de manera sencilla, personalizada y atractiva.
 
 ## Características Destacadas 🌟
 
