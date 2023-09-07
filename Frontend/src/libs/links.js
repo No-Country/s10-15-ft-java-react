@@ -1,32 +1,32 @@
-import { AiTwotoneSetting } from "react-icons/ai";
-import { BiHelpCircle, BiSolidDashboard } from "react-icons/bi";
-import { HiUsers } from "react-icons/hi";
-import { MdInventory } from "react-icons/md";
+import { AiTwotoneSetting } from 'react-icons/ai';
+import { BiHelpCircle, BiSolidDashboard } from 'react-icons/bi';
+import { HiUsers } from 'react-icons/hi';
+import { MdInventory } from 'react-icons/md';
 //links file = array of links with their respective path-route, label and icon
 export const links = [
   {
     label: 'Dashboard',
     route: '/dashboard',
-    icon: BiSolidDashboard
+    icon: BiSolidDashboard,
   },
   {
     label: 'Inventario',
     route: '/inventario',
-    icon: MdInventory
+    icon: MdInventory,
   },
   {
     label: 'Usuarios',
     route: '/usuarios',
-    icon: HiUsers
+    icon: HiUsers,
   },
   {
     label: 'Configuracion',
     route: '/configuracion',
-    icon: AiTwotoneSetting
+    icon: AiTwotoneSetting,
   },
   {
     label: 'Ayuda',
     route: '/ayuda',
-    icon: BiHelpCircle
-  }
-]
+    icon: BiHelpCircle,
+  },
+];

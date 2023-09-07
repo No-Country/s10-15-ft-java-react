@@ -1,12 +1,12 @@
-import { FaCamera } from 'react-icons/fa'
-import { MdUpload } from 'react-icons/md'
-import createProduct from '../libs/productPost'
-import { useEffect, useState } from 'react'
-import postImageProduct from '../libs/postImageProduct'
+import { FaCamera } from 'react-icons/fa';
+import { MdUpload } from 'react-icons/md';
+import createProduct from '../libs/productPost';
+import { useEffect, useState } from 'react';
+import postImageProduct from '../libs/postImageProduct';
 
 const AddItem = () => {
-  const [file, setFile] = useState()
-  const [nameFile, setNameFile] = useState('')
+  const [file, setFile] = useState();
+  const [nameFile, setNameFile] = useState('');
   const [formData, setFormData] = useState({
     productName: '',
     itemCode: '',
@@ -16,33 +16,33 @@ const AddItem = () => {
     locationDeposit: 'dfdsfsd',
     provider: 0,
     description: '',
-    warehouseStatus: 'In Stock'
-  })
+    warehouseStatus: 'In Stock',
+  });
   useEffect(() => {
-    setFile(file)
-    setNameFile(nameFile)
-  }, [file, nameFile, formData])
-  const [isLoading, setIsLoading] = useState(false)
+    setFile(file);
+    setNameFile(nameFile);
+  }, [file, nameFile, formData]);
+  const [isLoading, setIsLoading] = useState(false);
   //const [imagen, setImagen] = useState('');
 
   const handleInputChange = (evt) => {
-    const { name, value } = evt.target
+    const { name, value } = evt.target;
     setFormData({
       ...formData,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const handleSubmit = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      await createProduct(formData)
+      await createProduct(formData);
     } catch (error) {
-      error
+      error;
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <div className='p-5'>
@@ -51,11 +51,11 @@ const AddItem = () => {
           id='file'
           className='flex mt-6'
           onSubmit={(e) => {
-            e.preventDefault()
-            const formData = new FormData()
-            formData.append('file', file, nameFile)
-            postImageProduct(formData)
-            handleSubmit()
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('file', file, nameFile);
+            postImageProduct(formData);
+            handleSubmit();
           }}
           encType='multipart/form-data'
         >
@@ -67,12 +67,12 @@ const AddItem = () => {
                 accept='image/*'
                 name='file'
                 onChange={(e) => {
-                  setNameFile(`${e.target.files[0].name}`)
-                  setFile(e.target.files[0])
+                  setNameFile(`${e.target.files[0].name}`);
+                  setFile(e.target.files[0]);
                   setFormData({
                     ...formData,
-                    pathImage: `${e.target.files[0].name}`
-                  })
+                    pathImage: `${e.target.files[0].name}`,
+                  });
                 }} // Actualiza el estado de la imagen
               />
               <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
@@ -91,7 +91,7 @@ const AddItem = () => {
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='itemCode'
                 value={formData.itemCode || ''}
-                onChange={ (evt) => handleInputChange(evt) }
+                onChange={(evt) => handleInputChange(evt)}
               />
               <input
                 required
@@ -157,7 +157,7 @@ const AddItem = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddItem
+export default AddItem;

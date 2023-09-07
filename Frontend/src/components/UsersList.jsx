@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import axios from 'axios'
-import { MdModeEdit } from 'react-icons/md'
+import axios from 'axios';
+import { MdModeEdit } from 'react-icons/md';
 
 export const UsersList = () => {
-  const uriUsers = '../../users.json'
+  const uriUsers = '../../users.json';
 
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios(uriUsers)
       .then((res) => setUsers(res.data))
-      .catch((err) => console.log(err))
-  }, [])
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className='mt-2'>
@@ -32,5 +32,5 @@ export const UsersList = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};

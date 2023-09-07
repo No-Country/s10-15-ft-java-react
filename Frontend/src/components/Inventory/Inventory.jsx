@@ -1,23 +1,23 @@
-import { useEffect, useState } from 'react'
-import { AiOutlinePlus } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
-import Filter from './Filter'
-import SearchBar from './SearchBar'
-import { getProductsInventory } from '../../libs/getProductsInventory'
-import { filterData } from '../../libs/filterData'
-import { ProductItemComponent } from './ProductItemComponent'
+import { useEffect, useState } from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import Filter from './Filter';
+import SearchBar from './SearchBar';
+import { getProductsInventory } from '../../libs/getProductsInventory';
+import { filterData } from '../../libs/filterData';
+import { ProductItemComponent } from './ProductItemComponent';
 
 export const Inventory = () => {
-  const [items, setItems] = useState([])
-  const [category, setCategory] = useState('')
-  const [searchQuery, setSearchQuery] = useState('')
-  const [categories, setCategories] = useState([])
+  const [items, setItems] = useState([]);
+  const [category, setCategory] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
-    getProductsInventory(categories, setItems, setCategories)
-  }, [items, categories])
+    getProductsInventory(categories, setItems, setCategories);
+  }, [items, categories]);
 
-  const searchedData = filterData(searchQuery, items, 'search')
-  const filteredData = filterData(category, searchedData)
+  const searchedData = filterData(searchQuery, items, 'search');
+  const filteredData = filterData(category, searchedData);
 
   return (
     <div className='p-5 flex flex-col gap-6 '>
@@ -48,7 +48,11 @@ export const Inventory = () => {
       <div>
         {filteredData.length ? (
           filteredData.map((item) =>
-            item.id ? <ProductItemComponent key={item.id} item={item} /> : <></>
+            item.id ? (
+              <ProductItemComponent key={item.id} item={item} />
+            ) : (
+              <></>
+            ),
           )
         ) : (
           <div className='flex justify-center items-center'>
@@ -57,5 +61,5 @@ export const Inventory = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};

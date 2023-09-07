@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
-import { MdDelete } from 'react-icons/md'
-import { deleteProduct } from '../../libs/deleteProduct'
-import UpdateBtn from './UpdateBtn'
+import { MdDelete } from 'react-icons/md';
+import { deleteProduct } from '../../libs/deleteProduct';
+import UpdateBtn from './UpdateBtn';
+import { ProductItemComponentPropTypes } from '../../utils/prop-types';
 
 export const ProductItemComponent = ({ item }) => {
   return (
@@ -29,12 +29,14 @@ export const ProductItemComponent = ({ item }) => {
           >
             <MdDelete
               onClick={() => {
-                deleteProduct(item.id)
+                deleteProduct(item.id);
               }}
             />
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+ProductItemComponent.propTypes = ProductItemComponentPropTypes;

@@ -1,5 +1,5 @@
-import { AiOutlinePlus, AiTwotoneFilter } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { AiOutlinePlus, AiTwotoneFilter } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 export const FilterNav = () => {
   return (
@@ -27,5 +27,5 @@ export const FilterNav = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

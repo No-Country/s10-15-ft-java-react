@@ -1,9 +1,9 @@
-import { useContext } from 'react'
-import { RxExit } from 'react-icons/rx'
-import { UserContext } from '../../libs/context/useContext'
+import { useContext } from 'react';
+import { RxExit } from 'react-icons/rx';
+import { UserContext } from '../../libs/context/useContext';
 
 const BtnSalir = () => {
-  const { setLog } = useContext(UserContext)
+  const { setLog } = useContext(UserContext);
   return (
     <>
       <button
@@ -26,7 +26,7 @@ const BtnSalir = () => {
             </div>
             <button
               onClick={() => {
-                setLog('false')
+                setLog('false');
               }}
               className='btn'
             >
@@ -36,6 +36,6 @@ const BtnSalir = () => {
         </form>
       </dialog>
     </>
-  )
-}
-export default BtnSalir
+  );
+};
+export default BtnSalir;
