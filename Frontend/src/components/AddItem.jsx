@@ -3,7 +3,6 @@ import { MdUpload } from 'react-icons/md'
 import createProduct from '../libs/productPost'
 import { useEffect, useState } from 'react'
 import postImageProduct from '../libs/postImageProduct'
-//import postImageProduct from '../libs/postImageProduct';
 
 const AddItem = () => {
   const [file, setFile] = useState()
@@ -91,8 +90,8 @@ const AddItem = () => {
                 placeholder='Código del item'
                 className='input input-bordered outline-none w-full  border border-gray-400'
                 name='itemCode'
-                value={formData.itemCode}
-                onChange={(evt) => handleInputChange(evt)}
+                value={formData.itemCode || ''}
+                onChange={ (evt) => handleInputChange(evt) }
               />
               <input
                 required
