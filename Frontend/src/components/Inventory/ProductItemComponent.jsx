@@ -10,7 +10,7 @@ export const ProductItemComponent = ({ item }) => {
         <div className='col-span-3 flex justify-start items-center gap-6'>
           <div className='flex flex-row items-center border rounded-md border-gray-400 h-[40px] w-[40px] overflow-hidden p-1 '>
             <img
-              src={`https://s10-15-ft-java-react-production.up.railway.app/${item.pathImage}`}
+              src={`https://s10-15-ft-java-react-production.up.railway.app/images/${item.pathImage}`}
               alt={item.productName}
               className='  object-center object-cover '
             />

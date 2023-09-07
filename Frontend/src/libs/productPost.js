@@ -10,13 +10,13 @@ const createProduct = async (productData) => {
             );
 
             if (resp) {
-                console.log('Pesticion exitosa');
+resp
                 
             } else {
-                console.error('Petición fallida');
+               resp
             }
         } catch (error) {
-            console.error('Error al realizar la solicitud:', error);
+            error
         }
     };
 
