@@ -1,24 +1,27 @@
 import { FaCamera } from 'react-icons/fa'
 import { MdUpload } from 'react-icons/md'
 import createProduct from '../libs/productPost'
-import { useState } from 'react'
-import axios from 'axios'
-//import postImageProduct from '../libs/postImageProduct';
+import { useEffect, useState } from 'react'
+import postImageProduct from '../libs/postImageProduct'
 
 const AddItem = () => {
+  const [file, setFile] = useState()
+  const [nameFile, setNameFile] = useState('')
   const [formData, setFormData] = useState({
     productName: '',
     itemCode: '',
     category: 0,
     uniPrice: 0.0,
     quantityStock: 0,
-    pathImage: '',
-    locationDeposit: '',
+    locationDeposit: 'dfdsfsd',
     provider: 0,
     description: '',
     warehouseStatus: 'In Stock'
   })
-
+  useEffect(() => {
+    setFile(file)
+    setNameFile(nameFile)
+  }, [file, nameFile, formData])
   const [isLoading, setIsLoading] = useState(false)
   //const [imagen, setImagen] = useState('');
 
@@ -30,70 +33,12 @@ const AddItem = () => {
     })
   }
 
-  /* const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  }; */
-
-
-  const imageUpload = async (evt) => {
-    const file = evt.target.files[0];
-    //const base64 = await convertBase64(file);
-    
-    setFormData({
-      ...formData,
-      pathImage: file.name
-    });
-    console.log(formData);
-  };
-
-
-
-  const handleSubmit = async (evt) => {
-    evt.preventDefault()
+  const handleSubmit = async () => {
     setIsLoading(true)
     try {
-      // Primero, envía la imagen a la URL de carga de archivos
-      //const formData = new FormData();
-      //formData.append('file', evt.target.pathImage.files[0]); // Agrega el archivo seleccionado al formData
-      console.log(formData);
-  
-      const resp = await axios.post('https://s10-15-ft-java-react-production.up.railway.app/files/upload', formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        }
-      );
-
-      
-      if (resp) {
-        const imageUrl = resp.data;
-
-        // Actualiza la URL de la imagen en el formData
-        setFormData({
-          ...formData,
-          pathImage: imageUrl,
-        });
-
-        console.log(formData);
-  
-        console.log('Producto creado exitosamente');
-      }
-      await createProduct(formData);
-      
+      await createProduct(formData)
     } catch (error) {
-      console.error('Error al crear el producto:', error)
+      error
     } finally {
       setIsLoading(false)
     }
@@ -102,14 +47,33 @@ const AddItem = () => {
   return (
     <div className='p-5'>
       <div>
-        <form className='flex mt-6' onSubmit={handleSubmit}>
+        <form
+          id='file'
+          className='flex mt-6'
+          onSubmit={(e) => {
+            e.preventDefault()
+            const formData = new FormData()
+            formData.append('file', file, nameFile)
+            postImageProduct(formData)
+            handleSubmit()
+          }}
+          encType='multipart/form-data'
+        >
           <div className='flex w-[70%]  justify-center items-center gap-4'>
             <div className='flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1'>
               <input
+                required
                 type='file'
                 accept='image/*'
-                name='pathImage'
-                onChange={ (evt) => imageUpload(evt) }
+                name='file'
+                onChange={(e) => {
+                  setNameFile(`${e.target.files[0].name}`)
+                  setFile(e.target.files[0])
+                  setFormData({
+                    ...formData,
+                    pathImage: `${e.target.files[0].name}`
+                  })
+                }} // Actualiza el estado de la imagen
               />
               <div className='h-[150px] w-[150px] bg-slate-300 rounded-xl flex justify-center items-center text-5xl'>
                 <FaCamera />
@@ -121,6 +85,7 @@ const AddItem = () => {
             </div>
             <div className='flex flex-col w-[70%] gap-4 p-10'>
               <input
+                required
                 type='text'
                 placeholder='Código del item'
                 className='input input-bordered outline-none w-full  border border-gray-400'
@@ -129,6 +94,7 @@ const AddItem = () => {
                 onChange={ (evt) => handleInputChange(evt) }
               />
               <input
+                required
                 type='text'
                 placeholder='Nombre'
                 className='input input-bordered outline-none w-full  border border-gray-400'
@@ -137,6 +103,7 @@ const AddItem = () => {
                 onChange={handleInputChange}
               />
               <input
+                required
                 type='text'
                 placeholder='Precio'
                 className='input input-bordered outline-none w-full  border border-gray-400'
@@ -145,6 +112,7 @@ const AddItem = () => {
                 onChange={handleInputChange}
               />
               <input
+                required
                 type='text'
                 placeholder='Stock'
                 className='input input-bordered outline-none w-full  border border-gray-400'
@@ -153,6 +121,7 @@ const AddItem = () => {
                 onChange={handleInputChange}
               />
               <input
+                required
                 type='text'
                 placeholder='Categoria'
                 className='input input-bordered outline-none w-full  border border-gray-400'
@@ -161,6 +130,7 @@ const AddItem = () => {
                 onChange={handleInputChange}
               />
               <input
+                required
                 type='text'
                 placeholder='Proveedor'
                 className='input input-bordered outline-none w-full  border border-gray-400'
