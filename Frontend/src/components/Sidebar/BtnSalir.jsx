@@ -5,7 +5,6 @@ import { useContext } from 'react'
 
 const BtnSalir = () => {
   const [data, dispatch] = useContext(UserContext)
-  const { setLog } = data.auth
   return (
     <>
       <button
@@ -28,7 +27,9 @@ const BtnSalir = () => {
             </div>
             <button
               onClick={() => {
-                setLog('false')
+                dispatch({
+                  type: types.authLogout
+                })
               }}
               className='btn'
             >

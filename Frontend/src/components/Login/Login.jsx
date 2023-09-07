@@ -3,6 +3,7 @@ import { UserContext } from '../../libs/context/userProvider'
 import LoginPost from '../../libs/loginPost'
 import ErrorFormLoginComponent from './ErrorFormLoginComponent'
 import { types } from '../../libs/context/userReducer'
+
 const Login = () => {
   const [stat, setStat] = useState()
   useEffect((stat) => {
@@ -11,7 +12,6 @@ const Login = () => {
   const [user, setUser] = useState('')
   const [pass, setPass] = useState('')
   const [data, dispatch] = useContext(UserContext)
-  const { setLog } = data.auth
 
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
@@ -22,7 +22,10 @@ const Login = () => {
           onSubmit={(e) => {
             e.preventDefault()
             LoginPost({ stat, setStat, pass, user })
-            stat === 200 ? setLog('true') : {}
+            //stat === 200 ? setLog('true') : {}
+            dispatch({
+              type: types.authLogin
+            })
           }}
         >
           <label htmlFor='user' className='flex flex-col items-start'>

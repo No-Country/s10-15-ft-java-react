@@ -1,13 +1,15 @@
 export const types = {
   authLogin: 'authLogin',
-  authLogout: 'authLogout'
+  authLogout: 'authLogout',
+  userUpdate: 'userUpdate'
 }
 
 export const initialUser = {
-  id: 0,
-  username: '',
-  role: '',
-  img: '',
+  user:{
+    id: 0,
+    username: 'Administrador',
+    role: 'admin',
+    img: 'user.png'},
   auth:{
   }
 }
@@ -17,12 +19,18 @@ const userReducer = (state, action) =>{
     case types.authLogin:
       return{
         ...state,
-        auth: action.payload
+        auth: {log: 'true'}
       }
     case types.authLogout:
       return{
-        auth: setLog('false')
+        ...state,
+        auth: {log: 'false'}
       }
+      case types.userUpdate:
+        return{
+          ...state,
+          user: action.payload
+        }
     default:
       return state
   }
