@@ -1,9 +1,11 @@
-import { useContext } from 'react'
 import { RxExit } from 'react-icons/rx'
-import { UserContext } from '../../libs/context/useContext'
+import { UserContext } from '../../libs/context/userProvider'
+import { types } from '../../libs/context/userReducer'
+import { useContext } from 'react'
 
 const BtnSalir = () => {
-  const { setLog } = useContext(UserContext)
+  const [data, dispatch] = useContext(UserContext)
+  const { setLog } = data.auth
   return (
     <>
       <button
