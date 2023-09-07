@@ -6,6 +6,7 @@ import { EditUserPropTypes } from '../../utils/prop-types';
 export const EditUser = ({ username, img }) => {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState('');
+  const [fileURL, setFileURL] = useState(img);
   const handleChange = (e) => {
     setFileName(e.target.files[0].name);
     setFile(e.target.files[0]);
@@ -17,22 +18,22 @@ export const EditUser = ({ username, img }) => {
     const formData = new FormData();
     formData.append('file', file, fileName);
     console.log(formData);
-    axios
-      .post(
-        'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
-        },
-      )
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    // axios
+    //   .post(
+    //     'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
+    //     formData,
+    //     {
+    //       headers: {
+    //         'Content-Type': 'multipart/form-data'
+    //       }
+    //     }
+    //   )
+    //   .then(function (response) {
+    //     console.log(response)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
   };
 
   return (
@@ -54,7 +55,7 @@ export const EditUser = ({ username, img }) => {
                 className='flex items-center justify-center cursor-pointer w-full h-full'
               >
                 <Avatar
-                  src={file}
+                  src={fileURL}
                   className='group-hover:opacity-50 rounded-full'
                   size='100%'
                 />

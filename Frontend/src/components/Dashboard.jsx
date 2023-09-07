@@ -5,20 +5,27 @@ import { IoMdNotifications } from 'react-icons/io';
 import { CardInfo } from './CardInfo';
 import { CardStock } from './CardStock';
 import { useEffect, useState } from 'react';
-import getAllProducts from '../libs/productGet';
+import getProductsDashboard from '../libs/getProductsDashboard';
 
 export const Dashboard = () => {
   const [items, setItems] = useState([]);
-
   useEffect(() => {
-    getAllProducts().then((res) => {
+    getProductsDashboard().then((res) => {
       setItems(res.data);
     });
-  }, []);
+  }, [items]);
 
   // contar cantidad de providers mientars sean distintos
   const providers = items.map((item) => item.provider);
   const lenghtProviders = [...new Set(providers)]; // Set solo permite valores unicos...
+
+  // Productos con stock bajo (menor a 10)
+  const stockBajo = items.filter((item) => item.quantityStock < 10);
+  const cantidadStockBajo = stockBajo[0]?.quantityStock;
+
+  // Productos con stock alto (mayor a 20)
+  const stockAlto = items.filter((item) => item.quantityStock > 20);
+  const cantidadStockAlto = stockAlto[0]?.quantityStock;
 
   return (
     <div className='p-5 flex flex-col gap-6 w-full'>
@@ -54,8 +61,8 @@ export const Dashboard = () => {
             icon={FiArrowDownRight}
             customClass='text-red-700'
             title='Stock Bajo'
-            nameProduct='Producto'
-            number={0}
+            nameProduct={stockBajo[0]?.productName}
+            number={cantidadStockBajo}
           />
         </div>
         <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
@@ -63,17 +70,8 @@ export const Dashboard = () => {
             icon={FiArrowUpRight}
             customClass='text-green-700'
             title='Stock Alto'
-            nameProduct='Producto'
-            number={0}
-          />
-        </div>
-        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
-          <CardStock
-            icon={FiArrowUpRight}
-            customClass='text-red-700'
-            title='Sobre Stock'
-            nameProduct='Producto'
-            number={0}
+            nameProduct={stockAlto[0]?.productName}
+            number={cantidadStockAlto}
           />
         </div>
       </div>

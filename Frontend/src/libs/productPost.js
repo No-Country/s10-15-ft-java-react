@@ -6,15 +6,20 @@ const createProduct = async (productData) => {
     const resp = await axios.post(
       `https://s10-15-ft-java-react-production.up.railway.app/product/save`,
       productData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
     );
 
     if (resp) {
-      console.log('Pesticion exitosa');
+      resp;
     } else {
-      console.error('Petición fallida');
+      resp;
     }
   } catch (error) {
-    console.error('Error al realizar la solicitud:', error);
+    error;
   }
 };
 

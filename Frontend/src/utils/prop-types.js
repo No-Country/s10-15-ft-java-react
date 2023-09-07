@@ -1,39 +1,65 @@
 import PropTypes from 'prop-types';
 
 export const CardInfoPropTypes = {
-  icon: PropTypes.elementType.isRequired,
-  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  title: PropTypes.string.isRequired,
+  icon: PropTypes.elementType,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  title: PropTypes.string,
 };
 
 export const CardStockPropTypes = {
-  icon: PropTypes.elementType.isRequired,
-  title: PropTypes.string.isRequired,
-  nameProduct: PropTypes.string.isRequired,
-  number: PropTypes.number.isRequired,
+  icon: PropTypes.elementType,
+  title: PropTypes.string,
+  nameProduct: PropTypes.string,
+  number: PropTypes.number,
   customClass: PropTypes.string,
 };
 
 export const FilterPropTypes = {
-  category: PropTypes.string.isRequired,
-  setCategory: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
-export const ProductItemComponentPropTypes = {
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  code: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired,
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
+  setCategory: PropTypes.func,
+  categories: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const EditUserPropTypes = {
-  username: PropTypes.string.isRequired,
+  username: PropTypes.string,
   img: PropTypes.string,
 };
 
 export const SearchBarPropTypes = {
-  setSearchQuery: PropTypes.func.isRequired,
+  setSearchQuery: PropTypes.func,
+};
+
+export const ModalUpdateProductPropTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    productName: PropTypes.string,
+    itemCode: PropTypes.string,
+    category: PropTypes.string,
+    quantityStock: PropTypes.number,
+    uniPrice: PropTypes.number,
+  }),
+  setMostrar: PropTypes.func,
+};
+
+export const ProductItemComponentPropTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    productName: PropTypes.string,
+    itemCode: PropTypes.string,
+    category: PropTypes.string,
+    quantityStock: PropTypes.number,
+    uniPrice: PropTypes.number,
+    pathImage: PropTypes.string,
+  }),
+};
+
+export const UpdateBtnPropTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    productName: PropTypes.string,
+    itemCode: PropTypes.string,
+    category: PropTypes.string,
+    quantityStock: PropTypes.number,
+    uniPrice: PropTypes.number,
+  }),
 };

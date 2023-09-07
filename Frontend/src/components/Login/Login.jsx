@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../libs/context/useContext';
 import LoginPost from '../../libs/loginPost';
 import ErrorFormLoginComponent from './ErrorFormLoginComponent';
-const API_URL = import.meta.env.VITE_API_URL;
 const Login = () => {
   const [stat, setStat] = useState();
   useEffect((stat) => {
@@ -11,7 +10,7 @@ const Login = () => {
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
   const { setLog } = useContext(UserContext);
-  user && pass ? LoginPost({ stat, setLog, setStat, pass, user, API_URL }) : {};
+  user && pass ? LoginPost({ stat, setLog, setStat, pass, user }) : {};
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
       <div className='flex flex-col items-center w-1/2 gap-10'>

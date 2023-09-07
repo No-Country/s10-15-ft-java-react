@@ -5,7 +5,7 @@ import { GrNext } from 'react-icons/gr';
 
 export const Settings = () => {
   const [isVisible, setIsVisible] = useState(false);
-  let img = 'vite.svg';
+  let img = 'user.png';
   let username = 'Franco Fleitas';
 
   const handleClick = () => {
