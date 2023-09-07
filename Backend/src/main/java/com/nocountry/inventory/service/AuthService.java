@@ -37,8 +37,6 @@ public class AuthService {
 
         user.setUsername(userRE.getUserName());
         user.setPassword(passwordEncoder.encode(userRE.getPassword()));
-        user.setLastname(userRE.getLastname());
-        user.setFirstname(userRE.getFirstname());
         user.setRole(ERole.USER);
 
         userEntityRepository.save(user);

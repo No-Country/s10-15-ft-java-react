@@ -15,13 +15,13 @@ import javax.print.DocFlavor;
 
 @RequestMapping("/user")
 @RestController
-@Secured("ROLE_ADMIN")
+//@Secured("ROLE_ADMIN")
 public class UserController {
 
     @Autowired
     UserEntityService userEntityService;
 
-    @GetMapping("/listAll")
+    @GetMapping
     public ResponseEntity<?> listAllUsers(){
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"FULL",userEntityService.listAllUsers()));
     }

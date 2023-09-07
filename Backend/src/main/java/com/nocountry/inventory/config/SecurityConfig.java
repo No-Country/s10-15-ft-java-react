@@ -61,7 +61,7 @@ public class SecurityConfig {
   CorsConfigurationSource courseF() {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(
-        List.of("https://stockflows10.vercel.app/", "http://localhost:5173/"));
+        List.of("https://stockflows10.vercel.app/", "http://localhost:5173/", "https://stockflows10.netlify.app/"));
     configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
     configuration.setAllowedHeaders(List.of("Authorization"));
 

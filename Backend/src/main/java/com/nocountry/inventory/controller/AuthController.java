@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
-//@CrossOrigin(origins = {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/","http://localhost:5173/"})
 public class AuthController {
     private final AuthService authService;
     private final UserEntityService userEntityService;
