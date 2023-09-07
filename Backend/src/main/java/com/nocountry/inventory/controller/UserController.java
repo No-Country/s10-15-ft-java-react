@@ -21,7 +21,7 @@ public class UserController {
     @Autowired
     UserEntityService userEntityService;
 
-    @GetMapping
+    @GetMapping("/listAll")
     public ResponseEntity<?> listAllUsers(){
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"FULL",userEntityService.listAllUsers()));
     }
