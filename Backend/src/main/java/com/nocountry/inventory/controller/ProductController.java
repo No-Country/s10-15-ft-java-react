@@ -53,6 +53,8 @@ public class ProductController {
     // update product
     @PutMapping(value = "/update")
     public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity) {
+        //Mostrando lo que se recibe
+        System.out.println(productEntity);
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.updateProduct(productEntity)));
     }
