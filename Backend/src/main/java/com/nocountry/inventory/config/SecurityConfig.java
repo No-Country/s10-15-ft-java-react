@@ -74,6 +74,7 @@ public class SecurityConfig {
     sourse.registerCorsConfiguration("/**", configuration);
     return sourse;
 
+    
   }
 
 }
