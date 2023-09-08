@@ -63,7 +63,7 @@ public class SecurityConfig {
   }
 
   @Bean
-  CorsConfigurationSource courseF() {
+  CorsConfigurationSource corsFilter() {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(
         List.of("https://stockflows10.vercel.app", "http://localhost:5173", "https://stockflows10.netlify.app"));
@@ -74,6 +74,7 @@ public class SecurityConfig {
     sourse.registerCorsConfiguration("/**", configuration);
     return sourse;
 
+    
   }
 
 }
