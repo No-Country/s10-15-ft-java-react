@@ -1,17 +1,16 @@
-import { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../../libs/context/useContext'
-import LoginPost from '../../libs/loginPost'
-import ErrorFormLoginComponent from './ErrorFormLoginComponent'
-const API_URL = import.meta.env.VITE_API_URL
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../libs/context/useContext';
+import LoginPost from '../../libs/loginPost';
+import ErrorFormLoginComponent from './ErrorFormLoginComponent';
 const Login = () => {
-  const [stat, setStat] = useState()
+  const [stat, setStat] = useState();
   useEffect((stat) => {
-    setStat(stat)
-  }, [])
-  const [user, setUser] = useState('')
-  const [pass, setPass] = useState('')
-  const { setLog } = useContext(UserContext)
-  user && pass ? LoginPost({ stat, setLog, setStat, pass, user, API_URL }) : {}
+    setStat(stat);
+  }, []);
+  const [user, setUser] = useState('');
+  const [pass, setPass] = useState('');
+  const { setLog } = useContext(UserContext);
+  user && pass ? LoginPost({ stat, setLog, setStat, pass, user }) : {};
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
       <div className='flex flex-col items-center w-1/2 gap-10'>
@@ -19,8 +18,8 @@ const Login = () => {
         <form
           className='flex flex-col items-center gap-7 w-350px'
           onSubmit={(e) => {
-            e.preventDefault()
-            stat === 200 ? setLog('true') : {}
+            e.preventDefault();
+            stat === 200 ? setLog('true') : {};
           }}
         >
           <label htmlFor='user' className='flex flex-col items-start'>
@@ -31,7 +30,7 @@ const Login = () => {
               id='user'
               required
               onChange={(e) => {
-                setUser(e.target.value)
+                setUser(e.target.value.toLocaleLowerCase());
               }}
             />
           </label>
@@ -43,7 +42,7 @@ const Login = () => {
               id='password'
               required
               onChange={(e) => {
-                setPass(e.target.value)
+                setPass(e.target.value);
               }}
             />
             <ErrorFormLoginComponent data={{ user, pass, stat }} />
@@ -66,7 +65,7 @@ const Login = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { links } from '../../libs/links'
-import BtnSalir from './BtnSalir'
+import { Link } from 'react-router-dom';
+import { links } from '../../libs/links';
+import BtnSalir from './BtnSalir';
 
 export const SideBar = () => {
   return (
@@ -26,5 +26,5 @@ export const SideBar = () => {
         <BtnSalir />
       </div>
     </nav>
-  )
-}
+  );
+};

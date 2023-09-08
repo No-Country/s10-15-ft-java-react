@@ -1,19 +1,19 @@
-import { useContext } from 'react'
-import { RxExit } from 'react-icons/rx'
-import { UserContext } from '../../libs/context/useContext'
+import { useContext } from 'react';
+import { RxExit } from 'react-icons/rx';
+import { UserContext } from '../../libs/context/useContext';
 
 const BtnSalir = () => {
-  const { setLog } = useContext(UserContext)
+  const { setLog } = useContext(UserContext);
   return (
     <>
       <button
         className='flex items-center hover:bg-primary-focus py-4 rounded-xl px-2 w-full'
-        onClick={() => window.my_modal_1.showModal()}
+        onClick={() => window.modalSalir.showModal()}
       >
         <RxExit className='me-5 text-2xl' />
         Salir
       </button>
-      <dialog id='my_modal_1' className='modal'>
+      <dialog id='modalSalir' className='modal'>
         <form method='dialog' className='modal-box'>
           <h3 className='font-bold text-black'>ESTA SEGURO QUE DESEA SALIR?</h3>
           <p className='py-4 text-black'>
@@ -26,7 +26,7 @@ const BtnSalir = () => {
             </div>
             <button
               onClick={() => {
-                setLog('false')
+                setLog('false');
               }}
               className='btn'
             >
@@ -36,6 +36,6 @@ const BtnSalir = () => {
         </form>
       </dialog>
     </>
-  )
-}
-export default BtnSalir
+  );
+};
+export default BtnSalir;
