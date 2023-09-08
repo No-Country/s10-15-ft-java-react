@@ -63,17 +63,18 @@ public class SecurityConfig {
   }
 
   @Bean
-  CorsConfigurationSource courseF() {
+  CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
     configuration.setAllowedOrigins(
-        List.of("https://stockflows10.vercel.app/", "http://localhost:5173/", "https://stockflows10.netlify.app/"));
-    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+        List.of("https://stockflows10.vercel.app", "http://localhost:5173", "https://stockflows10.netlify.app"));
+    configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH"));
     configuration.setAllowedHeaders(List.of("Authorization"));
 
     UrlBasedCorsConfigurationSource sourse = new UrlBasedCorsConfigurationSource();
     sourse.registerCorsConfiguration("/**", configuration);
     return sourse;
 
+    
   }
 
 }
