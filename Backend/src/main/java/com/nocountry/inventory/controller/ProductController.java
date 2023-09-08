@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 //@Secured("ROLE_ADMIN")
 // @CrossOrigin(origins =
 // {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/","http://localhost:5173/"})
-//@CrossOrigin(origins = { "*" })
+@CrossOrigin(origins = { "*" })
 public class ProductController {
     @Autowired
     ProductEntityService productEntityService;
