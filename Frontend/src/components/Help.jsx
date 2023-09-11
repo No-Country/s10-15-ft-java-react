@@ -11,7 +11,7 @@ export const Help = () => {
           Aprende cómo utilizar todas las características del sistema de gestión
           de inventario.
         </p>
-        <Link to='/guia-de-uso' className='text-blue-500 hover:underline'>
+        <Link to='/GuiaUso' className='text-blue-500 hover:underline'>
           Ir a la Guía de Uso
         </Link>
       </div>

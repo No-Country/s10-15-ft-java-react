@@ -12,6 +12,8 @@ import Login from './components/Login/Login'
 import { useEffect, useState } from 'react'
 import { UserContext } from './libs/context/useContext'
 import AddItem from './components/AddItem'
+import GuiaUso from './components/GuiaUso'
+import PreguntasFrecuentes from './components/PreguntasFrecuentes'
 
 function App() {
   //logical part of user logged
@@ -48,6 +50,8 @@ function App() {
                     <Route path='/nuevoUsuario' element={<NewUser />} />
                     <Route path='/configuracion' element={<Settings />} />
                     <Route path='/ayuda' element={<Help />} />
+                    <Route path='/GuiaUso' element={<GuiaUso />} />
+                    <Route path='/preguntas-frecuentes' element={<PreguntasFrecuentes />} />
                   </Routes>
                 </div>
               </>
