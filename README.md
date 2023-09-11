@@ -116,7 +116,7 @@ Nuestro DevOps Engineer se encarga de garantizar una integración continua y una
 | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2BS78A-707abb3b82fa-512" width="120" height="120">|
 | :-: |
 | **Amarilys Baptista** <img src="https://i.ibb.co/276DbnR/VE.png">|
-|[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ve-amarilys-baptista/) |
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/aebaptista) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ve-amarilys-baptista/) |
 
 ### Tecnologías usadas para la planificación y comunicación  
 ![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff) ![Trello](https://img.shields.io/badge/Trello-095ED8?style=for-the-badge&logo=Trello&logoColor=fff) ![Slack](https://img.shields.io/badge/Slack-%234A154B?style=for-the-badge&logo=Slack&logoColor=white) ![Google Meet](https://img.shields.io/badge/Google_Meet-FF0000?style=for-the-badge&logo=Google-Meet&logoColor=fff) ![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=WhatsApp&logoColor=fff)
