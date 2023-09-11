@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const Help = () => {
+const Help = () => {
   return (
     <div className='p-5'>
       <h1 className='text-2xl font-semibold mb-4'>Sección de Ayuda</h1>
@@ -33,3 +33,4 @@ export const Help = () => {
     </div>
   );
 };
+export default Help;

@@ -1,10 +1,10 @@
 import { FaCamera } from 'react-icons/fa';
 import { MdUpload } from 'react-icons/md';
-import createProduct from '../libs/productPost';
+import createProduct from '../../libs/productsRequest/productPost';
 import { useEffect, useState } from 'react';
-import postImageProduct from '../libs/postImageProduct';
+import postImageProduct from '../../libs/postImg/postImageProduct';
 
-const AddItem = () => {
+export const AddItem = () => {
   const [file, setFile] = useState();
   const [nameFile, setNameFile] = useState('');
   const [formData, setFormData] = useState({
@@ -159,5 +159,3 @@ const AddItem = () => {
     </div>
   );
 };
-
-export default AddItem;

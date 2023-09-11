@@ -1,5 +1,5 @@
 import { MdDelete } from 'react-icons/md';
-import { deleteProduct } from '../../libs/deleteProduct';
+import { deleteProduct } from '../../libs/productsRequest/deleteProduct';
 import UpdateBtn from './UpdateBtn';
 import { ProductItemComponentPropTypes } from '../../utils/prop-types';
 
