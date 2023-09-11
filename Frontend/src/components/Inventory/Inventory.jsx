@@ -9,7 +9,7 @@ import { getProductsInventory } from '../../libs/productsRequest/getProductsInve
 
 export const Inventory = () => {
   const [items, setItems] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(Number);
   const [searchQuery, setSearchQuery] = useState('');
   const [categories, setCategories] = useState([]);
   useEffect(() => {
