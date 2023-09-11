@@ -54,10 +54,12 @@ Sigue estos pasos para comenzar.
 
 ### 🤝 Desarrolladores
 
-|  <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05L8NCT524-f0485deee09e-512" width="130" height="120">  | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KG49084V-d67ea304173b-512" width="130" height="120">  
+| <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05L8NCT524-f0485deee09e-512" width="130" height="120"> | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KG49084V-d67ea304173b-512" width="130" height="120"> |
 |:-:|:-:|
-| **Fernando Perez** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Edgar Ruiz** <img src="https://i.ibb.co/syCk2Fx/MEX.png" alt="MEX"/>|
-| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/bobony97)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/EdgarVRP)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edgarvrp/) | 
+| **Fernando Perez** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Edgar Ruiz** <img src="https://i.ibb.co/syCk2Fx/MEX.png" alt="MEX"/> |
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/bobony97) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/EdgarVRP) |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edgarvrp/) |
+
 
 ## Entorno Frontend
 
@@ -94,17 +96,19 @@ Sigue estos pasos para comenzar.
 
 ### 🤝 Desarrolladores
 
-|  <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2AH64S-83c6454952e7-512" width="130" height="120">  | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCC7J0TG-10661386963a-512" width="130" height="120"> | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCCCL0UE-08fefb3c659c-512" width="130" height="120">  
+| <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2AH64S-83c6454952e7-512" width="130" height="120"> | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCC7J0TG-10661386963a-512" width="130" height="120"> | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCCCL0UE-08fefb3c659c-512" width="130" height="120"> |
 |:-:|:-:|:-:|
 | **Franco Fleitas** <img src="https://i.ibb.co/6RFj6rF/UR.png" alt="UR"> | **Gerardo Turin** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Joaquin Pedraza** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> |
-| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/Riblast) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/GerardoTurin) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](--) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/J0AQUINPEDRAZA) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joaquinpedraza962/) | 
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/Riblast) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/GerardoTurin) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/J0AQUINPEDRAZA) |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](--) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joaquinpedraza962/) |
 
 ## Desarrollo y Planeamiento
 ### DevOps Engineer
 | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U054WGUAUBW-009561bb43b5-512" width="120" height="120">|
 | :-: |
 | **Max Cereceda** <img src="https://i.ibb.co/sj22SZS/PE.png">|
-| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/cereceda1991) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maxcereceda/) |
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/cereceda1991) |
+|[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maxcereceda/) |
 
 **Tecnologías Utilizadas:**
 
@@ -113,10 +117,13 @@ Sigue estos pasos para comenzar.
 Nuestro DevOps Engineer se encarga de garantizar una integración continua y una entrega continua eficiente mediante el uso de las siguientes tecnologías y herramientas. Si tienes alguna pregunta o necesitas asistencia relacionada con DevOps, no dudes en ponerte en contacto.
 
 ### Project Manager
-| <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2BS78A-707abb3b82fa-512" width="120" height="120">|
+| <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2BS78A-707abb3b82fa-512" width="120" height="120"> |
 | :-: |
-| **Amarilys Baptista** <img src="https://i.ibb.co/276DbnR/VE.png">|
-| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/aebaptista) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ve-amarilys-baptista/) |
+| **Amarilys Baptista** <img src="https://i.ibb.co/276DbnR/VE.png"> |
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/aebaptista) |
+| [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ve-amarilys-baptista/) |
+
+
 
 ### Tecnologías usadas para la planificación y comunicación  
 ![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=fff) ![Trello](https://img.shields.io/badge/Trello-095ED8?style=for-the-badge&logo=Trello&logoColor=fff) ![Slack](https://img.shields.io/badge/Slack-%234A154B?style=for-the-badge&logo=Slack&logoColor=white) ![Google Meet](https://img.shields.io/badge/Google_Meet-FF0000?style=for-the-badge&logo=Google-Meet&logoColor=fff) ![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=WhatsApp&logoColor=fff)
