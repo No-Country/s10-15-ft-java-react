@@ -56,8 +56,8 @@ Sigue estos pasos para comenzar.
 
 |  <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05L8NCT524-f0485deee09e-512" width="130" height="120">  | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KG49084V-d67ea304173b-512" width="130" height="120">  
 |:-:|:-:|
-| **Fernando Perez** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Edgar Ruiz** <img src="https://i.ibb.co/Ln0vhg4/AR.png">| **Lorenzo Rueda** <img src="https://i.ibb.co/276DbnR/VE.png"> | **Max Cereceda** <img src="https://i.ibb.co/sj22SZS/PE.png"> |
-| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/bobony97) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/EdgarVRP) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edgarvrp/) | 
+| **Fernando Perez** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Edgar Ruiz** <img src="https://i.ibb.co/syCk2Fx/MEX.png" alt="MEX"/>|
+| [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/bobony97)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/EdgarVRP)   [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edgarvrp/) | 
 
 ## Entorno Frontend
 
@@ -96,14 +96,14 @@ Sigue estos pasos para comenzar.
 
 |  <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KK2AH64S-83c6454952e7-512" width="130" height="120">  | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCC7J0TG-10661386963a-512" width="130" height="120"> | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U05KCCCL0UE-08fefb3c659c-512" width="130" height="120">  
 |:-:|:-:|:-:|
-| **Franco Fleitas** | **Gerardo Turin**| **Joaquin Pedraza** |
+| **Franco Fleitas** <img src="https://i.ibb.co/6RFj6rF/UR.png" alt="UR"> | **Gerardo Turin** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> | **Joaquin Pedraza** <img src="https://i.ibb.co/Ln0vhg4/AR.png"> |
 | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/Riblast) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/GerardoTurin) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](--) | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/J0AQUINPEDRAZA) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joaquinpedraza962/) | 
 
 ## Desarrollo y Planeamiento
 ### DevOps Engineer
 | <img src="https://ca.slack-edge.com/T032Y55Q6VC-U054WGUAUBW-009561bb43b5-512" width="120" height="120">|
 | :-: |
-| **Max Cereceda** |
+| **Max Cereceda** <img src="https://i.ibb.co/sj22SZS/PE.png">|
 | [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/cereceda1991) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maxcereceda/) |
 
 **Tecnologías Utilizadas:**
