@@ -1,5 +1,5 @@
-import { AiOutlineLeft } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { AiOutlineLeft } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 export const NewUser = () => {
   return (
@@ -44,5 +44,5 @@ export const NewUser = () => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};

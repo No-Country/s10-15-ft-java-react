@@ -1,4 +1,4 @@
-import { IoIosNotifications } from 'react-icons/io'
+import { IoIosNotifications } from 'react-icons/io';
 
 export const NavBar = () => {
   return (
@@ -12,5 +12,5 @@ export const NavBar = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};

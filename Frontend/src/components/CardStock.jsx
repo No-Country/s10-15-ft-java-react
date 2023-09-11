@@ -1,9 +1,11 @@
+import { CardStockPropTypes } from '../utils/prop-types';
+
 export const CardStock = ({
   icon,
   title,
   nameProduct,
   number,
-  customClass
+  customClass,
 }) => {
   const Icon = icon;
 
@@ -28,5 +30,7 @@ export const CardStock = ({
             )
       }
     </div>
-  )
-}
+  );
+};
+
+CardStock.propTypes = CardStockPropTypes;

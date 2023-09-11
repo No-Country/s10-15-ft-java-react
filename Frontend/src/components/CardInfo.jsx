@@ -1,5 +1,7 @@
+import { CardInfoPropTypes } from '../utils/prop-types';
+
 export const CardInfo = ({ icon, number, title }) => {
-  const Icon = icon
+  const Icon = icon;
 
   return (
     <div className='card-body flex flex-col items-center'>
@@ -7,5 +9,7 @@ export const CardInfo = ({ icon, number, title }) => {
       <span className='md:text-xl lg:text-2xl font-bold'>{number}</span>
       <p className='md:text-lg lg:text-xl font-bold'>{title}</p>
     </div>
-  )
-}
+  );
+};
+
+CardInfo.propTypes = CardInfoPropTypes;

@@ -17,20 +17,20 @@ import PreguntasFrecuentes from './components/PreguntasFrecuentes'
 
 function App() {
   //logical part of user logged
-  const [log, setLog] = useState(localStorage.getItem('log'))
+  const [log, setLog] = useState(localStorage.getItem('log'));
 
   useEffect(() => {
-    setLog(localStorage.getItem('log') ?? 'false')
-  }, [])
+    setLog(localStorage.getItem('log') ?? 'false');
+  }, []);
   useEffect(() => {
-    localStorage.setItem('log', log)
-  }, [log])
+    localStorage.setItem('log', log);
+  }, [log]);
   return (
     <BrowserRouter>
       <UserContext.Provider
         value={{
           log,
-          setLog
+          setLog,
         }}
       >
         <div className='flex text-black'>
@@ -62,7 +62,7 @@ function App() {
         </div>
       </UserContext.Provider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

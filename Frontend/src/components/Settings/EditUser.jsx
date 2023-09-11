@@ -1,39 +1,40 @@
-import { HiOutlineCamera } from 'react-icons/hi'
-import Avatar from 'react-avatar'
-import axios from 'axios'
-import { useState } from 'react'
-// eslint-disable-next-line react/prop-types
+import { HiOutlineCamera } from 'react-icons/hi';
+import Avatar from 'react-avatar';
+import axios from 'axios';
+import { useState } from 'react';
+import { EditUserPropTypes } from '../../utils/prop-types';
 export const EditUser = ({ username, img }) => {
-  const [file, setFile] = useState()
-  const [fileName, setFileName] = useState('')
+  const [file, setFile] = useState();
+  const [fileName, setFileName] = useState('');
+  const [fileURL, setFileURL] = useState(img);
   const handleChange = (e) => {
-    setFileName(e.target.files[0].name)
-    setFile(e.target.files[0])
-    // setFileURL(URL.createObjectURL(e.target.files[0]))
-  }
+    setFileName(e.target.files[0].name);
+    setFile(e.target.files[0]);
+    setFileURL(URL.createObjectURL(e.target.files[0]));
+  };
   const handleClick = (e) => {
-    e.preventDefault()
-    console.log(fileName, '=', file)
-    const formData = new FormData()
-    formData.append('file', file, fileName)
-    console.log(formData)
-    axios
-      .post(
-        'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }
-      )
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-  }
+    e.preventDefault();
+    console.log(fileName, '=', file);
+    const formData = new FormData();
+    formData.append('file', file, fileName);
+    console.log(formData);
+    // axios
+    //   .post(
+    //     'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
+    //     formData,
+    //     {
+    //       headers: {
+    //         'Content-Type': 'multipart/form-data'
+    //       }
+    //     }
+    //   )
+    //   .then(function (response) {
+    //     console.log(response)
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error)
+    //   })
+  };
 
   return (
     <div>
@@ -54,7 +55,7 @@ export const EditUser = ({ username, img }) => {
                 className='flex items-center justify-center cursor-pointer w-full h-full'
               >
                 <Avatar
-                  src={file}
+                  src={fileURL}
                   className='group-hover:opacity-50 rounded-full'
                   size='100%'
                 />
@@ -94,5 +95,7 @@ export const EditUser = ({ username, img }) => {
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
+
+EditUser.propTypes = EditUserPropTypes;

@@ -16,14 +16,13 @@ public class UserEntityService {
     @Autowired
     UserEntityRepository userEntityRepository;
 
-    public Boolean userEntity(String username){
-      Optional<UserEntity> user = userEntityRepository.findByUsername(username);
+    public Boolean userExist(String username) {
+        Optional<UserEntity> user = userEntityRepository.findByUsername(username);
         return user.isPresent();
     }
 
-    public List<UserEntity> listAllUsers(){
+    public List<UserEntity> listAllUsers() {
         return userEntityRepository.findAll();
     }
-
 
 }
