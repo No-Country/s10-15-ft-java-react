@@ -1,3 +1,15 @@
+<div align="center">
+<h1>
+<a href="" target="_blank" rel="noopener noreferrer" style="color: #86E3CE">StockFlow</a>
+</h1>
+   <img src="https://i.ibb.co/2t6KtnB/image.png" alt="image"/>
+<p>
+<p>¡Echa un vistazo al video promocional!</p>
+<a href="#" target="_blank" rel="noopener noreferrer">
+  <img src="https://img.shields.io/badge/Ver%20video-FF0000?style=for-the-badge&logo=YouTube&logoColor=fff"/>
+</a>
+</div>
+
 # Sistema de Gestión Integral: "StockFLow" 📊🛍️
 
 ¡Bienvenido a "StockFLow"! Esta aplicación revolucionaria combina Java y React para ofrecerte una solución completa de gestión de ventas e inventario. Este README te proporcionará un vistazo rápido a las características clave y cómo poner en marcha la aplicación.
