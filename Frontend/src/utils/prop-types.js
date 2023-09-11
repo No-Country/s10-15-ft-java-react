@@ -15,9 +15,9 @@ export const CardStockPropTypes = {
 };
 
 export const FilterPropTypes = {
-  category: PropTypes.number,
+  category: PropTypes.string,
   setCategory: PropTypes.func,
-  categories: PropTypes.arrayOf(PropTypes.number),
+  categories: PropTypes.arrayOf(PropTypes.string),
 };
 
 export const EditUserPropTypes = {
@@ -34,7 +34,7 @@ export const ModalUpdateProductPropTypes = {
     id: PropTypes.number,
     productName: PropTypes.string,
     itemCode: PropTypes.string,
-    category: PropTypes.number,
+    category: PropTypes.string,
     quantityStock: PropTypes.number,
     uniPrice: PropTypes.number,
   }),
@@ -46,7 +46,7 @@ export const ProductItemComponentPropTypes = {
     id: PropTypes.number,
     productName: PropTypes.string,
     itemCode: PropTypes.string,
-    category: PropTypes.number,
+    category: PropTypes.string,
     quantityStock: PropTypes.number,
     uniPrice: PropTypes.number,
     pathImage: PropTypes.string,
@@ -58,7 +58,7 @@ export const UpdateBtnPropTypes = {
     id: PropTypes.number,
     productName: PropTypes.string,
     itemCode: PropTypes.string,
-    category: PropTypes.number,
+    category: PropTypes.string,
     quantityStock: PropTypes.number,
     uniPrice: PropTypes.number,
   }),
