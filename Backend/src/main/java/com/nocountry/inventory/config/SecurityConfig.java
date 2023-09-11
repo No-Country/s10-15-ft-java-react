@@ -38,11 +38,11 @@ public class SecurityConfig {
           auth.requestMatchers("/auth/register").permitAll();
           auth.requestMatchers("/user/listAll").permitAll();
           /* testing product */
+          auth.requestMatchers("/product/save").permitAll();
+          auth.requestMatchers("/product/update").permitAll();
           auth.requestMatchers("/product/**").permitAll();
           auth.requestMatchers("/product/listAll").permitAll();
           auth.requestMatchers("/product/list/**").permitAll();
-          auth.requestMatchers("/product/save").permitAll();
-          auth.requestMatchers("/product/update").permitAll();
           auth.requestMatchers("/product/delete/**").permitAll();
           /* Fin testing product */
 
