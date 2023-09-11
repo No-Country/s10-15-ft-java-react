@@ -30,7 +30,7 @@ StockFlow es un innovador aplicativo web diseñado para transformar por completo
 
 - **Informes Analíticos**: Accede a informes detallados y análisis profundos de tus datos de ventas e inventario.
 
-## Entorno Backend
+## Entorno Back-End
 ## Tecnologías usadas
 [![Java Spring Boot](https://img.shields.io/badge/Java%20Spring%20Boot-2.5.4-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-boot) [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) [![Postman](https://img.shields.io/badge/Postman-10.15-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/) [![Railway](https://img.shields.io/badge/Railway-Hosted-FF6C37?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
 
@@ -73,7 +73,7 @@ Sigue estos pasos para comenzar.
 | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](----) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/edgarvrp/) |
 
 
-## Entorno Frontend
+## Entorno Front-End
 
 ## Tecnologías usadas
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-2.2.19-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) [![DaisyUI](https://img.shields.io/badge/DaisyUI-1.13.0-FF5722?style=for-the-badge&logoColor=white)](https://daisyui.com/) [![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
