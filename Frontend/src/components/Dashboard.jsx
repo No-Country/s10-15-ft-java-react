@@ -61,7 +61,7 @@ export const Dashboard = () => {
             icon={FiArrowDownRight}
             customClass='text-red-700'
             title='Stock Bajo'
-            nameProduct={stockBajo[0]?.productName}
+            nameProduct={stockBajo[0]?.productName ?? 'No hay productos'}
             number={cantidadStockBajo}
           />
         </div>
@@ -70,7 +70,7 @@ export const Dashboard = () => {
             icon={FiArrowUpRight}
             customClass='text-green-700'
             title='Stock Alto'
-            nameProduct={stockAlto[0]?.productName}
+            nameProduct={stockAlto[0]?.productName ?? 'No hay productos'}
             number={cantidadStockAlto}
           />
         </div>
