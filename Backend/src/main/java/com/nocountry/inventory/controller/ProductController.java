@@ -44,6 +44,7 @@ public class ProductController {
     }
 
     // Post product
+    @CrossOrigin(origins = { "*" })
     @PostMapping(value = "/save")
     public ResponseEntity<?> saveProduct(@RequestBody ProductEntity productEntity) {
         return ResponseEntity.ok()
@@ -51,6 +52,7 @@ public class ProductController {
     }
 
     // update product
+    @CrossOrigin(origins = { "*" })
     @PutMapping(value = "/update")
     public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity) {
         //Mostrando lo que se recibe
@@ -60,6 +62,7 @@ public class ProductController {
     }
 
     // delete product
+    @CrossOrigin(origins = { "*" })
     @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity<?> deleteProduct(@PathVariable Long id) {
         productEntityService.deleteProductById(id);
