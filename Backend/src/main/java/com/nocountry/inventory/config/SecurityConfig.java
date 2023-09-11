@@ -38,6 +38,7 @@ public class SecurityConfig {
           auth.requestMatchers("/auth/register").permitAll();
           auth.requestMatchers("/user/listAll").permitAll();
           /* testing product */
+          auth.requestMatchers("/product/**").permitAll();
           auth.requestMatchers("/product/listAll").permitAll();
           auth.requestMatchers("/product/list/**").permitAll();
           auth.requestMatchers("/product/save").permitAll();
