@@ -7,7 +7,7 @@ export const NavBar = () => {
         <IoIosNotifications className='text-3xl mx-3' />
         <div className='h-10 w-10 rounded-full bg-gray-500 mx-2'></div>
         <div className='flex flex-col items-center text-base'>
-          <span>Rocio del Solar</span>
+          <span>Amarilys Baptista</span>
           <small>Administrador</small>
         </div>
       </div>
