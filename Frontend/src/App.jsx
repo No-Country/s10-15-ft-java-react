@@ -11,8 +11,8 @@ import { NavBar } from './components/NavBar/NavBar';
 import Login from './components/Login/Login';
 import { useContext, useEffect, useState } from 'react';
 import AddItem from './components/AddItem';
-import { UserContext } from './libs/context/userProvider';
-import { types } from './libs/context/userReducer';
+import { GuiaUso } from './components/Help/GuiaUso';
+import { FrequentlyAskedQuestions } from './components/Help/PreguntasFrecuentes';
 
 function App() {
   //logical part of user logged
@@ -37,7 +37,7 @@ function App() {
       <div className='flex text-black'>
         {
           //diferencial rendering if user are logged
-          data.auth.log === 'true' ? (
+          log === 'true' ? (
             <>
               <SideBar />
               <div className='flex flex-col w-full'>
@@ -51,6 +51,11 @@ function App() {
                   <Route path='/nuevoUsuario' element={<NewUser />} />
                   <Route path='/configuracion' element={<Settings />} />
                   <Route path='/ayuda' element={<Help />} />
+                  <Route path='/GuiaUso' element={<GuiaUso />} />
+                  <Route
+                    path='/preguntas-frecuentes'
+                    element={<FrequentlyAskedQuestions />}
+                  />
                 </Routes>
               </div>
             </>

@@ -3,44 +3,42 @@ import Avatar from 'react-avatar';
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../libs/context/userProvider';
+import { EditUserPropTypes } from '../../utils/prop-types';
 import { types } from '../../libs/context/userReducer';
-// eslint-disable-next-line react/prop-types
-export const EditUser = () => {
+export const EditUser = ({ username, img }) => {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState('');
-  const [fileURL, setFileURL] = useState();
   const [data, dispatch] = useContext(UserContext);
   const { img } = data.user;
 
   const handleChange = (e) => {
-    // setFileName(e.target.files[0].name)
-    // setFile(e.target.files[0])
-    setFileURL(URL.createObjectURL(e.target.files[0]));
+    setFileName(e.target.files[0].name);
+    setFile(e.target.files[0]);
     dispatch({
       type: types.userUpdate,
-      payload: { ...data.user, img: fileURL },
+      payload: { ...data.user, img: URL.createObjectURL(file) },
     });
   };
   const handleClick = (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file, fileName);
-    // axios
-    //   .post(
-    //     'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
-    //     formData,
-    //     {
-    //       headers: {
-    //         'Content-Type': 'multipart/form-data'
-    //       }
-    //     }
-    //   )
-    //   .then(function (response) {
-    //     console.log(response)
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error)
-    //   })
+    axios
+      .post(
+        'https://s10-15-ft-java-react-production.up.railway.app/files/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        },
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

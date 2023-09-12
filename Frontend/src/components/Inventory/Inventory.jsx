@@ -3,17 +3,19 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import Filter from './Filter';
 import SearchBar from './SearchBar';
-import { getProductsInventory } from '../../libs/getProductsInventory';
-import { filterData } from '../../libs/filterData';
+import { filterData } from '../../libs/filters/filterData';
 import { ProductItemComponent } from './ProductItemComponent';
+import { getProductsInventory } from '../../libs/productsRequest/getProductsInventory';
 
 export const Inventory = () => {
   const [items, setItems] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState(Number);
   const [searchQuery, setSearchQuery] = useState('');
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    getProductsInventory(categories, setItems, setCategories);
+    items.length
+      ? {}
+      : getProductsInventory(categories, setItems, setCategories);
   }, [items, categories]);
 
   const searchedData = filterData(searchQuery, items, 'search');
