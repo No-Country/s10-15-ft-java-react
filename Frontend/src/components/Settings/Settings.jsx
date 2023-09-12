@@ -5,8 +5,6 @@ import { GrNext } from 'react-icons/gr';
 
 const Settings = () => {
   const [isVisible, setIsVisible] = useState(false);
-  let img = 'user.png';
-  let username = 'Franco Fleitas';
 
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -40,11 +38,7 @@ const Settings = () => {
         </div>
       </section>
       <section className='p-5 flex-col justify-center'>
-        {isVisible ? (
-          <ChangePassword />
-        ) : (
-          <EditUser img={img} username={username} />
-        )}
+        {isVisible ? <ChangePassword /> : <EditUser />}
       </section>
     </main>
   );
