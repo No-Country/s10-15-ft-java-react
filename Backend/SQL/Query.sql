@@ -8,6 +8,7 @@ CREATE TABLE s_Users (
     otherDetails TEXT,
     currencyType VARCHAR(50),
     showDecimals BOOLEAN,
+    img VARCHAR(255),
     darkMode BOOLEAN,
     email VARCHAR(255)
 );

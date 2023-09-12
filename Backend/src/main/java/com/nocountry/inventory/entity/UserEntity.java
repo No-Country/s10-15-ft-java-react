@@ -1,9 +1,10 @@
 package com.nocountry.inventory.entity;
 
-import com.nocountry.inventory.util.ERole;
+import com.nocountry.inventory.enums.ERole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Data
@@ -20,19 +21,21 @@ public class UserEntity {
 
     @Column(nullable = false)
     @NotBlank
+    @NotNull
     private String userName;
 
     @Column(nullable = false)
     @NotBlank
+    @NotNull
     private String password;
 
     @Email
     @Column(nullable = false)
     @NotBlank
+    @NotNull
     private String email;
 
-    @NotBlank
     @Enumerated(EnumType.STRING)
-    ERole role;
+    private ERole role;
 
 }
