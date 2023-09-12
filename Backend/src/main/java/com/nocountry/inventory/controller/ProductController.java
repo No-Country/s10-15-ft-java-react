@@ -3,7 +3,6 @@ package com.nocountry.inventory.controller;
 import org.hibernate.mapping.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RequestMapping("/product")
 @RestController
-//@Secured("ROLE_ADMIN")
-// @CrossOrigin(origins =
-// {"https://stockflow10.vercel.app/","https://stockflow.netlify.app/","http://localhost:5173/"})
 @CrossOrigin(origins = { "*" })
 public class ProductController {
     @Autowired
@@ -55,7 +51,7 @@ public class ProductController {
     @CrossOrigin(origins = { "*" })
     @PutMapping(value = "/update")
     public ResponseEntity<?> updateProduct(@RequestBody ProductEntity productEntity) {
-        //Mostrando lo que se recibe
+        // Mostrando lo que se recibe
         System.out.println(productEntity);
         return ResponseEntity.ok()
                 .body(new GenericResponseDTO<>(true, "FULL", productEntityService.updateProduct(productEntity)));
