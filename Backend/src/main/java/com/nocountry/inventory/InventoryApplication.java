@@ -32,7 +32,7 @@ public class InventoryApplication {
 	CommandLineRunner init(){
 		return args -> {
 			UserEntity user =UserEntity.builder()
-					.username("prueba")
+					.userName("prueba")
 					.password(passwordEncoder.encode("1234"))
 					.role(ERole.ADMIN)
 					.build();
