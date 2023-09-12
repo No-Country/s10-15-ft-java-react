@@ -1,18 +1,20 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { SideBar } from './components/Sidebar/SideBar';
-import { Dashboard } from './components/Dashboard';
-import { Help } from './components/Help';
+import { Dashboard } from './components/Dashboard/Dashboard';
+import Help from './components/Help/Help';
 import { Inventory } from './components/Inventory/Inventory';
-import { Users } from './components/Users';
-import { Settings } from './components/Settings/Settings';
-import { NewUser } from './components/NewUser';
+import { Users } from './components/Users/Users';
+import Settings from './components/Settings/Settings';
+import { NewUser } from './components/Users/NewUser';
 import { NavBar } from './components/NavBar/NavBar';
 import Login from './components/Login/Login';
 import { useContext, useEffect, useState } from 'react';
-import AddItem from './components/AddItem';
+import { AddItem } from './components/Inventory/AddItem';
 import { GuiaUso } from './components/Help/GuiaUso';
 import { FrequentlyAskedQuestions } from './components/Help/PreguntasFrecuentes';
+import { UserContext } from './libs/context/userProvider';
+import { types } from './libs/context/userReducer';
 
 function App() {
   //logical part of user logged

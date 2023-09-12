@@ -5,20 +5,27 @@ import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../libs/context/userProvider';
 import { EditUserPropTypes } from '../../utils/prop-types';
 import { types } from '../../libs/context/userReducer';
-export const EditUser = ({ username, img }) => {
+
+export const EditUser = () => {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState('');
+  const [fileURL, setFileURL] = useState();
   const [data, dispatch] = useContext(UserContext);
   const { img } = data.user;
 
   const handleChange = (e) => {
     setFileName(e.target.files[0].name);
     setFile(e.target.files[0]);
-    dispatch({
-      type: types.userUpdate,
-      payload: { ...data.user, img: URL.createObjectURL(file) },
-    });
   };
+  useEffect(() => {
+    file
+      ? dispatch({
+          type: types.userUpdate,
+          payload: { ...data.user, img: URL.createObjectURL(file) },
+        })
+      : null;
+  }, [file]);
+
   const handleClick = (e) => {
     e.preventDefault();
     const formData = new FormData();
