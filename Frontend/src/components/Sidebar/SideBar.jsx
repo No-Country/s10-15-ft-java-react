@@ -5,7 +5,7 @@ import BtnSalir from './BtnSalir';
 export const SideBar = () => {
   return (
     <nav className='h-screen w-1/5 flex flex-col justify-between bg-primary text-white box-border'>
-      <h2 className='text-center py-10 text-2xl'>StockFlow</h2>
+      <img src='StockFlowIcon.png' />
       <ul className='h-full flex flex-col mt-10 bg-primary px-8'>
         {
           //maping links from links file for dynamic rendering
