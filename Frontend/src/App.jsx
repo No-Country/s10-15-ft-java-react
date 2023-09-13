@@ -46,7 +46,7 @@ function App() {
       <div className='flex text-black'>
         {
           //diferencial rendering if user are logged
-          log === 'true' ? (
+          data.auth.log === 'true' ? (
             <>
               <SideBar />
               <div className='flex flex-col w-full'>
