@@ -1,9 +1,10 @@
 import { MdEdit } from 'react-icons/md';
 import { useEffect, useState } from 'react';
-import { ModalUpdateProduct } from './ModalUpdateProduct';
+import { ModalUpdateProduct } from '../Inventory/ModalUpdateProduct';
 import { UpdateBtnPropTypes } from '../../utils/prop-types';
+import { ModalUpdateUser } from '../Users/ModalUpdateUsers';
 
-const UpdateBtn = ({ item }) => {
+const UpdateBtn = ({ item, user }) => {
   const [mostrar, setMostrar] = useState(false);
   useEffect(() => {
     setMostrar(mostrar);
@@ -20,7 +21,16 @@ const UpdateBtn = ({ item }) => {
       <dialog id='my_modal_4' className='modal' open={mostrar}>
         <div className='modal-box flex flex-col justify-around h-max gap-5'>
           <h3 className='font-bold text-lg'>Editar producto</h3>
-          <ModalUpdateProduct item={item} setMostrar={setMostrar} />
+          {user ? (
+            <ModalUpdateUser user={user} setMostrar={setMostrar} />
+          ) : (
+            <></>
+          )}
+          {item ? (
+            <ModalUpdateProduct item={item} setMostrar={setMostrar} />
+          ) : (
+            <></>
+          )}
         </div>
       </dialog>
     </>

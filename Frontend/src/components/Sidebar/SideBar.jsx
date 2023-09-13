@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { links } from '../../libs/links/links';
 import BtnSalir from './BtnSalir';
-
+import { BsBoxSeam } from 'react-icons/bs';
 export const SideBar = () => {
   return (
     <nav className='h-screen w-1/5 flex flex-col justify-between bg-primary text-white box-border'>
-      <h2 className='text-center py-10 text-2xl'>StockFlow</h2>
+      <BsBoxSeam className='w-20 h-20 self-center pt-10 scale-x-[-1]' />
+      <h2 className='text-center pb-10 text-2xl'>StockFlow</h2>
       <ul className='h-full flex flex-col mt-10 bg-primary px-8'>
         {
           //maping links from links file for dynamic rendering

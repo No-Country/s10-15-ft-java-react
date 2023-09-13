@@ -1,7 +1,7 @@
 import axios from 'axios';
 const API_URL = import.meta.env.VITE_API_URL;
-export const updateProducts = (formData) => {
-  axios.put(
+export const updateProducts = async (formData) => {
+  await axios.put(
     `${
       API_URL || 'https://s10-15-ft-java-react-production.up.railway.app'
     }/product/update`,
