@@ -24,7 +24,7 @@ public class UserController {
     public ResponseEntity<UserEntity> register(@RequestBody @Valid UserEntity userEntity) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userEntityService.register(userEntity));
     }
-
+    @CrossOrigin(origins = { "*" })
     @PutMapping("/{id}")
     public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity userEntity,@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.update(userEntity, id));
@@ -34,18 +34,18 @@ public class UserController {
     public ResponseEntity<UserEntity> login(@Valid @RequestParam String username, @Valid @RequestParam String password) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.login(username, password));
     }
-
+    @CrossOrigin(origins = { "*" })
     @GetMapping("/{id}")
     public ResponseEntity<Optional<UserEntity>> getUserById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.getUserById(id));
     }
 
-
+    @CrossOrigin(origins = { "*" })
     @GetMapping("/listAll")
     public ResponseEntity<?> listAllUsers(){
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"FULL",userEntityService.listAllUsers()));
     }
-
+    @CrossOrigin(origins = { "*" })
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         userEntityService.deleteUser(id);
