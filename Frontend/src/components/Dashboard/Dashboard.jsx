@@ -1,11 +1,11 @@
 import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi';
 import { FaUserFriends } from 'react-icons/fa';
 import { BsClipboardCheckFill } from 'react-icons/bs';
-import { IoMdNotifications } from 'react-icons/io';
-import { CardInfo } from '../CardInfo';
+
 import { CardStock } from './CardStock';
 import { useEffect, useState } from 'react';
 import getProductsDashboard from '../../libs/productsRequest/getProductsDashboard';
+import { CardInfo } from '../CardInfo';
 
 export const Dashboard = () => {
   const [items, setItems] = useState([]);
@@ -43,14 +43,6 @@ export const Dashboard = () => {
             icon={BsClipboardCheckFill}
             number={items.length}
             title='Productos'
-          />
-        </div>
-
-        <div className='card w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
-          <CardInfo
-            icon={IoMdNotifications}
-            number={0}
-            title='Notificaciones'
           />
         </div>
       </div>

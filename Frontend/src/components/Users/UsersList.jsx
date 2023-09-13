@@ -1,34 +1,33 @@
-import { useEffect, useState } from 'react';
+import { MdDelete } from 'react-icons/md';
+import { deleteUser } from '../../libs/usersRequest/deleteUser';
+import UpdateBtn from '../UpdateBtn/UpdateBtn';
 
-import axios from 'axios';
-import { MdModeEdit } from 'react-icons/md';
-
-export const UsersList = () => {
-  const uriUsers = '../../users.json';
-
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    axios(uriUsers)
-      .then((res) => setUsers(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
+export const UsersList = (users) => {
   return (
     <div className='mt-2'>
-      {users.map((user) => (
+      {users.users.map((user) => (
         <div
-          key={user.fullName}
+          key={user.id}
           className='grid grid-cols-4 gap-4 py-4 justify-items-center border-b-2 border-gray-200 px-3 items-center'
         >
           <div className='flex justify-start w-full'>
-            <span>{user.fullName}</span>
+            <span>{user.username}</span>
           </div>
-          <span>{user.rol}</span>
+          <span>{user.role}</span>
           <span>{user.email}</span>
-          <span className='bg-blue-200 rounded-full text-xl p-1'>
-            <MdModeEdit />
-          </span>
+          <div className='flex flex-row gap-6 justify-center items-center'>
+            <UpdateBtn user={user} />
+            <div
+              className='cursor-pointer bg-gray-200 rounded-full p-2 text-red-600 text-xl tooltip'
+              data-tip='Eliminar'
+            >
+              <MdDelete
+                onClick={() => {
+                  deleteUser(user.id);
+                }}
+              />
+            </div>
+          </div>
         </div>
       ))}
     </div>

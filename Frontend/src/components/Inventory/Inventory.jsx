@@ -13,7 +13,9 @@ export const Inventory = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    getProductsInventory(categories, setItems, setCategories);
+    items.length === undefined
+      ? {}
+      : getProductsInventory(categories, setItems, setCategories);
   }, [items, categories]);
 
   const searchedData = filterData(searchQuery, items, 'search');

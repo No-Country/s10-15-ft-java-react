@@ -8,9 +8,9 @@ import { types } from '../../libs/context/userReducer';
 
 export const EditUser = () => {
   const [file, setFile] = useState();
-  const [fileName, setFileName] = useState('');
-  const [fileURL, setFileURL] = useState();
-  const [data, dispatch] = useContext(UserContext);
+  const [fileName, setFileName] = useState();
+
+  const { data, dispatch } = useContext(UserContext);
   const { img } = data.user;
 
   const handleChange = (e) => {
@@ -24,7 +24,7 @@ export const EditUser = () => {
           payload: { ...data.user, img: URL.createObjectURL(file) },
         })
       : null;
-  }, [file]);
+  }, [file, dispatch]);
 
   const handleClick = (e) => {
     e.preventDefault();

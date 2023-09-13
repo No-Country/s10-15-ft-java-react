@@ -27,19 +27,20 @@ function App() {
     localStorage.setItem('log', log);
   }, [log]);
 
-  const [data, dispatch] = useContext(UserContext);
+  const { data, dispatch } = useContext(UserContext);
+
   useEffect(() => {
     dispatch({
       type: types.authLogin,
       payload: { log },
     });
-  }, []);
+  }, [dispatch, log]);
   return (
     <BrowserRouter>
       <div className='flex text-black'>
         {
           //diferencial rendering if user are logged
-          log === 'true' ? (
+          data.auth.log === 'true' ? (
             <>
               <SideBar />
               <div className='flex flex-col w-full'>
