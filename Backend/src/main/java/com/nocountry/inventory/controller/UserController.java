@@ -19,7 +19,8 @@ public class UserController {
 
     @Autowired
     UserEntityService userEntityService;
-
+    
+    @CrossOrigin(origins = { "*" })
     @PostMapping
     public ResponseEntity<UserEntity> register(@RequestBody @Valid UserEntity userEntity) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userEntityService.register(userEntity));
