@@ -6,7 +6,7 @@ const LoginPost = async ({ user, pass, setStat }) => {
     .post(
       `${
         API_URL || 'https://s10-15-ft-java-react-production.up.railway.app'
-      }/auth/login`,
+      }/user/login`,
       {
         userName: user,
         password: `${pass}`,
