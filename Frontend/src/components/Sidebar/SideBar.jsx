@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { links } from '../../libs/links/links';
 import BtnSalir from './BtnSalir';
-
+import { BsBoxSeam } from 'react-icons/bs';
 export const SideBar = () => {
   return (
     <nav className='h-screen w-1/5 flex flex-col justify-between bg-primary text-white box-border'>

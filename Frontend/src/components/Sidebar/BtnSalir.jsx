@@ -4,7 +4,7 @@ import { types } from '../../libs/context/userReducer';
 import { useContext } from 'react';
 
 const BtnSalir = () => {
-  const [data, dispatch] = useContext(UserContext);
+  const {dispatch} = useContext(UserContext);
   return (
     <>
       <button
