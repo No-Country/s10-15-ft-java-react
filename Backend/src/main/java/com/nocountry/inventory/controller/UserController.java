@@ -19,33 +19,34 @@ public class UserController {
 
     @Autowired
     UserEntityService userEntityService;
-
+    
+    @CrossOrigin(origins = { "*" })
     @PostMapping
     public ResponseEntity<UserEntity> register(@RequestBody @Valid UserEntity userEntity) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userEntityService.register(userEntity));
     }
-
-    @PutMapping
-    public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity userEntity, Long id) {
+    @CrossOrigin(origins = { "*" })
+    @PutMapping("/{id}")
+    public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity userEntity,@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.update(userEntity, id));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserEntity> login(@Valid String userName, String pasword) {
-        return ResponseEntity.status(HttpStatus.OK).body(userEntityService.login(userName, pasword));
+    public ResponseEntity<UserEntity> login(@Valid @RequestParam String username, @Valid @RequestParam String password) {
+        return ResponseEntity.status(HttpStatus.OK).body(userEntityService.login(username, password));
     }
-
+    @CrossOrigin(origins = { "*" })
     @GetMapping("/{id}")
     public ResponseEntity<Optional<UserEntity>> getUserById(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.getUserById(id));
     }
 
-
+    @CrossOrigin(origins = { "*" })
     @GetMapping("/listAll")
     public ResponseEntity<?> listAllUsers(){
         return ResponseEntity.ok().body(new GenericResponseDTO<>(true,"FULL",userEntityService.listAllUsers()));
     }
-
+    @CrossOrigin(origins = { "*" })
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         userEntityService.deleteUser(id);
