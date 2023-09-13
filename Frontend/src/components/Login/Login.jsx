@@ -1,7 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../libs/context/useContext';
-import LoginPost from '../../libs/loginPost';
+import { UserContext } from '../../libs/context/userProvider';
+import LoginPost from '../../libs/loginRequest/loginPost';
 import ErrorFormLoginComponent from './ErrorFormLoginComponent';
+import { types } from '../../libs/context/userReducer';
+
 const Login = () => {
   const [stat, setStat] = useState();
   useEffect((stat) => {
@@ -9,8 +11,8 @@ const Login = () => {
   }, []);
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
-  const { setLog } = useContext(UserContext);
-  user && pass ? LoginPost({ stat, setLog, setStat, pass, user }) : {};
+  const [dispatch] = useContext(UserContext);
+
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
       <div className='flex flex-col items-center w-1/2 gap-10'>
@@ -19,7 +21,11 @@ const Login = () => {
           className='flex flex-col items-center gap-7 w-350px'
           onSubmit={(e) => {
             e.preventDefault();
-            stat === 200 ? setLog('true') : {};
+            LoginPost({ stat, setStat, pass, user });
+            //stat === 200 ? setLog('true') : {}
+            dispatch({
+              type: types.authLogin,
+            });
           }}
         >
           <label htmlFor='user' className='flex flex-col items-start'>

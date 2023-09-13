@@ -3,10 +3,8 @@ import { ChangePassword } from './ChangePassword';
 import { useState } from 'react';
 import { GrNext } from 'react-icons/gr';
 
-export const Settings = () => {
+const Settings = () => {
   const [isVisible, setIsVisible] = useState(false);
-  let img = 'user.png';
-  let username = 'Franco Fleitas';
 
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -40,12 +38,9 @@ export const Settings = () => {
         </div>
       </section>
       <section className='p-5 flex-col justify-center'>
-        {isVisible ? (
-          <ChangePassword />
-        ) : (
-          <EditUser img={img} username={username} />
-        )}
+        {isVisible ? <ChangePassword /> : <EditUser />}
       </section>
     </main>
   );
 };
+export default Settings;

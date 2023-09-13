@@ -1,7 +1,16 @@
+import { useEffect, useState } from 'react';
 import { FilterNav } from './FilterNav';
 import { UsersList } from './UsersList';
+import { getUsers } from '../../libs/usersRequest/getUsers';
 
 export const Users = () => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    users && users.length === 0 ? {} : getUsers(setUsers);
+  }, [users]);
+  console.log(users);
+  
+
   return (
     <div className='text-lg box-border px-10 py-5 w-full '>
       <FilterNav />
@@ -13,7 +22,13 @@ export const Users = () => {
         <span>Correo electronico</span>
         <span>Acciones</span>
       </div>
-      <UsersList />
+      {users.length ? (
+        <UsersList users={users} />
+      ) : (
+        <div className='flex justify-center items-center'>
+          <span className='loading loading-dots loading-lg'></span>
+        </div>
+      )}
     </div>
   );
 };

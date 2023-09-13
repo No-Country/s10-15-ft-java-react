@@ -1,8 +1,9 @@
-
-
-const GuiaUso = () => {
+export const GuiaUso = () => {
   return (
-    <div className='p-5 overflow-y-scroll' style={{ height: 'calc(100vh - 10rem)' }}>
+    <div
+      className='p-5 overflow-y-scroll'
+      style={{ height: 'calc(100vh - 10rem)' }}
+    >
       <h1 className='text-2xl font-semibold mb-4'>Guía de Uso del Sistema</h1>
 
       <div className='bg-white p-6 rounded shadow-md mb-4'>
@@ -73,7 +74,5 @@ const GuiaUso = () => {
         </p>
       </div>
     </div>
-  )
-}
-
-export default GuiaUso;
+  );
+};

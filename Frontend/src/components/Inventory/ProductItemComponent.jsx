@@ -1,7 +1,7 @@
 import { MdDelete } from 'react-icons/md';
-import { deleteProduct } from '../../libs/deleteProduct';
-import UpdateBtn from './UpdateBtn';
+import { deleteProduct } from '../../libs/productsRequest/deleteProduct';
 import { ProductItemComponentPropTypes } from '../../utils/prop-types';
+import UpdateBtn from '../UpdateBtn/UpdateBtn';
 
 export const ProductItemComponent = ({ item }) => {
   return (

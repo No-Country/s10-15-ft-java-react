@@ -1,10 +1,11 @@
 import { FiArrowDownRight, FiArrowUpRight } from 'react-icons/fi';
 import { FaUserFriends } from 'react-icons/fa';
 import { BsClipboardCheckFill } from 'react-icons/bs';
-import { CardInfo } from './CardInfo';
+
 import { CardStock } from './CardStock';
 import { useEffect, useState } from 'react';
-import getProductsDashboard from '../libs/getProductsDashboard';
+import getProductsDashboard from '../../libs/productsRequest/getProductsDashboard';
+import { CardInfo } from '../CardInfo';
 
 export const Dashboard = () => {
   const [items, setItems] = useState([]);

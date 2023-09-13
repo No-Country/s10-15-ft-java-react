@@ -1,10 +1,11 @@
 import { FaCamera } from 'react-icons/fa';
 import { MdUpload } from 'react-icons/md';
-import createProduct from '../libs/productPost';
+import createProduct from '../../libs/productsRequest/productPost';
 import { useEffect, useState } from 'react';
-import postImageProduct from '../libs/postImageProduct';
+import postImageProduct from '../../libs/postImg/postImageProduct';
+import { Link } from 'react-router-dom';
 
-const AddItem = () => {
+export const AddItem = () => {
   const [file, setFile] = useState();
   const [nameFile, setNameFile] = useState('');
   const [formData, setFormData] = useState({
@@ -46,7 +47,18 @@ const AddItem = () => {
 
   return (
     <div className='p-5'>
+
+<div>
+        <Link to='/inventario'>
+          <button className='btn btn-primary'>
+            Volver
+          </button>
+        </Link>
+      </div>
+
       <div>
+        <h1 className='text-3xl font-semibold text-center'>Nuevo Producto</h1>
+
         <form
           id='file'
           className='flex mt-6'
@@ -57,8 +69,7 @@ const AddItem = () => {
             postImageProduct(formData);
             handleSubmit();
           }}
-          encType='multipart/form-data'
-        >
+          encType='multipart/form-data'>
           <div className='flex w-[70%]  justify-center items-center gap-4'>
             <div className='flex flex-col justify-start items-center h-full w-[30%] pt-10 pl-8 gap-1'>
               <input
@@ -140,7 +151,7 @@ const AddItem = () => {
               />
             </div>
           </div>
-          <div className='flex flex-col w-[30%] justify-center items-start gap-4'>
+          <div className='flex flex-col justify-center gap-4'>
             <div className='flex gap-4 justify-end items-center w-full mt-5'>
               <button className=' border border-primary text-primary rounded-3xl font-semibold px-4 py-3'>
                 Cancelar
@@ -159,5 +170,3 @@ const AddItem = () => {
     </div>
   );
 };
-
-export default AddItem;

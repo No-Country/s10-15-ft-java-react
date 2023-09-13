@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { updateProducts } from '../../libs/updateProducts';
+import { updateProducts } from '../../libs/productsRequest/updateProducts';
 import { ModalUpdateProductPropTypes } from '../../utils/prop-types';
 
 //modal para actualizar el producto
