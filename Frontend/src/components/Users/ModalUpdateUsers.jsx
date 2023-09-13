@@ -5,7 +5,12 @@ import { updateUsers } from '../../libs/usersRequest/updateUsers';
 
 //modal para actualizar el producto
 export const ModalUpdateUser = ({ user, setMostrar }) => {
-  const [formData, setFormdata] = useState({ id: user.id });
+  const [formData, setFormdata] = useState({
+    id: user.id,
+    password: user.password,
+    email: user.email,
+    username: user.username,
+  });
   useEffect(() => {
     setFormdata(formData);
   }, [formData]);
@@ -29,13 +34,15 @@ export const ModalUpdateUser = ({ user, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              username: e.target.value ? e.target.value : user.username,
+              username: e.target.value.length
+                ? e.target.value
+                : `${user.username}`,
             });
           }}
         />
       </label>
       <label className={'flex flex-col users-start'}>
-        Código
+        email
         <input
           type='text'
           className='w-60 rounded border-2 border-blue-400 p-2 px-2 outline-4 outline-blue-500'
@@ -43,7 +50,7 @@ export const ModalUpdateUser = ({ user, setMostrar }) => {
           onChange={(e) => {
             setFormdata({
               ...formData,
-              email: e.target.value ? e.target.value : user.email,
+              email: e.target.value.length ? e.target.value : `${user.email}`,
             });
           }}
         />
