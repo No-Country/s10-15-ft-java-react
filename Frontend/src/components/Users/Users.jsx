@@ -6,11 +6,8 @@ import { getUsers } from '../../libs/usersRequest/getUsers';
 export const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    users && users.length === 0 ? {} : getUsers(setUsers);
+    users.length ? {} : getUsers(setUsers);
   }, [users]);
-  console.log(users);
-  
-
   return (
     <div className='text-lg box-border px-10 py-5 w-full '>
       <FilterNav />

@@ -11,7 +11,7 @@ const Login = () => {
   }, []);
   const [user, setUser] = useState('');
   const [pass, setPass] = useState('');
-  const [dispatch] = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
 
   return (
     <div className='flex flex-row justify-between w-full items-center bg-indigo-100 h-screen'>
