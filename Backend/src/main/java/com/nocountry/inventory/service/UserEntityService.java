@@ -6,6 +6,7 @@ import com.nocountry.inventory.repository.UserEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,7 +17,7 @@ public class UserEntityService {
     @Autowired
     UserEntityRepository userEntityRepository;
 
-   @Transactional
+    @Transactional
     public UserEntity register(UserEntity userEntity) {
         var existingEmail = userEntityRepository.findByEmail(userEntity.getEmail());
         if (existingEmail != null) {
@@ -24,7 +25,6 @@ public class UserEntityService {
         }
         return userEntityRepository.save(userEntity);
     }
-
 
     @Transactional
     public UserEntity update(UserEntity userEntity, Long id) {
