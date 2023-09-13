@@ -27,20 +27,14 @@ function App() {
     localStorage.setItem('log', log);
   }, [log]);
 
-  const {dispatch} = useContext(UserContext);
+  const { data, dispatch } = useContext(UserContext);
+
   useEffect(() => {
     dispatch({
       type: types.authLogin,
       payload: { log },
     });
   }, [dispatch, log]);
-  // const {dispatch} = useContext(UserContext);
-  // useEffect(() => {
-  //   dispatch({
-  //     type: types.authLogin,
-  //     payload: { log },
-  //   });
-  // }, [dispatch, log]);
   return (
     <BrowserRouter>
       <div className='flex text-black'>
