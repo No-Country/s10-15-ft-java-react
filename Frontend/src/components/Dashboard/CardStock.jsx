@@ -16,9 +16,13 @@ export const CardStock = ({
         <Icon className={`md:text-3xl lg:text-5xl ${customClass}`} />
       </span>
       {number > 0 ? (
-        <div className='flex flex-col items-center'>
+        <div className='flex gap-3 items-center'>
           <p className='md:text-2xl lg:text-2xl font-bold'>{nameProduct}</p>
-          <p className='md:text-2xl lg:text-2xl font-bold'>{number}</p>
+          <span className='md:text-2xl lg:text-2xl font-bold'> - </span>
+          <p className='md:text-2xl lg:text-2xl font-bold'>
+            {number}
+            <span className='md:text-xl lg:text-xl font-medium'> uds</span>
+          </p>
         </div>
       ) : (
         <div className='flex flex-col items-center'>
@@ -28,5 +32,6 @@ export const CardStock = ({
     </div>
   );
 };
+
 
 CardStock.propTypes = CardStockPropTypes;

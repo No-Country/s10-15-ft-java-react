@@ -7,7 +7,7 @@ export const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [data, dispatch] = useReducer(userReducer, initialUser);
   return (
-    <UserContext.Provider value={[data, dispatch]}>
+    <UserContext.Provider value={{data, dispatch}}>
       {children}
     </UserContext.Provider>
   );
