@@ -4,10 +4,11 @@ export const updateUsers = async (formData) => {
   await axios.put(
     `${
       API_URL || 'https://s10-15-ft-java-react-production.up.railway.app'
-    }/product/update`,
+    }/user/${formData.id}`,
     {
       id: formData.id,
-      userName: formData.userName,
+      password: formData.password,
+      username: formData.username,
       role: formData.role,
       email: formData.email,
     },
