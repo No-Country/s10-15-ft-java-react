@@ -24,14 +24,14 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userEntityService.register(userEntity));
     }
 
-    @PutMapping
-    public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity userEntity, Long id) {
+    @PutMapping("/{id}")
+    public ResponseEntity<UserEntity> update(@Valid @RequestBody UserEntity userEntity,@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(userEntityService.update(userEntity, id));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserEntity> login(@Valid String userName, String pasword) {
-        return ResponseEntity.status(HttpStatus.OK).body(userEntityService.login(userName, pasword));
+    public ResponseEntity<UserEntity> login(@Valid @RequestParam String username, @Valid @RequestParam String password) {
+        return ResponseEntity.status(HttpStatus.OK).body(userEntityService.login(username, password));
     }
 
     @GetMapping("/{id}")
