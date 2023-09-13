@@ -13,7 +13,7 @@ export const Inventory = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    items.length
+    items.length === undefined
       ? {}
       : getProductsInventory(categories, setItems, setCategories);
   }, [items, categories]);

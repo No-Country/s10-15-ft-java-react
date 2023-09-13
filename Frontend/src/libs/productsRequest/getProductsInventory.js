@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-export const getProductsInventory = (categories, setItems, setCategories) => {
-  axios
+export const getProductsInventory = async (
+  categories,
+  setItems,
+  setCategories,
+) => {
+  await axios
     .get(
       'https://s10-15-ft-java-react-production.up.railway.app/product/listAll',
     )
