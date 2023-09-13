@@ -22,7 +22,7 @@ public class UserEntity {
     @Column(nullable = false)
     @NotBlank
     @NotNull
-    private String userName;
+    private String username;
 
     @Column(nullable = false)
     @NotBlank
