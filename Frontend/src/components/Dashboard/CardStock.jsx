@@ -17,9 +17,9 @@ export const CardStock = ({
       </span>
       {number > 0 ? (
         <div className='flex gap-3 items-center'>
-          <p className='md:text-2xl lg:text-2xl font-bold'>{nameProduct}</p>
-          <span className='md:text-2xl lg:text-2xl font-bold'> - </span>
-          <p className='md:text-2xl lg:text-2xl font-bold'>
+          <p className='md:text-lg lg:text-xl font-bold'>{nameProduct}</p>
+          <span className='md:text-lg lg:text-xl font-bold'> - </span>
+          <p className='md:text-lg lg:text-xl font-bold'>
             {number}
             <span className='md:text-xl lg:text-xl font-medium'> uds</span>
           </p>
