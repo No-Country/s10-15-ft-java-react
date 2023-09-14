@@ -56,7 +56,7 @@ export const ModalUpdateUser = ({ user, setMostrar }) => {
         />
       </label>
       <div className='flex flex-row users-center justify-around gap-5'>
-        <input type='submit' className='btn' value='Actualizar Producto' />
+        <input type='submit' className='btn' value='Actualizar Usuario' />
         <div className='btn' onClick={() => setMostrar(false)}>
           Cancelar
         </div>

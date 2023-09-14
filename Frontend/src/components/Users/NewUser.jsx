@@ -1,6 +1,6 @@
 //import { AiOutlineLeft } from 'react-icons/ai';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import postUsers from '../../libs/usersRequest/postUsers';
 
 export const NewUser = () => {
@@ -11,21 +11,19 @@ export const NewUser = () => {
     email: '',
     role: 'USER',
   });
-
+  const navigate = useNavigate();
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
       await postUsers(formData);
       console.log(formData);
-
     } catch (error) {
       console.log(error);
-
     } finally {
       setIsLoading(false);
+      navigate('/usuarios');
     }
   };
-
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -35,25 +33,23 @@ export const NewUser = () => {
     });
   };
 
-
-
   return (
     <div className='p-5 flex flex-col'>
-
       <div>
         <Link to='/usuarios'>
-          <button className='btn btn-primary'>
-            Volver
-          </button>
+          <button className='btn btn-primary'>Volver</button>
         </Link>
       </div>
-      
+
       <div className='flex flex-col justify-center items-center w-full'>
         <h1 className='text-3xl font-semibold'>Nuevo usuario</h1>
-        
-        <form 
+
+        <form
           className='flex flex-col mt-5 gap-8 w-2/5 px-10'
-          onSubmit={(e) => { e.preventDefault(); handleSubmit();}}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}
         >
           <input
             type='text'
@@ -84,30 +80,31 @@ export const NewUser = () => {
             <span className='font-bold'>Rol</span>
             <div className='flex items-center justify-between py-3'>
               <span className=''>Administrador</span>
-              <input 
-                type='checkbox' 
-                className='toggle toggle-primary' 
+              <input
+                type='checkbox'
+                className='toggle toggle-primary bg-primary'
                 name='role'
                 value='ADMIN'
                 onChange={handleInputChange}
-                />
+              />
             </div>
           </div>
           <div className='flex gap-3 mt-10'>
             <button className='btn btn-primary'>Cancelar</button>
-            <button type='submit' className='btn btn-outline' disabled={isLoading}>
-            {
-              isLoading ? (
+            <button
+              type='submit'
+              className='btn btn-outline'
+              disabled={isLoading}
+            >
+              {isLoading ? (
                 <span className='loading loading-spinner text-primary loading-lg'></span>
               ) : (
                 'Guardar'
-              )
-            }
+              )}
             </button>
           </div>
         </form>
       </div>
-
     </div>
   );
 };

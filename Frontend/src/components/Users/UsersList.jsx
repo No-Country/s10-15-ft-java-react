@@ -1,6 +1,8 @@
 import { MdDelete } from 'react-icons/md';
 import { deleteUser } from '../../libs/usersRequest/deleteUser';
 import UpdateBtn from '../UpdateBtn/UpdateBtn';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export const UsersList = (users) => {
   return (

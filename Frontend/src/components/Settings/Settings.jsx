@@ -30,7 +30,8 @@ const Settings = () => {
                 <span className='label-text text-neutral'>Modo Oscuro</span>
                 <input
                   type='checkbox'
-                  className='toggle toggle-primary bg-primary'
+                  disabled
+                  className='toggle toggle-primary bg-primary disabled:bg-primary'
                 />
               </label>
             </div>
