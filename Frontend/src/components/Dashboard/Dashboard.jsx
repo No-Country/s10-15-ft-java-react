@@ -34,7 +34,7 @@ export const Dashboard = () => {
           <CardInfo
             icon={FaUserFriends}
             number={lenghtProviders.length}
-            title='Proveedores'
+            title='Usuarios'
           />
         </div>
 
@@ -45,7 +45,6 @@ export const Dashboard = () => {
             title='Productos'
           />
         </div>
-
       </div>
 
       <div className='flex justify-around w-full mt-10 gap-6'>

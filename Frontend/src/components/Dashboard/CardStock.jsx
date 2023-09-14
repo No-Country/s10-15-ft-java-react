@@ -33,5 +33,4 @@ export const CardStock = ({
   );
 };
 
-
 CardStock.propTypes = CardStockPropTypes;
