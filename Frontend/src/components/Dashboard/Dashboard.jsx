@@ -6,6 +6,7 @@ import { CardStock } from './CardStock';
 import { useEffect, useState } from 'react';
 import getProductsDashboard from '../../libs/productsRequest/getProductsDashboard';
 import { CardInfo } from '../CardInfo';
+import { Link } from 'react-router-dom';
 
 export const Dashboard = () => {
   const [items, setItems] = useState([]);
@@ -31,19 +32,24 @@ export const Dashboard = () => {
     <div className='p-5 flex flex-col gap-6 w-full'>
       <div className='flex justify-around w-full gap-6 mt-10'>
         <div className='card md:w-1/2 lg:w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
-          <CardInfo
-            icon={FaUserFriends}
-            number={lenghtProviders.length}
-            title='Proveedores'
-          />
+          <Link to='/usuarios'>
+            <CardInfo
+              icon={FaUserFriends}
+              number={lenghtProviders.length}
+              title='Usuarios'
+            />
+          </Link>
         </div>
 
         <div className='card md:w-1/2 lg:w-1/3 md:h-32 lg:h-40 flex justify-center items-center bg-inherit border-2 border-slate-400 rounded-lg shadow-xl'>
-          <CardInfo
-            icon={BsClipboardCheckFill}
-            number={items.length}
-            title='Productos'
-          />
+          <Link to='/inventario'>
+
+            <CardInfo
+              icon={BsClipboardCheckFill}
+              number={items.length}
+              title='Productos'
+            />
+          </Link>
         </div>
       </div>
 

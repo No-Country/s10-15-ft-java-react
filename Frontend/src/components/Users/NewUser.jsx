@@ -1,6 +1,5 @@
-//import { AiOutlineLeft } from 'react-icons/ai';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import postUsers from '../../libs/usersRequest/postUsers';
 
 export const NewUser = () => {
@@ -11,7 +10,7 @@ export const NewUser = () => {
     email: '',
     role: 'USER',
   });
-
+  const navigate = useNavigate();
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
@@ -21,6 +20,7 @@ export const NewUser = () => {
       console.log(error);
     } finally {
       setIsLoading(false);
+      navigate('/usuarios');
     }
   };
 
@@ -81,7 +81,7 @@ export const NewUser = () => {
               <span className=''>Administrador</span>
               <input
                 type='checkbox'
-                className='toggle toggle-primary'
+                className='toggle toggle-primary bg-primary'
                 name='role'
                 value='ADMIN'
                 onChange={handleInputChange}

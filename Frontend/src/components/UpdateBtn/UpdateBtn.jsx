@@ -20,7 +20,7 @@ const UpdateBtn = ({ item, user }) => {
       </button>
       <dialog id='my_modal_4' className='modal' open={mostrar}>
         <div className='modal-box flex flex-col justify-around h-max gap-5'>
-          <h3 className='font-bold text-lg'>Editar producto</h3>
+          <h3 className='font-bold text-lg'>Editar</h3>
           {user ? (
             <ModalUpdateUser user={user} setMostrar={setMostrar} />
           ) : (

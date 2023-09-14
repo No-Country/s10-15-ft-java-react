@@ -6,7 +6,7 @@ export const FilterNav = () => {
     <div className='text-black mt-10'>
       <div className='flex justify-between items-center'>
         <div>
-          <p>Total: 4 usuarios</p>
+          <p>Total: 2 usuarios</p>
         </div>
         <div className='flex items-center gap-10 py-2'>
           <span>Mostrar</span>

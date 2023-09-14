@@ -11,7 +11,7 @@ export const Users = () => {
   return (
     <div className='text-lg box-border px-10 py-5 w-full '>
       <FilterNav />
-      <div className='grid grid-cols-4 gap-4 py-4 justify-items-center font-bold px-3'>
+      <div className='grid grid-cols-4 gap-4 py-4 justify-items-center px-3'>
         <div className='flex justify-start w-full'>
           <span>Usuario</span>
         </div>
