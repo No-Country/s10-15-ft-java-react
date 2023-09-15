@@ -2,7 +2,7 @@
 <h1>
 <a href="" target="_blank" rel="noopener noreferrer" style="color: #86E3CE">StockFlow</a>
 </h1>
-   <img src="https://i.ibb.co/1Z57NtL/landing-Stock-Flow-1.webp" alt="image"/>
+   <img src="https://media.discordapp.net/attachments/1140646171522629683/1151638502866419802/mockup.png" alt="image"/>
 <p>
 <p>¡Echa un vistazo al video promocional!</p>
 <a href="https://www.youtube.com/watch?v=vJRWh_odeoY" target="_blank" rel="noopener noreferrer">
