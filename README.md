@@ -5,7 +5,7 @@
    <img src="https://i.ibb.co/1Z57NtL/landing-Stock-Flow-1.webp" alt="image"/>
 <p>
 <p>¡Echa un vistazo al video promocional!</p>
-<a href="#" target="_blank" rel="noopener noreferrer">
+<a href="https://www.youtube.com/watch?v=vJRWh_odeoY" target="_blank" rel="noopener noreferrer">
   <img src="https://img.shields.io/badge/Ver%20video-FF0000?style=for-the-badge&logo=YouTube&logoColor=fff"/>
 </a>
 </div>
